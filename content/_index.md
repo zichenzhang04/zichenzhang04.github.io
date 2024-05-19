@@ -64,16 +64,16 @@ sections:
       items:
         - title: Research Assistant
           company: Minji Lab at U-M
-          company_url: ''
-          company_logo: org-gc
+          company_url: 'https://www.minjilab.com/home'
+          # company_logo: org-gc
           location: Ann Arbor
           date_start: '2024-05-28'
           date_end: '2024-08-28'
           description:
         - title: Research Assistant
-          company: Brain-Computer Interface Lab at U-M
-          company_url: ''
-          company_logo: bci
+          company: Direct Brain Interface Lab at U-M
+          company_url: 'https://sites.google.com/umich.edu/umdbi/home'
+          # company_logo: bci
           location: Ann Arbor
           date_start: '2022-09-20'
           date_end: '2023-05-28'
@@ -129,7 +129,7 @@ sections:
       subtitle: ''
       text: ''
       # Choose how many pages you would like to display (0 = all pages)
-      count: 5
+      count: 1
       # Filter on criteria
       filters:
         folders:
