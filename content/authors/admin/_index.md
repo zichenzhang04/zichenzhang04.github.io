@@ -21,7 +21,7 @@ role: RA @ Minji Lab | Prev - UM-BCI Lab
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: University of Michigan Computer Science
+  - name: University of Michigan CS
     url: https://cse.engin.umich.edu/
 
 # Short bio (displayed in user profile at end of posts)
@@ -38,7 +38,7 @@ education:
   courses:
     - course: B.S. in Computer Science
       institution: University of Michigan
-      year: 2022-Present
+      year: 2026
 
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
