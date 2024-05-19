@@ -67,17 +67,17 @@ sections:
           company_url: ''
           company_logo: org-gc
           location: Ann Arbor
-          date_start: '2022-09-20'
-          date_end: '2023-05-28'
-          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIsDeployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
+          date_start: '2024-05-28'
+          date_end: '2024-08-28'
+          description:
         - title: Research Assistant
           company: Brain-Computer Interface Lab at U-M
           company_url: ''
           company_logo: org-x
           location: Ann Arbor
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
-          description:
+          date_start: '2022-09-20'
+          date_end: '2023-05-28'
+          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIsDeployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
     design:
       columns: '2'
   # - block: accomplishments
