@@ -1,9 +1,9 @@
 ---
 # Display name
-title: 张紫宸
+title: Zichen Zhang
 
 # Name pronunciation (optional)
-name_pronunciation: 
+name_pronunciation:
 
 # Full name (for SEO)
 first_name: Zichen
