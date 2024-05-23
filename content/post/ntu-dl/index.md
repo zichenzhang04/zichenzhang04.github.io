@@ -1,6 +1,11 @@
 ---
 title: Deep Learning Overview Inspired by NTU
 date: 2024-05-19
+summary: A brief introduction to deep learning models and theories inspired by a course at NTU
+tags:
+  - Deep Learning
+  - Machine Learning
+share: false
 ---
 
 ***Acknowledgement***:
@@ -574,9 +579,7 @@ Cross-entropy is more frequently used for classification than MSE. At the region
 <img src="assets/image-20240505110347099.png" alt="image-20240505110347099" style="zoom:25%;" />
 
 $$
-P(C_1 \mid x)
-= \frac{P(C_1, x)}{P(x)}
-= \frac{P(x \mid C_1)P(C_1)}{P(x \mid C_1)P(C_1) + P(x \mid C_2)P(C_2)}
+P(C_1 \mid x) = \frac{P(C_1, x)}{P(x)} = \frac{P(x \mid C_1)P(C_1)}{P(x \mid C_1)P(C_1) + P(x \mid C_2)P(C_2)}
 $$
 
 We can therefore predict the distribution of $x$:
