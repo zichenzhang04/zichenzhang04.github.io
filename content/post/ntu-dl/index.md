@@ -1,13 +1,9 @@
 ---
 title: Deep Learning Overview Inspired by NTU
 date: 2024-05-19
-math: true
-# image:
-#   placement: 2
-#   caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)'
 ---
 
-***Acknowledgment***:
+***Acknowledgement***:
 
 The course website: [MACHINE LEARNING 2022 SPRING](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 
@@ -35,23 +31,35 @@ Loss is a function itself of parameters, written as {{< math >}}$L(b,w)${{< /mat
 
 An example loss function is:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 L = \frac{1}{N} \sum_{n} e_n
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 where {{< math >}}$e_n${{< /math >}} can be calculated in many ways:
 
 **Mean Absolute Error (MAE)**
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 e_n = |y_n - \hat{y}_n|
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 **Mean Square Error (MSE)**
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 e_n = (y_n - \hat{y}_n)^2
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 If {{< math >}}$y${{< /math >}} and {{< math >}}$\hat{y}_n${{< /math >}} are both probability distributions, we can use **cross entropy**.
 
@@ -61,9 +69,13 @@ If {{< math >}}$y${{< /math >}} and {{< math >}}$\hat{y}_n${{< /math >}} are bot
 
 The goal is to find the best parameter:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 w^*, b^* = \arg\min_{w,b} L
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Solution: **Gradient Descent**
 
@@ -102,9 +114,13 @@ More pieces require more blue curves.
 
 How to represent a blue curve (**Hard Sigmoid** function): **Sigmoid** function
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 y = c\frac{1}{1 + e^{-(b + wx_1)}} = c\text{sigmoid}(b + wx_1)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 We can change {{< math >}}$w${{< /math >}}, {{< math >}}$c${{< /math >}} and {{< math >}}$b${{< /math >}} to get sigmoid curves with different shapes.
 
@@ -116,15 +132,23 @@ Different Sigmoid curves -> Combine to approximate different piecewise linear fu
 
 From a model with high bias {{< math >}}$y=b+wx_1${{< /math >}} to the new model with more features and a much lower bias:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 y = b + \sum_{i} c_i \text{sigmoid}(b_i + w_i x_1)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Also, if we consider multiple features {{< math >}}$y = b + \sum_{j} w_j x_j${{< /math >}}​, the new model can be expanded to look like this:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 y = b + \sum_{i} c_i \text{sigmoid}(b_i + \sum_{j} w_{ij} x_j)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Here, {{< math >}}$i${{< /math >}} represents each sigmoid function and {{< math >}}$j${{< /math >}} represents each feature. {{< math >}}$w_{ij}${{< /math >}} represents the weight for {{< math >}}$x_j${{< /math >}} that corresponds to the {{< math >}}$j${{< /math >}}-th feature in the {{< math >}}$i${{< /math >}}-th sigmoid.
 
@@ -135,9 +159,13 @@ Here, {{< math >}}$i${{< /math >}} represents each sigmoid function and {{< math
 <img src="assets/image-20240503132324232.png" alt="image-20240503132324232" style="zoom: 25%;" />
 
 <img src="assets/image-20240503132402405.png" alt="image-20240503132402405" style="zoom:25%;" />
-{{< math >}}$$
+{{< math >}}
+$$
+
 y = b + \boldsymbol{c}^T \sigma(\boldsymbol{b} + W \boldsymbol{x})
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 {{< math >}}$\boldsymbol{\theta}=[\theta_1, \theta_2, \theta_3, ...]^T${{< /math >}} is our parameter vector:
 
@@ -149,9 +177,13 @@ Our loss function is now expressed as {{< math >}}$L(\boldsymbol{\theta})${{< /m
 
 Optimization is still the same.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{\theta}^* = \arg \min_{\boldsymbol{\theta}} L
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 1. (Randomly) pick initial values {{< math >}}$\boldsymbol{\theta}^0${{< /math >}}​
 2. calculate the gradient {{< math >}}$\boldsymbol{g} = \begin{bmatrix} \frac{\partial{L}} {\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix} = \nabla L(\boldsymbol{\theta}^0)${{< /math >}} with {{< math >}}$\boldsymbol{\theta}, \boldsymbol{g} \in \mathbb{R}^n${{< /math >}}
@@ -161,9 +193,13 @@ The terms ***batch*** and ***epoch*** are different.
 
 <img src="assets/image-20240503155656244.png" alt="image-20240503155656244" style="zoom:33%;" />
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \text{num\_updates} = \frac{\text{num\_examples}}{\text{batch\_size}}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Batch size {{< math >}}$B${{< /math >}}​ is also a hyperparameter. One epoch does not tell the number of updates the training process actually has.
 
@@ -175,9 +211,13 @@ It looks kind of like the Hard Sigmoid function we saw earlier:
 
 As a result, we can use these two RELU curves to simulate the same result as Sigmoid curve.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 y = b + \sum_{2i} c_i \max(0, b_i + \sum_j w_{ij}x_j)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240503162214759.png" alt="image-20240503162214759" style="zoom:25%;" />
 
@@ -274,25 +314,41 @@ If we are stuck at a local minima, then there's no way to further decrease the l
 
 {{< math >}}$L(\boldsymbol{\theta})${{< /math >}} around {{< math >}}$\boldsymbol{\theta} = \boldsymbol{\theta}'${{< /math >}} can be approximated (Taylor Series)below:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 L(\boldsymbol{\theta}) \approx L(\boldsymbol{\theta}') + (\boldsymbol{\theta} - \boldsymbol{\theta}')^T \boldsymbol{g} + \frac{1}{2} (\boldsymbol{\theta} - \boldsymbol{\theta}')^T H (\boldsymbol{\theta} - \boldsymbol{\theta}')
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Gradient {{< math >}}$\boldsymbol{g}${{< /math >}} is a *vector*:
 
-{{< math >}}$$
-\boldsymbol{g} = \nabla L(\boldsymbol{\theta}')
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+\boldsymbol{g} = \nabla L(\boldsymbol{\theta}')
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 \boldsymbol{g}_i = \frac{\partial L(\boldsymbol{\theta}')}{\partial \boldsymbol{\theta}_i}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Hessian {{< math >}}$H${{< /math >}} is a matrix:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 H_{ij} = \frac{\partial^2}{\partial \boldsymbol{\theta}_i \partial \boldsymbol{\theta}_j} L(\boldsymbol{\theta}')
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240504121739774.png" alt="image-20240504121739774" style="zoom:25%;" />
 
@@ -304,9 +360,13 @@ When we are at the critical point, The approximation is "dominated" by the Hessi
 
 Namely, our approximation formula becomes:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 L(\boldsymbol{\theta}) \approx L(\boldsymbol{\theta}') + \frac{1}{2} (\boldsymbol{\theta} - \boldsymbol{\theta}')^T H (\boldsymbol{\theta} - \boldsymbol{\theta}') = L(\boldsymbol{\theta}') + \frac{1}{2} \boldsymbol{v}^T H \boldsymbol{v}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Local minima:
 
@@ -332,9 +392,13 @@ If by analyzing {{< math >}}$H${{< /math >}}'s properpty, we realize that it's i
 
 Suppose {{< math >}}$\boldsymbol{u}${{< /math >}} is an eigenvector of {{< math >}}$H${{< /math >}} and {{< math >}}$\lambda${{< /math >}} is the eigenvalue of {{< math >}}$\boldsymbol{u}${{< /math >}}.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{u}^T H \boldsymbol{u} = \boldsymbol{u}^T (H \boldsymbol{u}) = \boldsymbol{u}^T (\lambda \boldsymbol{u}) = \lambda (\boldsymbol{u}^T \boldsymbol{u}) = \lambda \|\boldsymbol{u}\|^2
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 If the eigenvalue {{< math >}}$\lambda < 0${{< /math >}}, then {{< math >}}$\boldsymbol{u}^T H \boldsymbol{u} = \lambda \|\boldsymbol{u}\|^2 < 0${{< /math >}} (eigenvector {{< math >}}$\boldsymbol{u}${{< /math >}} can't be {{< math >}}$\boldsymbol{0}${{< /math >}}). Because {{< math >}}$L(\boldsymbol{\theta}) \approx L(\boldsymbol{\theta}') + \frac{1}{2} \boldsymbol{u}^T H \boldsymbol{u}${{< /math >}}, we know {{< math >}}$L(\boldsymbol{\theta}) < L(\boldsymbol{\theta}')${{< /math >}}. By definition, {{< math >}}$\boldsymbol{\theta} - \boldsymbol{\theta}' = \boldsymbol{u}${{< /math >}}. If we perform {{< math >}}$\boldsymbol{\theta} = \boldsymbol{\theta}' + \boldsymbol{u}${{< /math >}}, we can effectively decrease {{< math >}}$L${{< /math >}}. We can escape the saddle point and decrease the loss.
 
@@ -420,25 +484,41 @@ Learning rate can not be one-size-fits-all. **If we are at a place where the gra
 
 Formulation for one parameter:
 
-{{< math >}}$$
-\boldsymbol{\theta}_i^{t+1} \leftarrow \boldsymbol{\theta}_i^{t} - \eta \boldsymbol{g}_i^t
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+\boldsymbol{\theta}_i^{t+1} \leftarrow \boldsymbol{\theta}_i^{t} - \eta \boldsymbol{g}_i^t
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 \boldsymbol{g}_i^t = \frac{\partial L}{\partial \boldsymbol{\theta}_i} \bigg |_{\boldsymbol{\theta} = \boldsymbol{\theta}^t}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 The new formulation becomes:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{\theta}_i^{t+1} \leftarrow \boldsymbol{\theta}_i^{t} - \frac{\eta}{\sigma_i^t} \boldsymbol{g}_i^t
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 {{< math >}}$\sigma_i^t${{< /math >}} is both parameter-dependent ({{< math >}}$i${{< /math >}}) and iteration-dependent ({{< math >}}$t${{< /math >}}). It is called **Root Mean Square**. It is used in **Adagrad** algorithm.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \sigma_i^t = \sqrt{\frac{1}{t+1} \sum_{i=0}^t (\boldsymbol{g}_i^t)^2}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 <img src="assets/image-20240504212350040.png" alt="image-20240504212350040" style="zoom:25%;" />
 
 Why this formulation works?
@@ -453,9 +533,13 @@ However, this formulation still has some problems. We assumed that the gradient 
 
 The new formulation is now:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \sigma_i^t = \sqrt{\alpha(\sigma_i^{t-1})^2 + (1-\alpha)(\boldsymbol{g}_i^t)^2}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 {{< math >}}$\alpha${{< /math >}} is a hyperparameter ({{< math >}}$0 < \alpha < 1${{< /math >}}). It controls how important the previously-calculated gradient is.
 
 <img src="assets/image-20240504214302296.png" alt="image-20240504214302296" style="zoom:25%;" />
@@ -476,9 +560,13 @@ This is the optimization process with Adagrad:
 
 To prevent the osciallations at the final stage, we can use two methods:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{\theta}_i^{t+1} \leftarrow \boldsymbol{\theta}_i^{t} - \frac{\eta^t}{\sigma_i^t} \boldsymbol{g}_i^t
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 #### Learning Rate Decay
 
@@ -512,18 +600,26 @@ It's also problematic to directly represent Class 1 as numeric value {{< math >}
 
 One possible model is:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 f(x) = \begin{cases}
 1 & g(x) > 0 \\
 2 & \text{else}
 \end{cases}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 The loss function denotes the number of times {{< math >}}$f${{< /math >}} gets incorrect results on training data.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 L(f) = \sum_n \delta(f(x^n) \neq \hat{y}^n)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 We can represent classes as one-hot vectors. For example, we can represent Class {{< math >}}$1${{< /math >}} as $\hat{y} = \begin{bmatrix}
 1 \\
@@ -543,9 +639,13 @@ We can represent classes as one-hot vectors. For example, we can represent Class
 
 ### Softmax
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 y_i' = \frac{\exp(y_i)}{\sum_j \exp(y_j)}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 We know that {{< math >}}$0 < y_i' < 1${{< /math >}} and {{< math >}}$\sum_i y_i' = 1${{< /math >}}.
 
@@ -557,15 +657,23 @@ We know that {{< math >}}$0 < y_i' < 1${{< /math >}} and {{< math >}}$\sum_i y_i
 
 #### Mean Squared Error (MSE)
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 e = \sum_i (\boldsymbol{\hat{y}}_i - \boldsymbol{y}_i')^2
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 #### Cross-Entropy
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 e = -\sum_i \boldsymbol{\hat{y}}_i \ln{\boldsymbol{y}_i'}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Minimizing cross-entropy is equivalent to maximizing likelihood.
 
@@ -577,17 +685,25 @@ Cross-entropy is more frequently used for classification than MSE. At the region
 
 <img src="assets/image-20240505110347099.png" alt="image-20240505110347099" style="zoom:25%;" />
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 P(C_1 \mid x)
 = \frac{P(C_1, x)}{P(x)}
 = \frac{P(x \mid C_1)P(C_1)}{P(x \mid C_1)P(C_1) + P(x \mid C_2)P(C_2)}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 We can therefore predict the distribution of {{< math >}}$x${{< /math >}}:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 P(x) = P(x \mid C_1)P(C_1) + P(x \mid C_2)P(C_2)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 #### Prior
 
@@ -595,9 +711,13 @@ $${{< /math >}}
 
 #### Gaussian distribution
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 f_{\mu, \Sigma}(x) = \frac{1}{(2\pi)^{D/2} |\Sigma|^{1/2}} \exp\left(-\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x - \mu)\right)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Input: vector {{< math >}}$x${{< /math >}}, output: probability of sampling {{< math >}}$x${{< /math >}}. The shape of the function determines by mean {{< math >}}$\mu${{< /math >}} and covariance matrix {{< math >}}$\Sigma${{< /math >}}. ==Technically, the output is the probability density, not exactly the probability, through they are positively correlated.==
 
@@ -609,23 +729,39 @@ Input: vector {{< math >}}$x${{< /math >}}, output: probability of sampling {{< 
 
 We assume {{< math >}}$x^1, x^2, x^3, \cdots, x^{79}${{< /math >}} generate from the Gaussian ({{< math >}}$\mu^*, \Sigma^*${{< /math >}}) with the *maximum likelihood*.
 
-{{< math >}}$$
-L(\mu, \Sigma) = f_{\mu, \Sigma}(x^1) f_{\mu, \Sigma}(x^2) f_{\mu, \Sigma}(x^3) \cdots f_{\mu, \Sigma}(x^{79})
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+L(\mu, \Sigma) = f_{\mu, \Sigma}(x^1) f_{\mu, \Sigma}(x^2) f_{\mu, \Sigma}(x^3) \cdots f_{\mu, \Sigma}(x^{79})
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 \mu^*, \Sigma^* = \arg \max_{\mu,\Sigma} L(\mu, \Sigma)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 The solution is as follows:
 
-{{< math >}}$$
-\mu^* = \frac{1}{79} \sum_{n=1}^{79} x^n
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+\mu^* = \frac{1}{79} \sum_{n=1}^{79} x^n
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 \Sigma^* = \frac{1}{79} \sum_{n=1}^{79} (x^n - \mu^*)(x^n - \mu^*)^T
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240505115811655.png" alt="image-20240505115811655" style="zoom:25%;" />
 
@@ -649,11 +785,15 @@ We can always use whatever distribution we like (we use Guassian in the previous
 
 If we assume all the dimensions are independent, then you are using **Naive Bayes Classifier**.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 P(\boldsymbol{x} \mid C_1) =
 P(\begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_K \end{bmatrix} \mid C_1) =
 P(x_1 \mid C_1)P(x_2 \mid C_1) \dots P(x_K \mid C_1)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Each {{< math >}}$P(x_m \mid C_1)${{< /math >}} is now a 1-D Gaussian. For binary features, you may assume they are from Bernouli distributions.
 
@@ -661,7 +801,9 @@ But if the assumption does not hold, the Naive Bayes Classifier may have a very 
 
 #### Posterior Probability
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \begin{align}
 P(C_1 | x)
 &= \frac{P(x | C_1) P(C_1)}{P(x | C_1) P(C_1) + P(x | C_2) P(C_2)} \\
@@ -669,27 +811,37 @@ P(C_1 | x)
 &= \frac{1}{1 + \exp(-z)} \\
 &= \sigma(z) \\
 \end{align}
-$${{< /math >}}
 
-{{< math >}}$$
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 \begin{align}
 z &= \ln \frac{P(x | C_1) P(C_1)}{P(x | C_2) P(C_2)} \\
 &= \ln \frac{P(x | C_1)}{P(x | C_2)} + \ln \frac{P(C_1)}{P(C_2)} \\
 &= \ln \frac{P(x | C_1)}{P(x | C_2)} + \ln \frac{\frac{N_1}{N_1+N_2}}{\frac{N_2}{N_1+N_2}} \\
 &= \ln \frac{P(x | C_1)}{P(x | C_2)} + \ln \frac{N_1}{N_2} \\
 \end{align}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Furthermore:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \begin{align}
 \ln \frac{P(x | C_1)}{P(x | C_2)}
 &= \ln \frac{\frac{1}{(2\pi)^{D/2} |\Sigma_1|^{1/2}} \exp\left\{-\frac{1}{2} (x - \mu^1)^T \Sigma_1^{-1} (x - \mu^1)\right\}}  {\frac{1}{(2\pi)^{D/2} |\Sigma_2|^{1/2}} \exp\left\{-\frac{1}{2} (x - \mu^2)^T \Sigma_2^{-1} (x - \mu^2)\right\}} \\
 &= \ln \frac{|\Sigma_2|^{1/2}}{|\Sigma_1|^{1/2}} \exp \left\{ -\frac{1}{2} [(x - \mu^1)^T \Sigma_1^{-1} (x - \mu^1)-\frac{1}{2} (x - \mu^2)^T \Sigma_2^{-1} (x - \mu^2)] \right\} \\
 &= \ln \frac{|\Sigma_2|^{1/2}}{|\Sigma_1|^{1/2}} - \frac{1}{2} \left[(x - \mu^1)^T \Sigma_1^{-1} (x - \mu^1) - (x - \mu^2)^T \Sigma_2^{-1} (x - \mu^2)\right]
 \end{align}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Further simplification goes:
 
@@ -699,9 +851,13 @@ Since we assume the distributions share the covariance matrix, we can further si
 
 <img src="assets/image-20240505133107451.png" alt="image-20240505133107451" style="zoom:33%;" />
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 P(C_1 \mid x) = \sigma(w^Tx + b)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 This is why the decision boundary is a linear line.
 
@@ -711,53 +867,85 @@ In generative models, we estimate {{< math >}}$N_1, N_2, \mu^1, \mu^2, \Sigma${{
 
 We want to find {{< math >}}$P_{w,b}(C_1 \mid x)${{< /math >}}. If {{< math >}}$P_{w,b}(C_1 \mid x) \geq 0.5${{< /math >}}, output {{< math >}}$C_1${{< /math >}}. Otherwise, output {{< math >}}$C_2${{< /math >}}.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 P_{w,b}(C_1 \mid x) = \sigma(z) = \sigma(w \cdot x + b)
 = \sigma(\sum_i w_ix_i + b)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 The function set is therefore (including all different {{< math >}}$w${{< /math >}} and {{< math >}}$b${{< /math >}}):
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 f_{w,b}(x) = P_{w,b}(C_1 \mid x)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Given the training data {{< math >}}$\{(x^1, C_1),(x^2, C_1),(x^3, C_2),\dots, (x^N, C_1)\}${{< /math >}}, assume the data is generated based on {{< math >}}$f_{w,b}(x) = P_{w,b}(C_1 \mid x)${{< /math >}}. Given a set of {{< math >}}$w${{< /math >}} and {{< math >}}$b${{< /math >}}, the probability of generating the data is:
 
-{{< math >}}$$
-L(w,b) = f_{w,b}(x^1)f_{w,b}(x^2)\left(1-f_{w,b}(x^3)\right)...f_{w,b}(x^N)
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+L(w,b) = f_{w,b}(x^1)f_{w,b}(x^2)\left(1-f_{w,b}(x^3)\right)...f_{w,b}(x^N)
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 w^*,b^* = \arg \max_{w,b} L(w,b)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 We can write the formulation by introducing {{< math >}}$\hat{y}^i${{< /math >}}, where:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \hat{y}^i = \begin{cases}
 1 & x^i \text{ belongs to } C_1 \\
 0 & x^i \text{ belongs to } C_2
 \end{cases}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240505153535990.png" alt="image-20240505153535990" style="zoom:33%;" />
 
 <img src="assets/image-20240505153917703.png" alt="image-20240505153917703" style="zoom:33%;" />
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 C(p,q) = - \sum_x p(x) \ln \left( q(x) \right)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Therefore, minimizing {{< math >}}$- \ln L(w,b)${{< /math >}} is actually minimizing the cross entropy between two distributions: the output of function {{< math >}}$f_{w,b}${{< /math >}} and the target {{< math >}}$\hat{y}^n${{< /math >}}​​.
 
-{{< math >}}$$
-L(f) = \sum_n C(f(x^n), \hat{y}^n)
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+L(f) = \sum_n C(f(x^n), \hat{y}^n)
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 C(f(x^n), \hat{y}^n) = -[\hat{y}^n \ln f(x^n) + (1-\hat{y}^n) \ln \left(1-f(x^n)\right)]
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240505155715704.png" alt="image-20240505155715704" style="zoom:33%;" />
 
@@ -769,9 +957,13 @@ Here, the larger the difference ({{< math >}}$\hat{y}^n - f_{w,b}(x^n)${{< /math
 
 Therefore, the update step for **logistic regression** is:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 w_i \leftarrow w_i - \eta \sum_n - \left(\hat{y}^n - f_{w,b}(x^n)\right)x_i^n
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 This looks the same as the update step for linear regression. However, in logistic regression, {{< math >}}$f_{w,b}, \hat{y}^n \in \{0,1\}${{< /math >}}.
 
@@ -838,9 +1030,13 @@ In a linear model, when the value at each dimension have very distinct values, w
 #### Feature Normalization
 
 Recall **standardization**:
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{\tilde{x}}^{r}_{i} \leftarrow \frac{\boldsymbol{x}^{r}_{i} - m_{i}}{\sigma_{i}}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 {{< math >}}$i${{< /math >}} represents the dimension of the vector {{< math >}}$\boldsymbol{x}${{< /math >}} and {{< math >}}$r${{< /math >}} represents the index of the datapoint.
 
 <img src="assets/image-20240509092317165.png" alt="image-20240509092317165" style="zoom:25%;" />
@@ -862,9 +1058,13 @@ Notice that now **if {{< math >}}$\boldsymbol{z}^1${{< /math >}} changes, {{< ma
 We can also make a small improvement:
 
 <img src="assets/image-20240509101408124.png" alt="image-20240509101408124" style="zoom:33%;" />
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{\hat{z}}^{i} = \boldsymbol{\gamma} \odot \boldsymbol{\tilde{z}}^{i} + \boldsymbol{\beta}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 We set {{< math >}}$\boldsymbol{\gamma}${{< /math >}} to {{< math >}}$[1,1,...]^T${{< /math >}} and {{< math >}}$\boldsymbol{\beta}${{< /math >}} to {{< math >}}$[0,0,...]^T${{< /math >}}​ at the start of the iteration (they are *parameters* of the network). This means that the range will still the the same amongst different dimensions in the beginning. As the training goes, we may want to lift the contraint that each dimension has a mean of 0.
 
 #### Batch Normalization Testing/Inference
@@ -874,10 +1074,14 @@ We set {{< math >}}$\boldsymbol{\gamma}${{< /math >}} to {{< math >}}$[1,1,...]^
 We do not always have batch at testing stage.
 
 Computing the moving average of {{< math >}}$\boldsymbol{\mu}${{< /math >}} and {{< math >}}$\boldsymbol{\sigma}${{< /math >}}​ of the batches during training (PyTorch has an implementation of this). The hyperparamteer {{< math >}}$p${{< /math >}} is usually {{< math >}}$0.1${{< /math >}}. {{< math >}}$\boldsymbol{\mu^t}${{< /math >}} is the {{< math >}}$t${{< /math >}}-th **batch**'s {{< math >}}$\boldsymbol{\mu}${{< /math >}}.
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{\bar{\mu}} \leftarrow
 p \boldsymbol{\bar{\mu}} + (1-p) \boldsymbol{\mu^t}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 
 # 3/04 Lecture 3: Image as input
@@ -972,17 +1176,25 @@ There are many ways to calculate {{< math >}}$\alpha${{< /math >}}:
 
 The attention score will then pass through *softmax* (not necessary, RELU is also possible).
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \alpha_{1,i}' = \frac{\exp(\alpha_{1,i})}{\sum_j \exp(\alpha_{1,j})}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240506144352946.png" alt="image-20240506144352946" style="zoom: 33%;" />
 
 We will then extract information based on attention scores (after applying softmax).
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{b}^1 = \sum_i \alpha_{1,i}' \boldsymbol{v}^i
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240506144754754.png" alt="image-20240506144754754" style="zoom: 33%;" />
 
@@ -1201,26 +1413,42 @@ How do we utilize the structures and relationship to help train our model?
 #### NN4G (Neural Network for Graph)
 
 <img src="assets/image-20240509170939928.png" alt="image-20240509170939928" style="zoom:35%;" />
-{{< math >}}$$
-h_3^0 = \boldsymbol{w}_0 \cdot \boldsymbol{x}_3
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+h_3^0 = \boldsymbol{w}_0 \cdot \boldsymbol{x}_3
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 h_3^1 = \hat{w}_{1,3}(h_0^0 + h_2^0 + h_4^0) + \boldsymbol{w}_1 \cdot \boldsymbol{x}_3
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240509171000501.png" alt="image-20240509171000501" style="zoom:35%;" />
 
 #### DCNN (Diffusion-Convolution Neural Network)
 
 <img src="assets/image-20240509174350496.png" alt="image-20240509174350496" style="zoom:33%;" />
-{{< math >}}$$
-h_3^0 = w_3^0 MEAN(d(3,\cdot)=1)
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+h_3^0 = w_3^0 MEAN(d(3,\cdot)=1)
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 h_3^1 = w_3^1 MEAN(d(3,\cdot)=2)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Node features:
 
@@ -1402,9 +1630,13 @@ The GNN can also learn different angles of face. For example, when we apply **in
 
 <img src="assets/image-20240507183702031.png" alt="image-20240507183702031" style="zoom:30%;" />
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 G^* = \arg \min_G Div(P_G, P_{\text{data}})
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 where {{< math >}}$Div(P_G, P_{\text{data}})${{< /math >}}, our "loss function," is the **divergence** between two distributions: {{< math >}}$P_G${{< /math >}} and {{< math >}}$P_{\text{data}}${{< /math >}}.
 
@@ -1416,13 +1648,21 @@ For discriminator,
 
 <img src="assets/image-20240507190414858.png" alt="image-20240507190414858" style="zoom:33%;" />
 
-{{< math >}}$$
-D^* = \arg \max_D V(D,G)
-$${{< /math >}}
+{{< math >}}
+$$
 
-{{< math >}}$$
+D^* = \arg \max_D V(D,G)
+
+$$
+{{< /math >}}
+
+{{< math >}}
+$$
+
 V(G, D) = \mathbb{E}_{y \sim P_{\text{data}}} [\log D(y)] + \mathbb{E}_{y \sim P_G} [\log (1 - D(y))]
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Since we want to maximize {{< math >}}$V(G,D)${{< /math >}}​, we in turn wants the discriminator output for true data to be as large as possible and the discriminator output for generated output to be as small as possible.
 
@@ -1436,12 +1676,16 @@ In additon, {{< math >}}$\max_D V(D,G)${{< /math >}} is also related to **JS div
 
 Therefore,
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \begin{align}
 G^* &= \arg \min_G Div(P_G, P_{\text{data}}) \\
 &= \arg \min_G \max_D V(D,G)
 \end{align}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 This is how the GAN algorithm was designed (to solve the optimization problem above).
 
@@ -1479,9 +1723,13 @@ Since there are many possible "moving plans," we use the “moving plan” with 
 
 <img src="assets/image-20240507204742569.png" alt="image-20240507204742569" style="zoom:25%;" />
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 W(P_{\text{data}}, P_G) = \max_{D \in \text{1-Lipschitz}} \left\{ \mathbb{E}_{y \sim P_{\text{data}}} [D(y)] - \mathbb{E}_{y \sim P_{G}} [D(y)] \right\}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 {{< math >}}$D \in \text{1-Lipschitz}${{< /math >}} means that {{< math >}}$D(x)${{< /math >}} has to be a smooth enough function. Having this constraint prevents {{< math >}}$D(x)${{< /math >}} from becoming {{< math >}}$\infty${{< /math >}} and {{< math >}}$-\infty${{< /math >}}.
 
@@ -1864,9 +2112,13 @@ We can also train a TTS model that takes the output of a particular hidden layer
 
 We can know based on feature maps (the output of a filter) what patterns a particular filter is responsible for detecting. As a result, for an unknown image {{< math >}}$X${{< /math >}}, we can try to create an image that tries to create a large value of sum in a feature map:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 X^* = \arg \max_X \sum_i \sum_j a_{ij}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 {{< math >}}$X^*${{< /math >}} is the image that contains the patterns filter 1 can detect. We can find {{< math >}}$X^*${{< /math >}} using **gradient *ascent***. One example of the resulting {{< math >}}$X^*${{< /math >}} looks like this:
 
@@ -1874,9 +2126,13 @@ $${{< /math >}}
 
 However, if we try to find the best image (that maximizes the classification probability),
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 X^* = \arg \max_X y_i
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 we fail to see any meaningful pattern:
 
@@ -1884,15 +2140,23 @@ we fail to see any meaningful pattern:
 
 The images should look like a digit. As a result, we need to add constraints {{< math >}}$R(X)${{< /math >}} -- how likely {{< math >}}$X${{< /math >}} is a digit:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 X^* = \arg \max_X y_i + R(X)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 where:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 R(X) = - \sum_{i,j} |X_{i,j}|
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 {{< math >}}$R(X)${{< /math >}} restricts image {{< math >}}$X${{< /math >}} to have as little pattern (white regions) as possible since an image of a digit should have a couple of patterns (the rest of the image should just be the cover).
 
@@ -1904,15 +2168,23 @@ For example, we can append an image generator {{< math >}}$G${{< /math >}} (GAN,
 
 <img src="assets/image-20240511140917496.png" alt="image-20240511140917496" style="zoom:35%;" />
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 z^* = \arg \max_z y_i
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 We can then get the image we want by calculating:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 X^* = G(z^*)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240511141059751.png" alt="image-20240511141059751" style="zoom:33%;" />
 
@@ -1942,18 +2214,28 @@ Our goal is to find a new picture {{< math >}}$\boldsymbol{x}${{< /math >}} that
 
 Since we also want the noise to be as little as possible, we add an additional constraint: {{< math >}}$d(\boldsymbol{x^0}, \boldsymbol{x}) \leq \epsilon${{< /math >}}. {{< math >}}$\epsilon${{< /math >}}​ is a threshold such that we want the noise to be unable to be perceived by humans.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{x^*} = \arg
 \min_{\boldsymbol{x}, d(\boldsymbol{x^0}, \boldsymbol{x}) \leq \epsilon}
 L(\boldsymbol{x})
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 We also define {{< math >}}$\boldsymbol{\Delta x}${{< /math >}}:
-{{< math >}}$$
+{{< math >}}
+$$
+
 \boldsymbol{\Delta x} = \boldsymbol{x} - \boldsymbol{x^0}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 This can be seen as:
-{{< math >}}$$
+{{< math >}}
+$$
+
 \begin{bmatrix}
 \Delta x_1 \\
 \Delta x_2 \\
@@ -1974,21 +2256,31 @@ x_2^0 \\
 x_3^0 \\
 \vdots
 \end{bmatrix}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 There are many ways to calculate distance {{< math >}}$d${{< /math >}}​ between the two images:
 
 **L2-norm**:
-{{< math >}}$$
+{{< math >}}
+$$
+
 d(\boldsymbol{x^0}, \boldsymbol{x}) =
 \|\boldsymbol{\Delta x}\|_2 =
 \sqrt{(\Delta x_1)^2 + (\Delta x_2)^2 + \dots}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 **L-infinity**:
-{{< math >}}$$
+{{< math >}}
+$$
+
 d(\boldsymbol{x^0}, \boldsymbol{x}) =
 \|\boldsymbol{\Delta x}\|_{\infty} =
 \max\{|\Delta x_1|,|\Delta x_2|, \dots\}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 L-infinity is a *better* metric for images because it fits human perception of image differences (as seen from the example below). We may need to use other metrics depending on our domain knowledge.
 
 <img src="assets/image-20240511203532567.png" alt="image-20240511203532567" style="zoom:27%;" />
@@ -1999,18 +2291,26 @@ The Loss function can be defined depending on the specific attack:
 
 The Loss function {{< math >}}$L${{< /math >}} is defined to be the negative cross entropy between the true label and the output label. Since we want to minimize {{< math >}}$L${{< /math >}}, this is the same as maximizing {{< math >}}$ e(\boldsymbol{y}, \boldsymbol{\hat{y}}) ${{< /math >}}.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 L(\boldsymbol{x}) = - e(\boldsymbol{y}, \boldsymbol{\hat{y}})
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 **Targeted Attack:**
 
 Since we want to *minimize* the Loss function, we add the cross entropy between the output and the target label (since we want the two to be similar, therefore a smaller {{< math >}}$e${{< /math >}}).
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 L(\boldsymbol{x}) = - e(\boldsymbol{y}, \boldsymbol{\hat{y}}) +
 e(\boldsymbol{y}, \boldsymbol{y^{\text{target}}})
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 How can we do optimization?
 
@@ -2034,13 +2334,17 @@ If we are using L-infinity, we can fix {{< math >}}$\boldsymbol{x^t}${{< /math >
 We can use **Fast Gradient Sign Method (FGSM, https://arxiv.org/abs/1412.6572)**:
 
 Redefine {{< math >}}$\boldsymbol{g}${{< /math >}} as:
-{{< math >}}$$
+{{< math >}}
+$$
+
 \mathbf{g} = \begin{bmatrix}
 \text{sign}\left(\frac{\partial L}{\partial x_1} \bigg|_{\mathbf{x}=\mathbf{x}^{t-1}}\right) \\
 \text{sign}\left(\frac{\partial L}{\partial x_2} \bigg|_{\mathbf{x}=\mathbf{x}^{t-1}} \right) \\
 \vdots
 \end{bmatrix}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 Here, each entry is either {{< math >}}$1${{< /math >}} or {{< math >}}$-1${{< /math >}}: if {{< math >}}$t>0${{< /math >}}, {{< math >}}$\text{sign}(t) = 1${{< /math >}}; otherwise, {{< math >}}$\text{sign}(t) = -1${{< /math >}}.
 
 1. Start from the *original* image {{< math >}}$\boldsymbol{x^0}${{< /math >}}
@@ -2179,17 +2483,25 @@ An **episode** is the whole process from the first observation {{< math >}}$s_1$
 
 The **total reward**, a.k.a. **return**, is what we want to maximize:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 R = \sum_{t=1}^T r_t
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 ### Optimization
 
 A **trajectory** {{< math >}}$\tau${{< /math >}} is the set of all the observations and actions.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 \tau = \{s_1, a_1, s_2, a_2, ...\}
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 Reward is a function of {{< math >}}$s_i${{< /math >}} and {{< math >}}$a_i${{< /math >}}, the current observation and the current action.
 
@@ -2213,9 +2525,13 @@ This is almost like supervised learning. We can train the Actor by getting a dat
 
 We can also redefine the loss by introducing weights for each {observation, action} pair. For example, we are more desired to see {{< math >}}$\hat{a}_1${{< /math >}} followed by {{< math >}}$s_1${{< /math >}} than {{< math >}}$\hat{a}_3${{< /math >}} followed by {{< math >}}$s_3${{< /math >}}.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 L = \sum A_n e_n
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240513135117659.png" alt="image-20240513135117659" style="zoom: 33%;" />
 
@@ -2237,9 +2553,13 @@ However, generally speaking, this is not a very good strategy since actions are 
 
 We need to take into account all the rewards that we gain after performing one action at timestamp {{< math >}}$t${{< /math >}}. Therefore, we can define a **cumulated reward** (as opposed to an immediate reward in the last version) {{< math >}}$G_t${{< /math >}}:
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 A_t = G_t = \sum_{n=t}^N r_n
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 <img src="assets/image-20240515155541817.png" alt="image-20240515155541817" style="zoom:33%;" />
 
@@ -2248,17 +2568,25 @@ $${{< /math >}}
 However, if the sequence of length {{< math >}}$N${{< /math >}} is very long, then {{< math >}}$r_N${{< /math >}} if probably not the credit of {{< math >}}$a_1${{< /math >}}. Therefore, we can redefine {{< math >}}$G_t'${{< /math >}} using a **discount factor** {{< math >}}$\gamma < 1${{< /math >}}:
 
 **Discounted Cumulated Reward**:
-{{< math >}}$$
+{{< math >}}
+$$
+
 A_t = G_t' = \sum_{n=t}^N \gamma^{n-t} r_n
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 ### Version 3
 
 But good or bad rewards are "relative." If all the {{< math >}}$r_n \geq 10${{< /math >}}, then having a reward of {{< math >}}$10${{< /math >}} is actually very bad. We can redefine {{< math >}}$A_i${{< /math >}} values by minusing by a **baseline** {{< math >}}$b${{< /math >}}. This makes {{< math >}}$A_i${{< /math >}} to have positive and negative values.
 
-{{< math >}}$$
+{{< math >}}
+$$
+
 A_t = G_t' - b
-$${{< /math >}}
+
+$$
+{{< /math >}}
 
 ### Policy Gradient
 
@@ -2313,9 +2641,13 @@ That is because MC and TD have different assumptions. For TD, we assume that {{<
 How can we use critic on training actor?
 
 Recall that in Version 3, we introduce a baseline {{< math >}}$b${{< /math >}} as normalization. How to choose {{< math >}}$b${{< /math >}}? One possible way is to set {{< math >}}$b = V^{\theta}(s_t)${{< /math >}}.
-{{< math >}}$$
+{{< math >}}
+$$
+
 A_t = G_t' - V^{\theta}(s_t)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 <img src="assets/image-20240516213342601.png" alt="image-20240516213342601" style="zoom:35%;" />
 
 Why this method works? Remember that {{< math >}}$V^{\theta}(s_t)${{< /math >}} takes into account many episodes, so it's an expected value. This makes {{< math >}}$A_t${{< /math >}} very intuitive.
@@ -2327,9 +2659,13 @@ Why this method works? Remember that {{< math >}}$V^{\theta}(s_t)${{< /math >}} 
 However, Version 3 is still problematic because {{< math >}}$G_t'${{< /math >}} may be very random (it's just a sample). It may be very good or bad. We want it to resemble an average value like {{< math >}}$V^{\theta}(s_t)${{< /math >}}​​​.
 
 Therefore, for a pair {{< math >}}$\{ s_t, a_t \}${{< /math >}}:
-{{< math >}}$$
+{{< math >}}
+$$
+
 A_t = \left[r_t + V^{\theta}(s_{t+1})\right] - V^{\theta}(s_t)
-$${{< /math >}}
+
+$$
+{{< /math >}}
 Note that {{< math >}}$s_{t+1}${{< /math >}} is the observation of the environment influenced by the actor taking action {{< math >}}$a_t${{< /math >}}.
 
 <img src="assets/image-20240516214628159.png" alt="image-20240516214628159" style="zoom:36%;" />
