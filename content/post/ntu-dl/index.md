@@ -1,10 +1,6 @@
 ---
 title: Deep Learning Overview Inspired by NTU
-summary: A brief introduction to deep learning models and theories inspired by a course at NTU
 date: 2024-05-19
-tags:
-  - Deep Learning
-  - Machine Learning
 ---
 
 ***Acknowledgement***:
