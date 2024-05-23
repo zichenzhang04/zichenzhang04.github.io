@@ -7,6 +7,8 @@ math: true
 #   caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)'
 ---
 
+***Acknowledgment***:
+
 The course website: [MACHINE LEARNING 2022 SPRING](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 
 # 2/18 Lecture 1: Introduction of Deep Learning
