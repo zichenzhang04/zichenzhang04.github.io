@@ -1,3 +1,12 @@
+---
+title: Deep Learning Overview Inspired by NTU
+date: 2024-05-19
+math: true
+# image:
+#   placement: 2
+#   caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)'
+---
+
 The course website: [MACHINE LEARNING 2022 SPRING](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 
 # 2/18 Lecture 1: Introduction of Deep Learning
@@ -16,33 +25,33 @@ Three main ML tasks:
 
 ### Function with unknown parameters
 
-*Guess* a function (**model**) $y=b+wx_1$ (in this case, a ***linear model***) based on **domain knowledge**. $w$ and $b$ are unknown parameters.
+*Guess* a function (**model**) {{< math >}}$y=b+wx_1${{< /math >}} (in this case, a ***linear model***) based on **domain knowledge**. {{< math >}}$w${{< /math >}} and {{< math >}}$b${{< /math >}} are unknown parameters.
 
 ### Define Loss From Training Data
 
-Loss is a function itself of parameters, written as $L(b,w)$​.
+Loss is a function itself of parameters, written as {{< math >}}$L(b,w)${{< /math >}}​.
 
 An example loss function is:
 
-$$
+{{< math >}}$${{< /math >}}
 L = \frac{1}{N} \sum_{n} e_n
-$$
+{{< math >}}$${{< /math >}}
 
-where $e_n$ can be calculated in many ways:
+where {{< math >}}$e_n${{< /math >}} can be calculated in many ways:
 
 **Mean Absolute Error (MAE)**
 
-$$
+{{< math >}}$${{< /math >}}
 e_n = |y_n - \hat{y}_n|
-$$
+{{< math >}}$${{< /math >}}
 
 **Mean Square Error (MSE)**
 
-$$
+{{< math >}}$${{< /math >}}
 e_n = (y_n - \hat{y}_n)^2
-$$
+{{< math >}}$${{< /math >}}
 
-If $y$ and $\hat{y}_n$ are both probability distributions, we can use **cross entropy**.
+If {{< math >}}$y${{< /math >}} and {{< math >}}$\hat{y}_n${{< /math >}} are both probability distributions, we can use **cross entropy**.
 
 <img src="assets/image-20240503102744604.png" alt="image-20240503102744604" style="zoom:25%;" />
 
@@ -50,26 +59,26 @@ If $y$ and $\hat{y}_n$ are both probability distributions, we can use **cross en
 
 The goal is to find the best parameter:
 
-$$
+{{< math >}}$${{< /math >}}
 w^*, b^* = \arg\min_{w,b} L
-$$
+{{< math >}}$${{< /math >}}
 
 Solution: **Gradient Descent**
 
-1. Randomly pick an intitial value $w^0$
-2. Compute $\frac{\partial L}{\partial w} \bigg|_{w=w^0}$ (if it's negative, we should increase $w$; if it's positive, we should decrease $w$​)
-3. Perform update step: $w^1 \leftarrow w^0 - \eta \frac{\partial L}{\partial w} \bigg|_{w=w^0}$ iteratively
-4. Stop either when we've performed a maximum number of update steps or the update stops ($\eta \frac{\partial L}{\partial w} = 0$)
+1. Randomly pick an intitial value {{< math >}}$w^0${{< /math >}}
+2. Compute {{< math >}}$\frac{\partial L}{\partial w} \bigg|_{w=w^0}${{< /math >}} (if it's negative, we should increase {{< math >}}$w${{< /math >}}; if it's positive, we should decrease {{< math >}}$w${{< /math >}}​)
+3. Perform update step: {{< math >}}$w^1 \leftarrow w^0 - \eta \frac{\partial L}{\partial w} \bigg|_{w=w^0}${{< /math >}} iteratively
+4. Stop either when we've performed a maximum number of update steps or the update stops ({{< math >}}$\eta \frac{\partial L}{\partial w} = 0${{< /math >}})
 
 If we have two parameters:
 
-1. (Randomly) Pick initial values $w^0, b^0$
+1. (Randomly) Pick initial values {{< math >}}$w^0, b^0${{< /math >}}
 
 2. Compute:
 
-   $w^1 \leftarrow w^0 - \eta \frac{\partial L}{\partial w} \bigg|_{w=w^0, b=b^0}$
+   {{< math >}}$w^1 \leftarrow w^0 - \eta \frac{\partial L}{\partial w} \bigg|_{w=w^0, b=b^0}${{< /math >}}
 
-   $b^1 \leftarrow b^0 - \eta \frac{\partial L}{\partial b} \bigg|_{w=w^0, b=b^0}$​
+   {{< math >}}$b^1 \leftarrow b^0 - \eta \frac{\partial L}{\partial b} \bigg|_{w=w^0, b=b^0}${{< /math >}}​
 
 <img src="assets/image-20240503111251767.png" alt="image-20240503111251767" style="zoom:25%;" />
 
@@ -91,11 +100,11 @@ More pieces require more blue curves.
 
 How to represent a blue curve (**Hard Sigmoid** function): **Sigmoid** function
 
-$$
+{{< math >}}$${{< /math >}}
 y = c\frac{1}{1 + e^{-(b + wx_1)}} = c\text{sigmoid}(b + wx_1)
-$$
+{{< math >}}$${{< /math >}}
 
-We can change $w$, $c$ and $b$ to get sigmoid curves with different shapes.
+We can change {{< math >}}$w${{< /math >}}, {{< math >}}$c${{< /math >}} and {{< math >}}$b${{< /math >}} to get sigmoid curves with different shapes.
 
 Different Sigmoid curves -> Combine to approximate different piecewise linear functions -> Approximate different continuous functions
 
@@ -103,19 +112,19 @@ Different Sigmoid curves -> Combine to approximate different piecewise linear fu
 
 <img src="assets/image-20240503125224141.png" alt="image-20240503125224141" style="zoom: 25%;" />
 
-From a model with high bias $y=b+wx_1$ to the new model with more features and a much lower bias:
+From a model with high bias {{< math >}}$y=b+wx_1${{< /math >}} to the new model with more features and a much lower bias:
 
-$$
-y = b + \sum_{i} \; c_i \; \text{sigmoid}(b_i + w_i x_1)
-$$
+{{< math >}}$${{< /math >}}
+y = b + \sum_{i} c_i \text{sigmoid}(b_i + w_i x_1)
+{{< math >}}$${{< /math >}}
 
-Also, if we consider multiple features $y = b + \sum_{j} w_j x_j$​, the new model can be expanded to look like this:
+Also, if we consider multiple features {{< math >}}$y = b + \sum_{j} w_j x_j${{< /math >}}​, the new model can be expanded to look like this:
 
-$$
-y = b + \sum_{i} c_i \; \text{sigmoid}(b_i + \sum_{j} w_{ij} x_j)
-$$
+{{< math >}}$${{< /math >}}
+y = b + \sum_{i} c_i \text{sigmoid}(b_i + \sum_{j} w_{ij} x_j)
+{{< math >}}$${{< /math >}}
 
-Here, $i$ represents each sigmoid function and $j$ represents each feature. $w_{ij}$ represents the weight for $x_j$ that corresponds to the $j$-th feature in the $i$-th sigmoid.
+Here, {{< math >}}$i${{< /math >}} represents each sigmoid function and {{< math >}}$j${{< /math >}} represents each feature. {{< math >}}$w_{ij}${{< /math >}} represents the weight for {{< math >}}$x_j${{< /math >}} that corresponds to the {{< math >}}$j${{< /math >}}-th feature in the {{< math >}}$i${{< /math >}}-th sigmoid.
 
 <img src="assets/image-20240503131652987.png" alt="image-20240503131652987" style="zoom:33%;" />
 
@@ -124,37 +133,37 @@ Here, $i$ represents each sigmoid function and $j$ represents each feature. $w_{
 <img src="assets/image-20240503132324232.png" alt="image-20240503132324232" style="zoom: 25%;" />
 
 <img src="assets/image-20240503132402405.png" alt="image-20240503132402405" style="zoom:25%;" />
-$$
+{{< math >}}$${{< /math >}}
 y = b + \boldsymbol{c}^T \sigma(\boldsymbol{b} + W \boldsymbol{x})
-$$
+{{< math >}}$${{< /math >}}
 
-$\boldsymbol{\theta}=[\theta_1, \theta_2, \theta_3, ...]^T$ is our parameter vector:
+{{< math >}}$\boldsymbol{\theta}=[\theta_1, \theta_2, \theta_3, ...]^T${{< /math >}} is our parameter vector:
 
 <img src="assets/image-20240503132744112.png" alt="image-20240503132744112" style="zoom: 25%;" />
 
-Our loss function is now expressed as $L(\boldsymbol{\theta})$.
+Our loss function is now expressed as {{< math >}}$L(\boldsymbol{\theta})${{< /math >}}.
 
 <img src="assets/image-20240503134032953.png" alt="image-20240503134032953" style="zoom:25%;" />
 
 Optimization is still the same.
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{\theta}^* = \arg \min_{\boldsymbol{\theta}} L
-$$
+{{< math >}}$${{< /math >}}
 
-1. (Randomly) pick initial values $\boldsymbol{\theta}^0$​
-2. calculate the gradient {{< math >}}$\bold{g} = \begin{bmatrix} \frac{\partial{L}} {\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix} = \nabla L(\boldsymbol{\theta}^0)${{< /math >}} with $\boldsymbol{\theta}, \boldsymbol{g} \in \mathbb{R}^n$
-3. perform the update step: $\begin{bmatrix} \theta_1^1 \\ \theta_2^1 \\ \vdots \end{bmatrix} \leftarrow \begin{bmatrix} \theta_1^0 \\ \theta_2^0 \\ \vdots \end{bmatrix} - \begin{bmatrix} \eta \frac{\partial{L}}{\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \eta \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix}$, namely $\boldsymbol{\theta}^1 \leftarrow \boldsymbol{\theta}^0 - \eta \boldsymbol{g}$
+1. (Randomly) pick initial values {{< math >}}$\boldsymbol{\theta}^0${{< /math >}}​
+2. calculate the gradient {{< math >}}$\boldsymbol{g} = \begin{bmatrix} \frac{\partial{L}} {\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix} = \nabla L(\boldsymbol{\theta}^0)${{< /math >}} with {{< math >}}$\boldsymbol{\theta}, \boldsymbol{g} \in \mathbb{R}^n${{< /math >}}
+3. perform the update step: {{< math >}}$\begin{bmatrix} \theta_1^1 \\ \theta_2^1 \\ \vdots \end{bmatrix} \leftarrow \begin{bmatrix} \theta_1^0 \\ \theta_2^0 \\ \vdots \end{bmatrix} - \begin{bmatrix} \eta \frac{\partial{L}}{\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \eta \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix}${{< /math >}}, namely {{< math >}}$\boldsymbol{\theta}^1 \leftarrow \boldsymbol{\theta}^0 - \eta \boldsymbol{g}${{< /math >}}
 
 The terms ***batch*** and ***epoch*** are different.
 
 <img src="assets/image-20240503155656244.png" alt="image-20240503155656244" style="zoom:33%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 \text{num\_updates} = \frac{\text{num\_examples}}{\text{batch\_size}}
-$$
+{{< math >}}$${{< /math >}}
 
-Batch size $B$​ is also a hyperparameter. One epoch does not tell the number of updates the training process actually has.
+Batch size {{< math >}}$B${{< /math >}}​ is also a hyperparameter. One epoch does not tell the number of updates the training process actually has.
 
 ### More activation functions: RELU
 
@@ -164,9 +173,9 @@ It looks kind of like the Hard Sigmoid function we saw earlier:
 
 As a result, we can use these two RELU curves to simulate the same result as Sigmoid curve.
 
-$$
+{{< math >}}$${{< /math >}}
 y = b + \sum_{2i} c_i \max(0, b_i + \sum_j w_{ij}x_j)
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240503162214759.png" alt="image-20240503162214759" style="zoom:25%;" />
 
@@ -178,14 +187,14 @@ $$
 
 ### Frameworks of ML
 
-Training data is $\{(\boldsymbol{x}^1, \hat{y}^1), (\boldsymbol{x}^2, \hat{y}^2), ...,(\boldsymbol{x}^N, \hat{y}^N)\}$. Testing data is $\{ \boldsymbol{x}^{N+1}, \boldsymbol{x}^{N+2}, ..., \boldsymbol{x}^{N+M} \}$​
+Training data is {{< math >}}$\{(\boldsymbol{x}^1, \hat{y}^1), (\boldsymbol{x}^2, \hat{y}^2), ...,(\boldsymbol{x}^N, \hat{y}^N)\}${{< /math >}}. Testing data is {{< math >}}$\{ \boldsymbol{x}^{N+1}, \boldsymbol{x}^{N+2}, ..., \boldsymbol{x}^{N+M} \}${{< /math >}}​
 
 Traing steps:
 
-1. write a function with unknown parameters, namely $y = f_{\boldsymbol{\theta}}(\boldsymbol{x})$​
-2. define loss from training data: $L(\boldsymbol{\theta})$
-3. optimization: $\boldsymbol{\theta}^* = \arg \min_{\boldsymbol{\theta}} L$​
-4. Use $y = f_{\boldsymbol{\theta}^*}(\boldsymbol{x})$​ to label the testing data
+1. write a function with unknown parameters, namely {{< math >}}$y = f_{\boldsymbol{\theta}}(\boldsymbol{x})${{< /math >}}​
+2. define loss from training data: {{< math >}}$L(\boldsymbol{\theta})${{< /math >}}
+3. optimization: {{< math >}}$\boldsymbol{\theta}^* = \arg \min_{\boldsymbol{\theta}} L${{< /math >}}​
+4. Use {{< math >}}$y = f_{\boldsymbol{\theta}^*}(\boldsymbol{x})${{< /math >}}​ to label the testing data
 
 ### General Guide
 
@@ -197,7 +206,7 @@ Model bias: the potential function set of our model does not even include the de
 
 <img src="assets/image-20240503173246516.png" alt="image-20240503173246516" style="zoom: 25%;" />
 
-Large loss doesn't always imply issues with model bias. There may be issues with *optimization*. That is, gradient descent does not always produce global minima. We may stuck at a local minima. In the language of function set, the set theoretically contain optimal function $f^*(\boldsymbol{x})$. However, we may never reach that.
+Large loss doesn't always imply issues with model bias. There may be issues with *optimization*. That is, gradient descent does not always produce global minima. We may stuck at a local minima. In the language of function set, the set theoretically contain optimal function {{< math >}}$f^*(\boldsymbol{x})${{< /math >}}. However, we may never reach that.
 
 <img src="assets/image-20240503174333051.png" alt="image-20240503174333051" style="zoom: 33%;" />
 
@@ -253,35 +262,35 @@ Mismatch occurs when the training dataset and the testing dataset comes from dif
 
 <img src="assets/image-20240504115906505.png" alt="image-20240504115906505" style="zoom:25%;" />
 
-Optimization fails not always because of we stuck at local minima. We may also encounter **saddle points**, which are not local minima but have a gradient of $0$.
+Optimization fails not always because of we stuck at local minima. We may also encounter **saddle points**, which are not local minima but have a gradient of {{< math >}}$0${{< /math >}}.
 
-All the points that have a gradient of $0$ are called **critical points**. So, we can't say that our gradient descent algorithms always stops because we stuck at local minima -- we may stuck at saddle points as well. The correct way to say is that gradient descent stops when we stuck at a critical point.
+All the points that have a gradient of {{< math >}}$0${{< /math >}} are called **critical points**. So, we can't say that our gradient descent algorithms always stops because we stuck at local minima -- we may stuck at saddle points as well. The correct way to say is that gradient descent stops when we stuck at a critical point.
 
 If we are stuck at a local minima, then there's no way to further decrease the loss (all the points around local minima are higher); if we are stuck at a saddle point, we can escape the saddle point. But, how can we differentiate a saddle point and local minima?
 
 ### Identify which kinds of Critical Points
 
-$L(\boldsymbol{\theta})$ around $\boldsymbol{\theta} = \boldsymbol{\theta}'$ can be approximated (Taylor Series)below:
+{{< math >}}$L(\boldsymbol{\theta})${{< /math >}} around {{< math >}}$\boldsymbol{\theta} = \boldsymbol{\theta}'${{< /math >}} can be approximated (Taylor Series)below:
 
-$$
+{{< math >}}$${{< /math >}}
 L(\boldsymbol{\theta}) \approx L(\boldsymbol{\theta}') + (\boldsymbol{\theta} - \boldsymbol{\theta}')^T \boldsymbol{g} + \frac{1}{2} (\boldsymbol{\theta} - \boldsymbol{\theta}')^T H (\boldsymbol{\theta} - \boldsymbol{\theta}')
-$$
+{{< math >}}$${{< /math >}}
 
-Gradient $\boldsymbol{g}$ is a *vector*:
+Gradient {{< math >}}$\boldsymbol{g}${{< /math >}} is a *vector*:
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{g} = \nabla L(\boldsymbol{\theta}')
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{g}_i = \frac{\partial L(\boldsymbol{\theta}')}{\partial \boldsymbol{\theta}_i}
-$$
+{{< math >}}$${{< /math >}}
 
-Hessian $H$ is a matrix:
+Hessian {{< math >}}$H${{< /math >}} is a matrix:
 
-$$
+{{< math >}}$${{< /math >}}
 H_{ij} = \frac{\partial^2}{\partial \boldsymbol{\theta}_i \partial \boldsymbol{\theta}_j} L(\boldsymbol{\theta}')
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240504121739774.png" alt="image-20240504121739774" style="zoom:25%;" />
 
@@ -293,21 +302,21 @@ When we are at the critical point, The approximation is "dominated" by the Hessi
 
 Namely, our approximation formula becomes:
 
-$$
+{{< math >}}$${{< /math >}}
 L(\boldsymbol{\theta}) \approx L(\boldsymbol{\theta}') + \frac{1}{2} (\boldsymbol{\theta} - \boldsymbol{\theta}')^T H (\boldsymbol{\theta} - \boldsymbol{\theta}') = L(\boldsymbol{\theta}') + \frac{1}{2} \boldsymbol{v}^T H \boldsymbol{v}
-$$
+{{< math >}}$${{< /math >}}
 
 Local minima:
 
-- For all $\boldsymbol{v}$, if $\boldsymbol{v}^T H \boldsymbol{v} > 0$ ($H$ is positive definite, so all eigenvalues are positive), around $\boldsymbol{\theta}'$: $L(\boldsymbol{\theta}) > L(\boldsymbol{\theta}')$​
+- For all {{< math >}}$\boldsymbol{v}${{< /math >}}, if {{< math >}}$\boldsymbol{v}^T H \boldsymbol{v} > 0${{< /math >}} ({{< math >}}$H${{< /math >}} is positive definite, so all eigenvalues are positive), around {{< math >}}$\boldsymbol{\theta}'${{< /math >}}: {{< math >}}$L(\boldsymbol{\theta}) > L(\boldsymbol{\theta}')${{< /math >}}​
 
 Local maxima:
 
-- For all $\boldsymbol{v}$, if $\boldsymbol{v}^T H \boldsymbol{v} < 0$ ($H$ is negative definite, so all eigenvalues are negative), around $\boldsymbol{\theta}'$: $L(\boldsymbol{\theta}) < L(\boldsymbol{\theta}')$
+- For all {{< math >}}$\boldsymbol{v}${{< /math >}}, if {{< math >}}$\boldsymbol{v}^T H \boldsymbol{v} < 0${{< /math >}} ({{< math >}}$H${{< /math >}} is negative definite, so all eigenvalues are negative), around {{< math >}}$\boldsymbol{\theta}'${{< /math >}}: {{< math >}}$L(\boldsymbol{\theta}) < L(\boldsymbol{\theta}')${{< /math >}}
 
 Saddle point:
 
-- Sometimes $\boldsymbol{v}^T H \boldsymbol{v} < 0$, sometimes $\boldsymbol{v}^T H \boldsymbol{v} > 0$. Namely, $H$​ is indefinite -- some eigenvalues are positive and some eigenvalues are negative.
+- Sometimes {{< math >}}$\boldsymbol{v}^T H \boldsymbol{v} < 0${{< /math >}}, sometimes {{< math >}}$\boldsymbol{v}^T H \boldsymbol{v} > 0${{< /math >}}. Namely, {{< math >}}$H${{< /math >}}​ is indefinite -- some eigenvalues are positive and some eigenvalues are negative.
 
 Example:
 
@@ -317,15 +326,15 @@ Example:
 
 ### Escaping saddle point
 
-If by analyzing $H$'s properpty, we realize that it's indefinite (we are at a saddle point). We can also analyze $H$ to get a sense of the **parameter update direction**!
+If by analyzing {{< math >}}$H${{< /math >}}'s properpty, we realize that it's indefinite (we are at a saddle point). We can also analyze {{< math >}}$H${{< /math >}} to get a sense of the **parameter update direction**!
 
-Suppose $\boldsymbol{u}$ is an eigenvector of $H$ and $\lambda$ is the eigenvalue of $\boldsymbol{u}$.
+Suppose {{< math >}}$\boldsymbol{u}${{< /math >}} is an eigenvector of {{< math >}}$H${{< /math >}} and {{< math >}}$\lambda${{< /math >}} is the eigenvalue of {{< math >}}$\boldsymbol{u}${{< /math >}}.
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{u}^T H \boldsymbol{u} = \boldsymbol{u}^T (H \boldsymbol{u}) = \boldsymbol{u}^T (\lambda \boldsymbol{u}) = \lambda (\boldsymbol{u}^T \boldsymbol{u}) = \lambda \|\boldsymbol{u}\|^2
-$$
+{{< math >}}$${{< /math >}}
 
-If the eigenvalue $\lambda < 0$, then $\boldsymbol{u}^T H \boldsymbol{u} = \lambda \|\boldsymbol{u}\|^2 < 0$ (eigenvector $\boldsymbol{u}$ can't be $\boldsymbol{0}$). Because $L(\boldsymbol{\theta}) \approx L(\boldsymbol{\theta}') + \frac{1}{2} \boldsymbol{u}^T H \boldsymbol{u}$, we know $L(\boldsymbol{\theta}) < L(\boldsymbol{\theta}')$. By definition, $\boldsymbol{\theta} - \boldsymbol{\theta}' = \boldsymbol{u}$. If we perform $\boldsymbol{\theta} = \boldsymbol{\theta}' + \boldsymbol{u}$, we can effectively decrease $L$. We can escape the saddle point and decrease the loss.
+If the eigenvalue {{< math >}}$\lambda < 0${{< /math >}}, then {{< math >}}$\boldsymbol{u}^T H \boldsymbol{u} = \lambda \|\boldsymbol{u}\|^2 < 0${{< /math >}} (eigenvector {{< math >}}$\boldsymbol{u}${{< /math >}} can't be {{< math >}}$\boldsymbol{0}${{< /math >}}). Because {{< math >}}$L(\boldsymbol{\theta}) \approx L(\boldsymbol{\theta}') + \frac{1}{2} \boldsymbol{u}^T H \boldsymbol{u}${{< /math >}}, we know {{< math >}}$L(\boldsymbol{\theta}) < L(\boldsymbol{\theta}')${{< /math >}}. By definition, {{< math >}}$\boldsymbol{\theta} - \boldsymbol{\theta}' = \boldsymbol{u}${{< /math >}}. If we perform {{< math >}}$\boldsymbol{\theta} = \boldsymbol{\theta}' + \boldsymbol{u}${{< /math >}}, we can effectively decrease {{< math >}}$L${{< /math >}}. We can escape the saddle point and decrease the loss.
 
 However, this method is seldom used in practice because of the huge computation need to compute the Hessian matrix and the eigenvectors/eigenvalues.
 
@@ -347,7 +356,7 @@ A local minima in lower-dimensional space may be a saddle point in a higher-dime
 
 Note that here, "time for cooldown" does not always determine the time it takes to complete an epoch.
 
-Emprically, large batch size $B$​ does **not** require longer time to compute gradient because of GPU's parallel computing, unless the batch size is too big.
+Emprically, large batch size {{< math >}}$B${{< /math >}}​ does **not** require longer time to compute gradient because of GPU's parallel computing, unless the batch size is too big.
 
 <img src="assets/image-20240504145814623.png" alt="image-20240504145814623" style="zoom:25%;" />
 
@@ -397,11 +406,11 @@ The fact that training process is stuck does not always mean small gradient.
 
 <img src="assets/image-20240504161124291.png" alt="image-20240504161124291" style="zoom:33%;" />
 
-Training can be difficult even without critical points. Gradient descent can fail to send us to the global minima even under the circumstance of a **convex** error surface. You can't fix this problem by adjusting the learning rate $\eta$.
+Training can be difficult even without critical points. Gradient descent can fail to send us to the global minima even under the circumstance of a **convex** error surface. You can't fix this problem by adjusting the learning rate {{< math >}}$\eta${{< /math >}}.
 
 <img src="assets/image-20240504161746667.png" alt="image-20240504161746667" style="zoom:33%;" />
 
-Learning rate can not be one-size-fits-all. **If we are at a place where the gradient is high (steep surface), we expect $\eta$ to be small so that we don't overstep; if we are at a place where the gradient is small (flat surface), we expect $\eta$ to be large so that we don't get stuck at one place.**
+Learning rate can not be one-size-fits-all. **If we are at a place where the gradient is high (steep surface), we expect {{< math >}}$\eta${{< /math >}} to be small so that we don't overstep; if we are at a place where the gradient is small (flat surface), we expect {{< math >}}$\eta${{< /math >}} to be large so that we don't get stuck at one place.**
 
 <img src="assets/image-20240504162232403.png" alt="image-20240504162232403" style="zoom:25%;" />
 
@@ -409,25 +418,25 @@ Learning rate can not be one-size-fits-all. **If we are at a place where the gra
 
 Formulation for one parameter:
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{\theta}_i^{t+1} \leftarrow \boldsymbol{\theta}_i^{t} - \eta \boldsymbol{g}_i^t
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{g}_i^t = \frac{\partial L}{\partial \boldsymbol{\theta}_i} \bigg |_{\boldsymbol{\theta} = \boldsymbol{\theta}^t}
-$$
+{{< math >}}$${{< /math >}}
 
 The new formulation becomes:
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{\theta}_i^{t+1} \leftarrow \boldsymbol{\theta}_i^{t} - \frac{\eta}{\sigma_i^t} \boldsymbol{g}_i^t
-$$
+{{< math >}}$${{< /math >}}
 
-$\sigma_i^t$ is both parameter-dependent ($i$) and iteration-dependent ($t$). It is called **Root Mean Square**. It is used in **Adagrad** algorithm.
+{{< math >}}$\sigma_i^t${{< /math >}} is both parameter-dependent ({{< math >}}$i${{< /math >}}) and iteration-dependent ({{< math >}}$t${{< /math >}}). It is called **Root Mean Square**. It is used in **Adagrad** algorithm.
 
-$$
+{{< math >}}$${{< /math >}}
 \sigma_i^t = \sqrt{\frac{1}{t+1} \sum_{i=0}^t (\boldsymbol{g}_i^t)^2}
-$$
+{{< math >}}$${{< /math >}}
 <img src="assets/image-20240504212350040.png" alt="image-20240504212350040" style="zoom:25%;" />
 
 Why this formulation works?
@@ -442,10 +451,10 @@ However, this formulation still has some problems. We assumed that the gradient 
 
 The new formulation is now:
 
-$$
+{{< math >}}$${{< /math >}}
 \sigma_i^t = \sqrt{\alpha(\sigma_i^{t-1})^2 + (1-\alpha)(\boldsymbol{g}_i^t)^2}
-$$
-$\alpha$ is a hyperparameter ($0 < \alpha < 1$). It controls how important the previously-calculated gradient is.
+{{< math >}}$${{< /math >}}
+{{< math >}}$\alpha${{< /math >}} is a hyperparameter ({{< math >}}$0 < \alpha < 1${{< /math >}}). It controls how important the previously-calculated gradient is.
 
 <img src="assets/image-20240504214302296.png" alt="image-20240504214302296" style="zoom:25%;" />
 
@@ -465,13 +474,13 @@ This is the optimization process with Adagrad:
 
 To prevent the osciallations at the final stage, we can use two methods:
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{\theta}_i^{t+1} \leftarrow \boldsymbol{\theta}_i^{t} - \frac{\eta^t}{\sigma_i^t} \boldsymbol{g}_i^t
-$$
+{{< math >}}$${{< /math >}}
 
 #### Learning Rate Decay
 
-As the training goes, we are closer to the destination. So, we reduce the learning rate $\eta^t$​.
+As the training goes, we are closer to the destination. So, we reduce the learning rate {{< math >}}$\eta^t${{< /math >}}​.
 
 <img src="assets/image-20240504220358590.png" alt="image-20240504220358590" style="zoom:25%;" />
 
@@ -483,7 +492,7 @@ This improves the previous result:
 
 <img src="assets/image-20240504220517645.png" alt="image-20240504220517645" style="zoom:25%;" />
 
-We first increase $\eta ^ t$ and then decrease it. This method is used in both the Residual Network and Transformer paper. At the beginning, the estimate of $\sigma_i^t$​​ has large variance. We can learn more about this method in the RAdam paper.
+We first increase {{< math >}}$\eta ^ t${{< /math >}} and then decrease it. This method is used in both the Residual Network and Transformer paper. At the beginning, the estimate of {{< math >}}$\sigma_i^t${{< /math >}}​​ has large variance. We can learn more about this method in the RAdam paper.
 
 ### Summary
 
@@ -497,32 +506,32 @@ We can't directly apply regression to classification problems because regression
 
 <img src="assets/image-20240505103637180.png" alt="image-20240505103637180" style="zoom:25%;" />
 
-It's also problematic to directly represent Class 1 as numeric value $1$, Class 2 as $2$, Class 3 as $3$​. That is, this representation has an underlying assumption that Class 1 is "closer" or more "similar" to Class 2 than Class 3. However, this is not always the case.
+It's also problematic to directly represent Class 1 as numeric value {{< math >}}$1${{< /math >}}, Class 2 as {{< math >}}$2${{< /math >}}, Class 3 as {{< math >}}$3${{< /math >}}​. That is, this representation has an underlying assumption that Class 1 is "closer" or more "similar" to Class 2 than Class 3. However, this is not always the case.
 
 One possible model is:
 
-$$
+{{< math >}}$${{< /math >}}
 f(x) = \begin{cases}
 1 & g(x) > 0 \\
 2 & \text{else}
 \end{cases}
-$$
+{{< math >}}$${{< /math >}}
 
-The loss function denotes the number of times $f$ gets incorrect results on training data.
+The loss function denotes the number of times {{< math >}}$f${{< /math >}} gets incorrect results on training data.
 
-$$
+{{< math >}}$${{< /math >}}
 L(f) = \sum_n \delta(f(x^n) \neq \hat{y}^n)
-$$
+{{< math >}}$${{< /math >}}
 
-We can represent classes as one-hot vectors. For example, we can represent Class $1$ as $\hat{y} = \begin{bmatrix}
+We can represent classes as one-hot vectors. For example, we can represent Class {{< math >}}$1${{< /math >}} as $\hat{y} = \begin{bmatrix}
 1 \\
 0 \\
 0
-\end{bmatrix}$, Class $2$ as $\hat{y} = \begin{bmatrix}
+\end{bmatrix}{{< math >}}$, Class ${{< /math >}}2{{< math >}}$ as ${{< /math >}}\hat{y} = \begin{bmatrix}
 0 \\
 1 \\
 0
-\end{bmatrix}$ and Class $3$ as $\hat{y} = \begin{bmatrix}
+\end{bmatrix}{{< math >}}$ and Class ${{< /math >}}3{{< math >}}$ as ${{< /math >}}\hat{y} = \begin{bmatrix}
 0 \\
 0 \\
 1
@@ -532,11 +541,11 @@ We can represent classes as one-hot vectors. For example, we can represent Class
 
 ### Softmax
 
-$$
+{{< math >}}$${{< /math >}}
 y_i' = \frac{\exp(y_i)}{\sum_j \exp(y_j)}
-$$
+{{< math >}}$${{< /math >}}
 
-We know that $0 < y_i' < 1$ and $\sum_i y_i' = 1$.
+We know that {{< math >}}$0 < y_i' < 1${{< /math >}} and {{< math >}}$\sum_i y_i' = 1${{< /math >}}.
 
 <img src="assets/image-20240505085254461.png" alt="image-20240505085254461" style="zoom: 33%;" />
 
@@ -546,19 +555,19 @@ We know that $0 < y_i' < 1$ and $\sum_i y_i' = 1$.
 
 #### Mean Squared Error (MSE)
 
-$$
+{{< math >}}$${{< /math >}}
 e = \sum_i (\boldsymbol{\hat{y}}_i - \boldsymbol{y}_i')^2
-$$
+{{< math >}}$${{< /math >}}
 
 #### Cross-Entropy
 
-$$
+{{< math >}}$${{< /math >}}
 e = -\sum_i \boldsymbol{\hat{y}}_i \ln{\boldsymbol{y}_i'}
-$$
+{{< math >}}$${{< /math >}}
 
 Minimizing cross-entropy is equivalent to maximizing likelihood.
 
-Cross-entropy is more frequently used for classification than MSE. At the region with higher loss, the gradient of MSE is close to $0$. This is not good for gradient descent.
+Cross-entropy is more frequently used for classification than MSE. At the region with higher loss, the gradient of MSE is close to {{< math >}}$0${{< /math >}}. This is not good for gradient descent.
 
 <img src="assets/image-20240505091600454.png" alt="image-20240505091600454" style="zoom:33%;" />
 
@@ -566,29 +575,29 @@ Cross-entropy is more frequently used for classification than MSE. At the region
 
 <img src="assets/image-20240505110347099.png" alt="image-20240505110347099" style="zoom:25%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 P(C_1 \mid x)
 = \frac{P(C_1, x)}{P(x)}
 = \frac{P(x \mid C_1)P(C_1)}{P(x \mid C_1)P(C_1) + P(x \mid C_2)P(C_2)}
-$$
+{{< math >}}$${{< /math >}}
 
-We can therefore predict the distribution of $x$:
+We can therefore predict the distribution of {{< math >}}$x${{< /math >}}:
 
-$$
+{{< math >}}$${{< /math >}}
 P(x) = P(x \mid C_1)P(C_1) + P(x \mid C_2)P(C_2)
-$$
+{{< math >}}$${{< /math >}}
 
 #### Prior
 
-$P(C_1)$ and $P(C_2)$ are called prior probabilities.
+{{< math >}}$P(C_1)${{< /math >}} and {{< math >}}$P(C_2)${{< /math >}} are called prior probabilities.
 
 #### Gaussian distribution
 
-$$
+{{< math >}}$${{< /math >}}
 f_{\mu, \Sigma}(x) = \frac{1}{(2\pi)^{D/2} |\Sigma|^{1/2}} \exp\left(-\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x - \mu)\right)
-$$
+{{< math >}}$${{< /math >}}
 
-Input: vector $x$, output: probability of sampling $x$. The shape of the function determines by mean $\mu$ and covariance matrix $\Sigma$. ==Technically, the output is the probability density, not exactly the probability, through they are positively correlated.==
+Input: vector {{< math >}}$x${{< /math >}}, output: probability of sampling {{< math >}}$x${{< /math >}}. The shape of the function determines by mean {{< math >}}$\mu${{< /math >}} and covariance matrix {{< math >}}$\Sigma${{< /math >}}. ==Technically, the output is the probability density, not exactly the probability, through they are positively correlated.==
 
 <img src="assets/image-20240505111630135.png" alt="image-20240505111630135" style="zoom:25%;" />
 
@@ -596,25 +605,25 @@ Input: vector $x$, output: probability of sampling $x$. The shape of the functio
 
 #### Maximum Likelihood
 
-We assume $x^1, x^2, x^3, \cdots, x^{79}$ generate from the Gaussian ($\mu^*, \Sigma^*$) with the *maximum likelihood*.
+We assume {{< math >}}$x^1, x^2, x^3, \cdots, x^{79}${{< /math >}} generate from the Gaussian ({{< math >}}$\mu^*, \Sigma^*${{< /math >}}) with the *maximum likelihood*.
 
-$$
+{{< math >}}$${{< /math >}}
 L(\mu, \Sigma) = f_{\mu, \Sigma}(x^1) f_{\mu, \Sigma}(x^2) f_{\mu, \Sigma}(x^3) \cdots f_{\mu, \Sigma}(x^{79})
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 \mu^*, \Sigma^* = \arg \max_{\mu,\Sigma} L(\mu, \Sigma)
-$$
+{{< math >}}$${{< /math >}}
 
 The solution is as follows:
 
-$$
+{{< math >}}$${{< /math >}}
 \mu^* = \frac{1}{79} \sum_{n=1}^{79} x^n
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 \Sigma^* = \frac{1}{79} \sum_{n=1}^{79} (x^n - \mu^*)(x^n - \mu^*)^T
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240505115811655.png" alt="image-20240505115811655" style="zoom:25%;" />
 
@@ -638,19 +647,19 @@ We can always use whatever distribution we like (we use Guassian in the previous
 
 If we assume all the dimensions are independent, then you are using **Naive Bayes Classifier**.
 
-$$
+{{< math >}}$${{< /math >}}
 P(\boldsymbol{x} \mid C_1) =
 P(\begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_K \end{bmatrix} \mid C_1) =
 P(x_1 \mid C_1)P(x_2 \mid C_1) \dots P(x_K \mid C_1)
-$$
+{{< math >}}$${{< /math >}}
 
-Each $P(x_m \mid C_1)$ is now a 1-D Gaussian. For binary features, you may assume they are from Bernouli distributions.
+Each {{< math >}}$P(x_m \mid C_1)${{< /math >}} is now a 1-D Gaussian. For binary features, you may assume they are from Bernouli distributions.
 
 But if the assumption does not hold, the Naive Bayes Classifier may have a very high bias.
 
 #### Posterior Probability
 
-$$
+{{< math >}}$${{< /math >}}
 \begin{align}
 P(C_1 | x)
 &= \frac{P(x | C_1) P(C_1)}{P(x | C_1) P(C_1) + P(x | C_2) P(C_2)} \\
@@ -658,27 +667,27 @@ P(C_1 | x)
 &= \frac{1}{1 + \exp(-z)} \\
 &= \sigma(z) \\
 \end{align}
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 \begin{align}
 z &= \ln \frac{P(x | C_1) P(C_1)}{P(x | C_2) P(C_2)} \\
 &= \ln \frac{P(x | C_1)}{P(x | C_2)} + \ln \frac{P(C_1)}{P(C_2)} \\
 &= \ln \frac{P(x | C_1)}{P(x | C_2)} + \ln \frac{\frac{N_1}{N_1+N_2}}{\frac{N_2}{N_1+N_2}} \\
 &= \ln \frac{P(x | C_1)}{P(x | C_2)} + \ln \frac{N_1}{N_2} \\
 \end{align}
-$$
+{{< math >}}$${{< /math >}}
 
 Furthermore:
 
-$$
+{{< math >}}$${{< /math >}}
 \begin{align}
 \ln \frac{P(x | C_1)}{P(x | C_2)}
 &= \ln \frac{\frac{1}{(2\pi)^{D/2} |\Sigma_1|^{1/2}} \exp\left\{-\frac{1}{2} (x - \mu^1)^T \Sigma_1^{-1} (x - \mu^1)\right\}}  {\frac{1}{(2\pi)^{D/2} |\Sigma_2|^{1/2}} \exp\left\{-\frac{1}{2} (x - \mu^2)^T \Sigma_2^{-1} (x - \mu^2)\right\}} \\
 &= \ln \frac{|\Sigma_2|^{1/2}}{|\Sigma_1|^{1/2}} \exp \left\{ -\frac{1}{2} [(x - \mu^1)^T \Sigma_1^{-1} (x - \mu^1)-\frac{1}{2} (x - \mu^2)^T \Sigma_2^{-1} (x - \mu^2)] \right\} \\
 &= \ln \frac{|\Sigma_2|^{1/2}}{|\Sigma_1|^{1/2}} - \frac{1}{2} \left[(x - \mu^1)^T \Sigma_1^{-1} (x - \mu^1) - (x - \mu^2)^T \Sigma_2^{-1} (x - \mu^2)\right]
 \end{align}
-$$
+{{< math >}}$${{< /math >}}
 
 Further simplification goes:
 
@@ -688,65 +697,65 @@ Since we assume the distributions share the covariance matrix, we can further si
 
 <img src="assets/image-20240505133107451.png" alt="image-20240505133107451" style="zoom:33%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 P(C_1 \mid x) = \sigma(w^Tx + b)
-$$
+{{< math >}}$${{< /math >}}
 
 This is why the decision boundary is a linear line.
 
-In generative models, we estimate $N_1, N_2, \mu^1, \mu^2, \Sigma$, then we have $\boldsymbol{w}$ and $b$. How about directly find $\boldsymbol{w}$ and $b$​?
+In generative models, we estimate {{< math >}}$N_1, N_2, \mu^1, \mu^2, \Sigma${{< /math >}}, then we have {{< math >}}$\boldsymbol{w}${{< /math >}} and {{< math >}}$b${{< /math >}}. How about directly find {{< math >}}$\boldsymbol{w}${{< /math >}} and {{< math >}}$b${{< /math >}}​?
 
 ### Logistic Regression
 
-We want to find $P_{w,b}(C_1 \mid x)$. If $P_{w,b}(C_1 \mid x) \geq 0.5$, output $C_1$. Otherwise, output $C_2$.
+We want to find {{< math >}}$P_{w,b}(C_1 \mid x)${{< /math >}}. If {{< math >}}$P_{w,b}(C_1 \mid x) \geq 0.5${{< /math >}}, output {{< math >}}$C_1${{< /math >}}. Otherwise, output {{< math >}}$C_2${{< /math >}}.
 
-$$
+{{< math >}}$${{< /math >}}
 P_{w,b}(C_1 \mid x) = \sigma(z) = \sigma(w \cdot x + b)
 = \sigma(\sum_i w_ix_i + b)
-$$
+{{< math >}}$${{< /math >}}
 
-The function set is therefore (including all different $w$ and $b$):
+The function set is therefore (including all different {{< math >}}$w${{< /math >}} and {{< math >}}$b${{< /math >}}):
 
-$$
+{{< math >}}$${{< /math >}}
 f_{w,b}(x) = P_{w,b}(C_1 \mid x)
-$$
+{{< math >}}$${{< /math >}}
 
-Given the training data $\{(x^1, C_1),(x^2, C_1),(x^3, C_2),\dots, (x^N, C_1)\}$, assume the data is generated based on $f_{w,b}(x) = P_{w,b}(C_1 \mid x)$. Given a set of $w$ and $b$, the probability of generating the data is:
+Given the training data {{< math >}}$\{(x^1, C_1),(x^2, C_1),(x^3, C_2),\dots, (x^N, C_1)\}${{< /math >}}, assume the data is generated based on {{< math >}}$f_{w,b}(x) = P_{w,b}(C_1 \mid x)${{< /math >}}. Given a set of {{< math >}}$w${{< /math >}} and {{< math >}}$b${{< /math >}}, the probability of generating the data is:
 
-$$
+{{< math >}}$${{< /math >}}
 L(w,b) = f_{w,b}(x^1)f_{w,b}(x^2)\left(1-f_{w,b}(x^3)\right)...f_{w,b}(x^N)
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 w^*,b^* = \arg \max_{w,b} L(w,b)
-$$
+{{< math >}}$${{< /math >}}
 
-We can write the formulation by introducing $\hat{y}^i$, where:
+We can write the formulation by introducing {{< math >}}$\hat{y}^i${{< /math >}}, where:
 
-$$
+{{< math >}}$${{< /math >}}
 \hat{y}^i = \begin{cases}
 1 & x^i \text{ belongs to } C_1 \\
 0 & x^i \text{ belongs to } C_2
 \end{cases}
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240505153535990.png" alt="image-20240505153535990" style="zoom:33%;" />
 
 <img src="assets/image-20240505153917703.png" alt="image-20240505153917703" style="zoom:33%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 C(p,q) = - \sum_x p(x) \ln \left( q(x) \right)
-$$
+{{< math >}}$${{< /math >}}
 
-Therefore, minimizing $- \ln L(w,b)$ is actually minimizing the cross entropy between two distributions: the output of function $f_{w,b}$ and the target $\hat{y}^n$​​.
+Therefore, minimizing {{< math >}}$- \ln L(w,b)${{< /math >}} is actually minimizing the cross entropy between two distributions: the output of function {{< math >}}$f_{w,b}${{< /math >}} and the target {{< math >}}$\hat{y}^n${{< /math >}}​​.
 
-$$
+{{< math >}}$${{< /math >}}
 L(f) = \sum_n C(f(x^n), \hat{y}^n)
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 C(f(x^n), \hat{y}^n) = -[\hat{y}^n \ln f(x^n) + (1-\hat{y}^n) \ln \left(1-f(x^n)\right)]
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240505155715704.png" alt="image-20240505155715704" style="zoom:33%;" />
 
@@ -754,15 +763,15 @@ $$
 
 <img src="assets/image-20240505160902451.png" alt="image-20240505160902451" style="zoom:33%;" />
 
-Here, the larger the difference ($\hat{y}^n - f_{w,b}(x^n)$) is, the larger the update.
+Here, the larger the difference ({{< math >}}$\hat{y}^n - f_{w,b}(x^n)${{< /math >}}) is, the larger the update.
 
 Therefore, the update step for **logistic regression** is:
 
-$$
+{{< math >}}$${{< /math >}}
 w_i \leftarrow w_i - \eta \sum_n - \left(\hat{y}^n - f_{w,b}(x^n)\right)x_i^n
-$$
+{{< math >}}$${{< /math >}}
 
-This looks the same as the update step for linear regression. However, in logistic regression, $f_{w,b}, \hat{y}^n \in \{0,1\}$.
+This looks the same as the update step for linear regression. However, in logistic regression, {{< math >}}$f_{w,b}, \hat{y}^n \in \{0,1\}${{< /math >}}.
 
 Comparision of the two algorithms:
 
@@ -784,9 +793,9 @@ The logistic regression is an example of **discriminative** model, while the Gau
 
 <img src="assets/image-20240505170417654.png" alt="image-20240505170417654" style="zoom:25%;" />
 
-We will not obtain the same set of $w$ and $b$. The same model (function set) but different function is selected by the same training data. The discriminative model tends to have a better performance than the generative model.
+We will not obtain the same set of {{< math >}}$w${{< /math >}} and {{< math >}}$b${{< /math >}}. The same model (function set) but different function is selected by the same training data. The discriminative model tends to have a better performance than the generative model.
 
-A toy example shows why the generative model tends to perform less well. We assume Naive Bayes here, namely $P(x \mid C_i) = P(x_1 \mid C_i)P(x_2 \mid C_i)$ if $x \in \mathbb{R}^2$. The result is counterintuitive -- we expect the testing data to be classified as Class 1 instead of Class 2.
+A toy example shows why the generative model tends to perform less well. We assume Naive Bayes here, namely {{< math >}}$P(x \mid C_i) = P(x_1 \mid C_i)P(x_2 \mid C_i)${{< /math >}} if {{< math >}}$x \in \mathbb{R}^2${{< /math >}}. The result is counterintuitive -- we expect the testing data to be classified as Class 1 instead of Class 2.
 
 <img src="assets/image-20240505202709608.png" alt="image-20240505202709608" style="zoom:25%;" />
 
@@ -796,7 +805,7 @@ A toy example shows why the generative model tends to perform less well. We assu
 
 <img src="assets/image-20240505213248614.png" alt="image-20240505213248614" style="zoom:33%;" />
 
-**Softmax** will further enhance the maximum $z$ input, expanding the difference between a large value and a small value. Softmax is an approximation of the posterior probability. If we assume the previous Gaussian generative model that share the same covariance matrix amongst distributions, we can derive the exact same Softmax formulation. We can also derive Softmax from maximum entropy (similar to logistic regression).
+**Softmax** will further enhance the maximum {{< math >}}$z${{< /math >}} input, expanding the difference between a large value and a small value. Softmax is an approximation of the posterior probability. If we assume the previous Gaussian generative model that share the same covariance matrix amongst distributions, we can derive the exact same Softmax formulation. We can also derive Softmax from maximum entropy (similar to logistic regression).
 
 <img src="assets/image-20240505213741874.png" alt="image-20240505213741874" style="zoom: 25%;" />
 
@@ -827,34 +836,34 @@ In a linear model, when the value at each dimension have very distinct values, w
 #### Feature Normalization
 
 Recall **standardization**:
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{\tilde{x}}^{r}_{i} \leftarrow \frac{\boldsymbol{x}^{r}_{i} - m_{i}}{\sigma_{i}}
-$$
-$i$ represents the dimension of the vector $\boldsymbol{x}$ and $r$ represents the index of the datapoint.
+{{< math >}}$${{< /math >}}
+{{< math >}}$i${{< /math >}} represents the dimension of the vector {{< math >}}$\boldsymbol{x}${{< /math >}} and {{< math >}}$r${{< /math >}} represents the index of the datapoint.
 
 <img src="assets/image-20240509092317165.png" alt="image-20240509092317165" style="zoom:25%;" />
 
-For the *Sigmoid* activation function, we can apply feature normalization on $\boldsymbol{z}$ (before Sigmoid) so that all the values are concentrated close to $0$. But in other cases, it's acceptable to apply feature normalization on either $\boldsymbol{z}$ or $\boldsymbol{a}$.
+For the *Sigmoid* activation function, we can apply feature normalization on {{< math >}}$\boldsymbol{z}${{< /math >}} (before Sigmoid) so that all the values are concentrated close to {{< math >}}$0${{< /math >}}. But in other cases, it's acceptable to apply feature normalization on either {{< math >}}$\boldsymbol{z}${{< /math >}} or {{< math >}}$\boldsymbol{a}${{< /math >}}.
 
 <img src="assets/image-20240509094310111.png" alt="image-20240509094310111" style="zoom:33%;" />
 
-When doing feature normalization, we can use element-wise operation on $\boldsymbol{z}$.
+When doing feature normalization, we can use element-wise operation on {{< math >}}$\boldsymbol{z}${{< /math >}}.
 
 <img src="assets/image-20240509094746248.png" alt="image-20240509094746248" style="zoom:29%;" />
 
 #### Batch Normalization Training
 
-Notice that now **if $\boldsymbol{z}^1$ changes, $\boldsymbol{\mu}, \boldsymbol{\sigma}, \boldsymbol{\tilde{z}}^1, \boldsymbol{\tilde{z}}^2, \boldsymbol{\tilde{z}}^3$​ will all change**. That is, the network is now considering all the inputs and output a bunch of outputs. This could be slow and memory-intensive because we need to load the entire dataset. So, we consider batches -- *Batch Normalization*.
+Notice that now **if {{< math >}}$\boldsymbol{z}^1${{< /math >}} changes, {{< math >}}$\boldsymbol{\mu}, \boldsymbol{\sigma}, \boldsymbol{\tilde{z}}^1, \boldsymbol{\tilde{z}}^2, \boldsymbol{\tilde{z}}^3${{< /math >}}​ will all change**. That is, the network is now considering all the inputs and output a bunch of outputs. This could be slow and memory-intensive because we need to load the entire dataset. So, we consider batches -- *Batch Normalization*.
 
 <img src="assets/image-20240509100535438.png" alt="image-20240509100535438" style="zoom:33%;" />
 
 We can also make a small improvement:
 
 <img src="assets/image-20240509101408124.png" alt="image-20240509101408124" style="zoom:33%;" />
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{\hat{z}}^{i} = \boldsymbol{\gamma} \odot \boldsymbol{\tilde{z}}^{i} + \boldsymbol{\beta}
-$$
-We set $\boldsymbol{\gamma}$ to $[1,1,...]^T$ and $\boldsymbol{\beta}$ to $[0,0,...]^T$​ at the start of the iteration (they are *parameters* of the network). This means that the range will still the the same amongst different dimensions in the beginning. As the training goes, we may want to lift the contraint that each dimension has a mean of 0.
+{{< math >}}$${{< /math >}}
+We set {{< math >}}$\boldsymbol{\gamma}${{< /math >}} to {{< math >}}$[1,1,...]^T${{< /math >}} and {{< math >}}$\boldsymbol{\beta}${{< /math >}} to {{< math >}}$[0,0,...]^T${{< /math >}}​ at the start of the iteration (they are *parameters* of the network). This means that the range will still the the same amongst different dimensions in the beginning. As the training goes, we may want to lift the contraint that each dimension has a mean of 0.
 
 #### Batch Normalization Testing/Inference
 
@@ -862,11 +871,11 @@ We set $\boldsymbol{\gamma}$ to $[1,1,...]^T$ and $\boldsymbol{\beta}$ to $[0,0,
 
 We do not always have batch at testing stage.
 
-Computing the moving average of $\boldsymbol{\mu}$ and $\boldsymbol{\sigma}$​ of the batches during training (PyTorch has an implementation of this). The hyperparamteer $p$ is usually $0.1$. $\boldsymbol{\mu^t}$ is the $t$-th **batch**'s $\boldsymbol{\mu}$.
-$$
+Computing the moving average of {{< math >}}$\boldsymbol{\mu}${{< /math >}} and {{< math >}}$\boldsymbol{\sigma}${{< /math >}}​ of the batches during training (PyTorch has an implementation of this). The hyperparamteer {{< math >}}$p${{< /math >}} is usually {{< math >}}$0.1${{< /math >}}. {{< math >}}$\boldsymbol{\mu^t}${{< /math >}} is the {{< math >}}$t${{< /math >}}-th **batch**'s {{< math >}}$\boldsymbol{\mu}${{< /math >}}.
+{{< math >}}$${{< /math >}}
 \boldsymbol{\bar{\mu}} \leftarrow
 p \boldsymbol{\bar{\mu}} + (1-p) \boldsymbol{\mu^t}
-$$
+{{< math >}}$${{< /math >}}
 
 
 # 3/04 Lecture 3: Image as input
@@ -919,7 +928,7 @@ We often use **word embedding** for sentences. Each word is a vector, and theref
 
 <img src="assets/image-20240506131746897.png" alt="image-20240506131746897" style="zoom:25%;" />
 
-Audio can also be represented as a vector set. We often use a vector to represent a $25ms$-long audio.
+Audio can also be represented as a vector set. We often use a vector to represent a {{< math >}}$25ms${{< /math >}}-long audio.
 
 <img src="assets/image-20240506131950596.png" alt="image-20240506131950596" style="zoom:25%;" />
 
@@ -943,11 +952,11 @@ It is also possible that the model has to decide the number of labels itself (e.
 
 <img src="assets/image-20240506142936680.png" alt="image-20240506142936680" style="zoom: 25%;" />
 
-The **self-attention** module will try to consider the whole sequence and find the relevant vectors within the sequence (based on the attention score $\alpha$ for each pair).
+The **self-attention** module will try to consider the whole sequence and find the relevant vectors within the sequence (based on the attention score {{< math >}}$\alpha${{< /math >}} for each pair).
 
 <img src="assets/image-20240506143433074.png" alt="image-20240506143433074" style="zoom:25%;" />
 
-There are many ways to calculate $\alpha$:
+There are many ways to calculate {{< math >}}$\alpha${{< /math >}}:
 
 **Additive**:
 
@@ -961,27 +970,27 @@ There are many ways to calculate $\alpha$:
 
 The attention score will then pass through *softmax* (not necessary, RELU is also possible).
 
-$$
+{{< math >}}$${{< /math >}}
 \alpha_{1,i}' = \frac{\exp(\alpha_{1,i})}{\sum_j \exp(\alpha_{1,j})}
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240506144352946.png" alt="image-20240506144352946" style="zoom: 33%;" />
 
 We will then extract information based on attention scores (after applying softmax).
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{b}^1 = \sum_i \alpha_{1,i}' \boldsymbol{v}^i
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240506144754754.png" alt="image-20240506144754754" style="zoom: 33%;" />
 
-If $\boldsymbol{a}^1$ is most similar to $\boldsymbol{a}^2$, then $\alpha_{1,2}'$ will be the highest. Therefore, $\boldsymbol{b}^1$ will be dominated by $\boldsymbol{a}^2$.
+If {{< math >}}$\boldsymbol{a}^1${{< /math >}} is most similar to {{< math >}}$\boldsymbol{a}^2${{< /math >}}, then {{< math >}}$\alpha_{1,2}'${{< /math >}} will be the highest. Therefore, {{< math >}}$\boldsymbol{b}^1${{< /math >}} will be dominated by {{< math >}}$\boldsymbol{a}^2${{< /math >}}.
 
 ## Preparation 2: Self-Attention
 
 ### Review
 
-The creation of $\boldsymbol{b}^n$ is in parallel. We don't wait.
+The creation of {{< math >}}$\boldsymbol{b}^n${{< /math >}} is in parallel. We don't wait.
 
 <img src="assets/image-20240506145502633.png" alt="image-20240506145502633" style="zoom:25%;" />
 
@@ -989,7 +998,7 @@ The creation of $\boldsymbol{b}^n$ is in parallel. We don't wait.
 
 We can also view self-attention using matrix algebra.
 
-Since every $\boldsymbol{a}^n$ will produce $\boldsymbol{q}^n, \boldsymbol{k}^n, \boldsymbol{v}^n$​, we can write the process in matrix-matrix multiplication form.
+Since every {{< math >}}$\boldsymbol{a}^n${{< /math >}} will produce {{< math >}}$\boldsymbol{q}^n, \boldsymbol{k}^n, \boldsymbol{v}^n${{< /math >}}​, we can write the process in matrix-matrix multiplication form.
 
 <img src="assets/image-20240506152837314.png" alt="image-20240506152837314" style="zoom:25%;" />
 
@@ -1005,11 +1014,11 @@ In addition, we can use the same method for calculating attention scores:
 
 <img src="assets/image-20240506153556204.png" alt="image-20240506153556204" style="zoom:33%;" />
 
-Here, since $K = [\boldsymbol{k}^1, \boldsymbol{k}^2, \boldsymbol{k}^3, \boldsymbol{k}^4]$​, we use its transpose $K^T$.
+Here, since {{< math >}}$K = [\boldsymbol{k}^1, \boldsymbol{k}^2, \boldsymbol{k}^3, \boldsymbol{k}^4]${{< /math >}}​, we use its transpose {{< math >}}$K^T${{< /math >}}.
 
-By applying softmax, we make sure that every column of $A'$ sum up to $1$, namely, for $i\in\{1,2,3,4\}$, $\sum_j \alpha_{i,j}' = 1$​​.
+By applying softmax, we make sure that every column of {{< math >}}$A'${{< /math >}} sum up to {{< math >}}$1${{< /math >}}, namely, for {{< math >}}$i\in\{1,2,3,4\}${{< /math >}}, {{< math >}}$\sum_j \alpha_{i,j}' = 1${{< /math >}}​​.
 
-We use the same method to write the final output $\boldsymbol{b}^n$:
+We use the same method to write the final output {{< math >}}$\boldsymbol{b}^n${{< /math >}}:
 
 <img src="assets/image-20240506155151917.png" alt="image-20240506155151917" style="zoom:33%;" />
 
@@ -1017,7 +1026,7 @@ This is based on matrix-vector rules:
 
 <img src="assets/image-20240506155319537.png" alt="image-20240506155319537" style="zoom: 50%;" />
 
-Summary of self-attention: the process from $I$ to $O$
+Summary of self-attention: the process from {{< math >}}$I${{< /math >}} to {{< math >}}$O${{< /math >}}
 
 <img src="assets/image-20240506155530554.png" alt="image-20240506155530554" style="zoom:33%;" />
 
@@ -1027,19 +1036,19 @@ We may have different metrics of relevance. As a result, we may consider multi-h
 
 <img src="assets/image-20240506161132825.png" alt="image-20240506161132825" style="zoom:33%;" />
 
-We can then combine $\boldsymbol{b}^{i,1}, \boldsymbol{b}^{i,2}$ to get the final $\boldsymbol{b}^i$.
+We can then combine {{< math >}}$\boldsymbol{b}^{i,1}, \boldsymbol{b}^{i,2}${{< /math >}} to get the final {{< math >}}$\boldsymbol{b}^i${{< /math >}}.
 
 <img src="assets/image-20240506161448289.png" alt="image-20240506161448289" style="zoom: 33%;" />
 
 ### Positional Encoding
 
-Self-attention does not care about position information. For example, it does not care whether $\boldsymbol{a}^1$ is close to $\boldsymbol{a}^2$ or $\boldsymbol{a}^4$. To solve that, we can apply **positional encoding**. Each position has a unique **hand-crafted** positional vector $\boldsymbol{e}^i$. We then apply $\boldsymbol{a}^i \leftarrow \boldsymbol{a}^i + \boldsymbol{e}^i$​​.
+Self-attention does not care about position information. For example, it does not care whether {{< math >}}$\boldsymbol{a}^1${{< /math >}} is close to {{< math >}}$\boldsymbol{a}^2${{< /math >}} or {{< math >}}$\boldsymbol{a}^4${{< /math >}}. To solve that, we can apply **positional encoding**. Each position has a unique **hand-crafted** positional vector {{< math >}}$\boldsymbol{e}^i${{< /math >}}. We then apply {{< math >}}$\boldsymbol{a}^i \leftarrow \boldsymbol{a}^i + \boldsymbol{e}^i${{< /math >}}​​.
 
 <img src="assets/image-20240506163634996.png" alt="image-20240506163634996" style="zoom:25%;" />
 
 ### Speech
 
-If the input sequence is of length $L$, the attention matrix $A'$ is a matrix of $L$x$L$​, which may require a large amount of computation. Therefore, in practice, we don't look at the whole audio sequence. Instead, we use **truncated self-attention**, which only looks at a small range.
+If the input sequence is of length {{< math >}}$L${{< /math >}}, the attention matrix {{< math >}}$A'${{< /math >}} is a matrix of {{< math >}}$L${{< /math >}}x{{< math >}}$L${{< /math >}}​, which may require a large amount of computation. Therefore, in practice, we don't look at the whole audio sequence. Instead, we use **truncated self-attention**, which only looks at a small range.
 
 <img src="assets/image-20240506163652228.png" alt="image-20240506163652228" style="zoom:25%;" />
 
@@ -1110,33 +1119,33 @@ We can also train two networks at once. This way, the network can consider the e
 
 <img src="assets/image-20240509123050221.png" alt="image-20240509123050221" style="zoom:33%;" />
 
-$4$ inputs: input, signal to Input Gate, signal to Output Gate, signal to Forget Gate
+{{< math >}}$4${{< /math >}} inputs: input, signal to Input Gate, signal to Output Gate, signal to Forget Gate
 
-Why LSTM? The RNN will wipe out memory in every new timestamp, therefore having a really short short-term memory. However, the LSTM can hold on to the memory as long as the Forget Gate $f(z_f)$ is $1$​.
+Why LSTM? The RNN will wipe out memory in every new timestamp, therefore having a really short short-term memory. However, the LSTM can hold on to the memory as long as the Forget Gate {{< math >}}$f(z_f)${{< /math >}} is {{< math >}}$1${{< /math >}}​.
 
 This is the structure of a **LSTM cell/neuron**:
 
 <img src="assets/image-20240509124021283.png" alt="image-20240509124021283" style="zoom:40%;" />
 
-When $f(z_f)=1$, memory $c$ is completely remembered; when $f(z_f)=0$, memory $c$ is completely forgotten (since $c \cdot f(z_f)=0$​).
+When {{< math >}}$f(z_f)=1${{< /math >}}, memory {{< math >}}$c${{< /math >}} is completely remembered; when {{< math >}}$f(z_f)=0${{< /math >}}, memory {{< math >}}$c${{< /math >}} is completely forgotten (since {{< math >}}$c \cdot f(z_f)=0${{< /math >}}​).
 
-When $f(z_i)=1$, input $g(z)$ is completely passed through; when $f(z_i)=0$, $g(z)$ is blocked.
+When {{< math >}}$f(z_i)=1${{< /math >}}, input {{< math >}}$g(z)${{< /math >}} is completely passed through; when {{< math >}}$f(z_i)=0${{< /math >}}, {{< math >}}$g(z)${{< /math >}} is blocked.
 
-Same story for $f(z_o)$.
+Same story for {{< math >}}$f(z_o)${{< /math >}}.
 
 ### Multi-Layer LSTM
 
-A LSTM neuron has **four** times more parameters than a vanilla neural network neuron. In vanilla neural network, every neuron is a function mapping a input vector to a output scalar. In LSTM, the neuron maps $4$ inputs to $1$ output.
+A LSTM neuron has **four** times more parameters than a vanilla neural network neuron. In vanilla neural network, every neuron is a function mapping a input vector to a output scalar. In LSTM, the neuron maps {{< math >}}$4${{< /math >}} inputs to {{< math >}}$1${{< /math >}} output.
 
 <img src="assets/image-20240509131055385.png" alt="image-20240509131055385" style="zoom:38%;" />
 
-Assume the total number of cells is $n$.
+Assume the total number of cells is {{< math >}}$n${{< /math >}}.
 
 <img src="assets/image-20240509131711965.png" alt="image-20240509131711965" style="zoom:40%;" />
 
-We will apply $4$ linear transformations to get $\boldsymbol{z^f, z^i, z, z^o}$. Each of them represents a type of input to the LSTM neuron. Each of them is a vector in $\mathbb{R}^n$. The $i$-th entry is the input to the $i$​​​-th neuron.
+We will apply {{< math >}}$4${{< /math >}} linear transformations to get {{< math >}}$\boldsymbol{z^f, z^i, z, z^o}${{< /math >}}. Each of them represents a type of input to the LSTM neuron. Each of them is a vector in {{< math >}}$\mathbb{R}^n${{< /math >}}. The {{< math >}}$i${{< /math >}}-th entry is the input to the {{< math >}}$i${{< /math >}}​​​-th neuron.
 
-We can use element-wise operations on those vectors to conduct these operations for all $n$ cells at the same time. In addition, the $z$ inputs are based on not only the current input $\boldsymbol{x^t}$, but also the memory cell $\boldsymbol{c^{t-1}}$ and the previous output $\boldsymbol{h^{t-1}}$.
+We can use element-wise operations on those vectors to conduct these operations for all {{< math >}}$n${{< /math >}} cells at the same time. In addition, the {{< math >}}$z${{< /math >}} inputs are based on not only the current input {{< math >}}$\boldsymbol{x^t}${{< /math >}}, but also the memory cell {{< math >}}$\boldsymbol{c^{t-1}}${{< /math >}} and the previous output {{< math >}}$\boldsymbol{h^{t-1}}${{< /math >}}.
 
 <img src="assets/image-20240509134617159.png" alt="image-20240509134617159" style="zoom:40%;" />
 
@@ -1156,7 +1165,7 @@ Why do we observe this kind of behavior for RNN's error surface?
 
 <img src="assets/image-20240509144606662.png" alt="image-20240509144606662" style="zoom:33%;" />
 
-We can notice that the same weight $w$ is applied many times in different time. This causes the problem because any change in $w$ will either has not effect on the final output $y^N$ or a huge impact.
+We can notice that the same weight {{< math >}}$w${{< /math >}} is applied many times in different time. This causes the problem because any change in {{< math >}}$w${{< /math >}} will either has not effect on the final output {{< math >}}$y^N${{< /math >}} or a huge impact.
 
 One solution is LSTM. It can deal with **gradient vanishing**, but not **gradient explode**. As a result, most points on LSTM error surface with have a high gradient. When training LSTM, we can thus set the learning rate a relatively small value.
 
@@ -1185,31 +1194,31 @@ How do we utilize the structures and relationship to help train our model?
 <img src="assets/image-20240509170309414.png" alt="image-20240509170309414" style="zoom:33%;" />
 
 - **Aggregation**: use neighbor features to update hidden states in the next layer
-- **Readout**: use features of all the nodes to represent the whole graph $h_G$​
+- **Readout**: use features of all the nodes to represent the whole graph {{< math >}}$h_G${{< /math >}}​
 
 #### NN4G (Neural Network for Graph)
 
 <img src="assets/image-20240509170939928.png" alt="image-20240509170939928" style="zoom:35%;" />
-$$
+{{< math >}}$${{< /math >}}
 h_3^0 = \boldsymbol{w}_0 \cdot \boldsymbol{x}_3
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 h_3^1 = \hat{w}_{1,3}(h_0^0 + h_2^0 + h_4^0) + \boldsymbol{w}_1 \cdot \boldsymbol{x}_3
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240509171000501.png" alt="image-20240509171000501" style="zoom:35%;" />
 
 #### DCNN (Diffusion-Convolution Neural Network)
 
 <img src="assets/image-20240509174350496.png" alt="image-20240509174350496" style="zoom:33%;" />
-$$
+{{< math >}}$${{< /math >}}
 h_3^0 = w_3^0 MEAN(d(3,\cdot)=1)
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 h_3^1 = w_3^1 MEAN(d(3,\cdot)=2)
-$$
+{{< math >}}$${{< /math >}}
 
 Node features:
 
@@ -1253,7 +1262,7 @@ The Transformer architecture looks like this:
 
 <img src="assets/image-20240506224349208.png" alt="image-20240506224349208" style="zoom:33%;" />
 
-**Residual connection** is a very popular technique in deep learning: $\text{output}_{\text{final}} = \text{output} + \text{input}$
+**Residual connection** is a very popular technique in deep learning: {{< math >}}$\text{output}_{\text{final}} = \text{output} + \text{input}${{< /math >}}
 
 <img src="assets/image-20240506225128224.png" alt="image-20240506225128224" style="zoom:33%;" />
 
@@ -1271,7 +1280,7 @@ The encoder and the decoder of the Transformer is actually quite similar if we h
 
 <img src="assets/image-20240507095905602.png" alt="image-20240507095905602" style="zoom:38%;" />
 
-**Masked self-attention**: When considering $\boldsymbol{b}^i$, we will only take into account $\boldsymbol{k}^j$, $j \in [0,i)$. This is because the decoder does not read the input sequence all at once. Instead, the input token is generated one after another.
+**Masked self-attention**: When considering {{< math >}}$\boldsymbol{b}^i${{< /math >}}, we will only take into account {{< math >}}$\boldsymbol{k}^j${{< /math >}}, {{< math >}}$j \in [0,i)${{< /math >}}. This is because the decoder does not read the input sequence all at once. Instead, the input token is generated one after another.
 
 <img src="assets/image-20240507100340717.png" alt="image-20240507100340717" style="zoom:36%;" />
 
@@ -1284,7 +1293,7 @@ We also want to add a **stop token** (along with the vocabulary and the start to
 How to decide the output length for NAT decoder?
 
 - Another predictor for output length.
-- Determine a maximum possible length of sequence, $n$. Feed the decoder with $n$​ START tokens. Output a very long sequence, ignore tokens after END.
+- Determine a maximum possible length of sequence, {{< math >}}$n${{< /math >}}. Feed the decoder with {{< math >}}$n${{< /math >}}​ START tokens. Output a very long sequence, ignore tokens after END.
 
 Advantage: **parallel** (relying on self-attention), **more stable generation** (e.g., TTS) -- we can control the output-length classifier to manage the length of output sequence
 
@@ -1296,7 +1305,7 @@ Cross Attention:
 
 <img src="assets/image-20240507111202594.png" alt="image-20240507111202594" style="zoom:33%;" />
 
-$\alpha_i'$ is the attention score after softmax:
+{{< math >}}$\alpha_i'${{< /math >}} is the attention score after softmax:
 
 <img src="assets/image-20240507111524741.png" alt="image-20240507111524741" style="zoom:33%;" />
 
@@ -1360,7 +1369,7 @@ This causes problems. Therefore, we want to add a distribution into the network.
 
 ### Unconditional Generation
 
-For unconditional generation, we don't need the input $x$.
+For unconditional generation, we don't need the input {{< math >}}$x${{< /math >}}.
 
 <img src="assets/image-20240507170223915.png" alt="image-20240507170223915" style="zoom:33%;" />
 
@@ -1376,8 +1385,8 @@ The algorithm is:
 
 1. (Randomly) initialize generator and discriminator's parameters
 2. In each training iteration:
-   1. **Fix generator $G$ and update discriminator $D$**. This task can be seen as either a classification (labeling true images as $1$ and generator-generated images $0$​) or regression problem. We want discriminator to **learn to assign high scores to real objects and local scores to generated objects**.
-   2. **Fix discriminator $D$ and update generator $G$**. Generator learns to "fool" the discriminator. We can use **gradient ascent** to train the generator while freezing the paramters of the discriminator.
+   1. **Fix generator {{< math >}}$G${{< /math >}} and update discriminator {{< math >}}$D${{< /math >}}**. This task can be seen as either a classification (labeling true images as {{< math >}}$1${{< /math >}} and generator-generated images {{< math >}}$0${{< /math >}}​) or regression problem. We want discriminator to **learn to assign high scores to real objects and local scores to generated objects**.
+   2. **Fix discriminator {{< math >}}$D${{< /math >}} and update generator {{< math >}}$G${{< /math >}}**. Generator learns to "fool" the discriminator. We can use **gradient ascent** to train the generator while freezing the paramters of the discriminator.
 
 <img src="assets/image-20240507180402008.png" alt="image-20240507180402008" style="zoom:30%;" />
 
@@ -1391,13 +1400,13 @@ The GNN can also learn different angles of face. For example, when we apply **in
 
 <img src="assets/image-20240507183702031.png" alt="image-20240507183702031" style="zoom:30%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 G^* = \arg \min_G Div(P_G, P_{\text{data}})
-$$
+{{< math >}}$${{< /math >}}
 
-where $Div(P_G, P_{\text{data}})$, our "loss function," is the **divergence** between two distributions: $P_G$ and $P_{\text{data}}$.
+where {{< math >}}$Div(P_G, P_{\text{data}})${{< /math >}}, our "loss function," is the **divergence** between two distributions: {{< math >}}$P_G${{< /math >}} and {{< math >}}$P_{\text{data}}${{< /math >}}.
 
-The hardest part of GNN training is how to formulate the divergence. But, sampling is good enough. Although we do not know the distributions of $P_G$ and $P_{\text{data}}$, we can sample from them.
+The hardest part of GNN training is how to formulate the divergence. But, sampling is good enough. Although we do not know the distributions of {{< math >}}$P_G${{< /math >}} and {{< math >}}$P_{\text{data}}${{< /math >}}, we can sample from them.
 
 <img src="assets/image-20240507185732875.png" alt="image-20240507185732875" style="zoom:25%;" />
 
@@ -1405,50 +1414,50 @@ For discriminator,
 
 <img src="assets/image-20240507190414858.png" alt="image-20240507190414858" style="zoom:33%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 D^* = \arg \max_D V(D,G)
-$$
+{{< math >}}$${{< /math >}}
 
-$$
+{{< math >}}$${{< /math >}}
 V(G, D) = \mathbb{E}_{y \sim P_{\text{data}}} [\log D(y)] + \mathbb{E}_{y \sim P_G} [\log (1 - D(y))]
-$$
+{{< math >}}$${{< /math >}}
 
-Since we want to maximize $V(G,D)$​, we in turn wants the discriminator output for true data to be as large as possible and the discriminator output for generated output to be as small as possible.
+Since we want to maximize {{< math >}}$V(G,D)${{< /math >}}​, we in turn wants the discriminator output for true data to be as large as possible and the discriminator output for generated output to be as small as possible.
 
-Recall that cross-entropy $e = -\sum_i \boldsymbol{\hat{y}}_i \ln{\boldsymbol{y}_i'}$. <u>We can see that $V(G,D)$ looks a lot like **negative cross entropy** $-e = \sum_i \boldsymbol{\hat{y}}_i \ln{\boldsymbol{y}_i'}$.</u>
+Recall that cross-entropy {{< math >}}$e = -\sum_i \boldsymbol{\hat{y}}_i \ln{\boldsymbol{y}_i'}${{< /math >}}. <u>We can see that {{< math >}}$V(G,D)${{< /math >}} looks a lot like **negative cross entropy** {{< math >}}$-e = \sum_i \boldsymbol{\hat{y}}_i \ln{\boldsymbol{y}_i'}${{< /math >}}.</u>
 
-Since we often minimize cross-entropy, we can find similarities here as well: $\min e = \max -e = \max V(G,D)$​. As a result, when we do the above optimization on a discriminator, we are actually training a *classifier* (with cross-entropy loss). That is, we can **view a discriminator as a classifier** that tries to seperate the true data and the generated data.
+Since we often minimize cross-entropy, we can find similarities here as well: {{< math >}}$\min e = \max -e = \max V(G,D)${{< /math >}}​. As a result, when we do the above optimization on a discriminator, we are actually training a *classifier* (with cross-entropy loss). That is, we can **view a discriminator as a classifier** that tries to seperate the true data and the generated data.
 
-In additon, $\max_D V(D,G)$ is also related to **JS divergence** (proof is in the original GAN paper):
+In additon, {{< math >}}$\max_D V(D,G)${{< /math >}} is also related to **JS divergence** (proof is in the original GAN paper):
 
 <img src="assets/image-20240507191902403.png" alt="image-20240507191902403" style="zoom:33%;" />
 
 Therefore,
 
-$$
+{{< math >}}$${{< /math >}}
 \begin{align}
 G^* &= \arg \min_G Div(P_G, P_{\text{data}}) \\
 &= \arg \min_G \max_D V(D,G)
 \end{align}
-$$
+{{< math >}}$${{< /math >}}
 
 This is how the GAN algorithm was designed (to solve the optimization problem above).
 
 GAN is known for its difficulty to be trained.
 
-**In most cases, $P_G$ and $P_{\text{data}}$ are not overlapped.**
+**In most cases, {{< math >}}$P_G${{< /math >}} and {{< math >}}$P_{\text{data}}${{< /math >}} are not overlapped.**
 
-- The nature of the data is that both $P_G$ and $P_{\text{data}}$​ are **low-dimensional manifold in a high-dimensional space**. That is, most pictures in the high-dimensional space are not pictures, let alone human faces. So, any overlap can be ignored.
+- The nature of the data is that both {{< math >}}$P_G${{< /math >}} and {{< math >}}$P_{\text{data}}${{< /math >}}​ are **low-dimensional manifold in a high-dimensional space**. That is, most pictures in the high-dimensional space are not pictures, let alone human faces. So, any overlap can be ignored.
 
-- Even when $P_G$ and $P_{\text{data}}$ have overlap, the discriminator could still divide them if we don't have enough sampling.
+- Even when {{< math >}}$P_G${{< /math >}} and {{< math >}}$P_{\text{data}}${{< /math >}} have overlap, the discriminator could still divide them if we don't have enough sampling.
 
   <img src="assets/image-20240507201344462.png" alt="image-20240507201344462" style="zoom:25%;" />
 
-The problem with JS divergence is that JS divergence always outputs $\log2$ if two distributions do not overlap.
+The problem with JS divergence is that JS divergence always outputs {{< math >}}$\log2${{< /math >}} if two distributions do not overlap.
 
 <img src="assets/image-20240507201618857.png" alt="image-20240507201618857" style="zoom:25%;" />
 
-In addition, **when two classifiers don't overlap, binary classifiers can always achieve $100\%$ accuracy**. Everytime we finish discriminator training, the accuracy is $100\%$. We had hoped that after iterations, the discriminator will struggle more with classifying true data from generated data. However, it's not the case -- our discriminator can always achieve $100\%$ accuracy.
+In addition, **when two classifiers don't overlap, binary classifiers can always achieve {{< math >}}$100\%${{< /math >}} accuracy**. Everytime we finish discriminator training, the accuracy is {{< math >}}$100\%${{< /math >}}. We had hoped that after iterations, the discriminator will struggle more with classifying true data from generated data. However, it's not the case -- our discriminator can always achieve {{< math >}}$100\%${{< /math >}} accuracy.
 
 The accuracy (or loss) means nothing during GAN training.
 
@@ -1456,7 +1465,7 @@ The accuracy (or loss) means nothing during GAN training.
 
 <img src="assets/image-20240507203904606.png" alt="image-20240507203904606" style="zoom:25%;" />
 
-Considering one distribution P as a pile of earth, and another distribution Q as the target, the **Wasserstein Distance** is the average distance the earth mover has to move the earth. In the case above, distribution $P$ is concentrated on one point. Therefore, the distance is just $d$​.
+Considering one distribution P as a pile of earth, and another distribution Q as the target, the **Wasserstein Distance** is the average distance the earth mover has to move the earth. In the case above, distribution {{< math >}}$P${{< /math >}} is concentrated on one point. Therefore, the distance is just {{< math >}}$d${{< /math >}}​.
 
 However, when we consider two distributions, the distance can be difficult to calculate.
 
@@ -1464,19 +1473,19 @@ However, when we consider two distributions, the distance can be difficult to ca
 
 Since there are many possible "moving plans," we use the “moving plan” with the **smallest** average distance to define the Wasserstein distance.
 
-$W$ is a better metric than $JS$ since it can better capture the divergence of two distributions with no overlap.
+{{< math >}}$W${{< /math >}} is a better metric than {{< math >}}$JS${{< /math >}} since it can better capture the divergence of two distributions with no overlap.
 
 <img src="assets/image-20240507204742569.png" alt="image-20240507204742569" style="zoom:25%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 W(P_{\text{data}}, P_G) = \max_{D \in \text{1-Lipschitz}} \left\{ \mathbb{E}_{y \sim P_{\text{data}}} [D(y)] - \mathbb{E}_{y \sim P_{G}} [D(y)] \right\}
-$$
+{{< math >}}$${{< /math >}}
 
-$D \in \text{1-Lipschitz}$ means that $D(x)$ has to be a smooth enough function. Having this constraint prevents $D(x)$ from becoming $\infty$ and $-\infty$.
+{{< math >}}$D \in \text{1-Lipschitz}${{< /math >}} means that {{< math >}}$D(x)${{< /math >}} has to be a smooth enough function. Having this constraint prevents {{< math >}}$D(x)${{< /math >}} from becoming {{< math >}}$\infty${{< /math >}} and {{< math >}}$-\infty${{< /math >}}.
 
 <img src="assets/image-20240507222633511.png" alt="image-20240507222633511" style="zoom:33%;" />
 
-When the two distributions are very close, the two extremes can't be too far apart. This causes $W(P_{\text{data}}, P_G)$ to become relatively small. When the two distributions are very far, the two extremes can be rather far apart, making $W(P_{\text{data}}, P_G)$​​ relatively large.
+When the two distributions are very close, the two extremes can't be too far apart. This causes {{< math >}}$W(P_{\text{data}}, P_G)${{< /math >}} to become relatively small. When the two distributions are very far, the two extremes can be rather far apart, making {{< math >}}$W(P_{\text{data}}, P_G)${{< /math >}}​​ relatively large.
 
 ## Preparation 3: Generator Performance and Conditional Generation
 
@@ -1556,8 +1565,8 @@ Condition generation is useful for text-to-image tasks.
 
 The discriminator will look at two things:
 
-- is output image $y$ realistic or not
-- are text input $x$ and $y$ matched or not
+- is output image {{< math >}}$y${{< /math >}} realistic or not
+- are text input {{< math >}}$x${{< /math >}} and {{< math >}}$y${{< /math >}} matched or not
 
 <img src="assets/image-20240508121623002.png" alt="image-20240508121623002" style="zoom:33%;" />
 
@@ -1579,11 +1588,11 @@ GAN can also be applied on unsupervised learning. In some cases like **Image Sty
 
 <img src="assets/image-20240508165308900.png" alt="image-20240508165308900" style="zoom:25%;" />
 
-Instead of sampling from a Gaussian distribution like vanilla GAN, we sample from a particular domain $\mathcal{X}$. In this case, the domain is human profiles.
+Instead of sampling from a Gaussian distribution like vanilla GAN, we sample from a particular domain {{< math >}}$\mathcal{X}${{< /math >}}. In this case, the domain is human profiles.
 
 <img src="assets/image-20240508165636665.png" alt="image-20240508165636665" style="zoom:33%;" />
 
-However, the model may try to ignore the input because as long as it generates something from domain $\mathcal{Y}$, it can pass the discriminator check. We can use the **Cycle GAN** architecture: training two generators at once. In this way, $G_{\mathcal{X} \rightarrow \mathcal{Y}}$ has to generate something related to the "input", so that $G_{\mathcal{Y} \rightarrow \mathcal{X}}$ can reconstruct the image.
+However, the model may try to ignore the input because as long as it generates something from domain {{< math >}}$\mathcal{Y}${{< /math >}}, it can pass the discriminator check. We can use the **Cycle GAN** architecture: training two generators at once. In this way, {{< math >}}$G_{\mathcal{X} \rightarrow \mathcal{Y}}${{< /math >}} has to generate something related to the "input", so that {{< math >}}$G_{\mathcal{Y} \rightarrow \mathcal{X}}${{< /math >}} can reconstruct the image.
 
 <img src="assets/image-20240508170522970.png" alt="image-20240508170522970" style="zoom:33%;" />
 
@@ -1623,7 +1632,7 @@ With a combination of unlabelled and labelled dataset, this training is called *
 
 #### GLUE
 
-GLUE has $9$ tasks. We fine-tune $9$ models based on the fine-tuned BERT, each for one task below, and then evaluate the model's performance.
+GLUE has {{< math >}}$9${{< /math >}} tasks. We fine-tune {{< math >}}$9${{< /math >}} models based on the fine-tuned BERT, each for one task below, and then evaluate the model's performance.
 
 <img src="assets/image-20240509190900208.png" alt="image-20240509190900208" style="zoom:25%;" />
 
@@ -1657,7 +1666,7 @@ Example: **Natural Language Inference (NLI)**
 
 <img src="assets/image-20240509212306860.png" alt="image-20240509212306860" style="zoom:32%;" />
 
-In this case, as usual, both $D$ and $Q$ are sequences of vectors. Both $d_i$ and $q_i$ are words (vectors). In QA system, $D$ is the article and $Q$ is the question. The outputs are two positive integers $s$ and $e$. This means that the answer is in the range from the $s$-th word to the $e$-th word.
+In this case, as usual, both {{< math >}}$D${{< /math >}} and {{< math >}}$Q${{< /math >}} are sequences of vectors. Both {{< math >}}$d_i${{< /math >}} and {{< math >}}$q_i${{< /math >}} are words (vectors). In QA system, {{< math >}}$D${{< /math >}} is the article and {{< math >}}$Q${{< /math >}} is the question. The outputs are two positive integers {{< math >}}$s${{< /math >}} and {{< math >}}$e${{< /math >}}. This means that the answer is in the range from the {{< math >}}$s${{< /math >}}-th word to the {{< math >}}$e${{< /math >}}-th word.
 
 <img src="assets/image-20240509213240963.png" alt="image-20240509213240963" style="zoom:30%;" />
 
@@ -1705,7 +1714,7 @@ Auto-encoder is often used for **dimension reduction** (the output vector of the
 
 <img src="assets/image-20240510141903138.png" alt="image-20240510141903138" style="zoom:33%;" />
 
-**The variation of pictures is very limited**. There are many possible $n \times n$ matrix. But only a very small subset of them are meaningful pictures. So, the job of the encoder is to make complex things simpler. As seen from the graph below, we can represent the possible pictures with a $1\times2$ vector.
+**The variation of pictures is very limited**. There are many possible {{< math >}}$n \times n${{< /math >}} matrix. But only a very small subset of them are meaningful pictures. So, the job of the encoder is to make complex things simpler. As seen from the graph below, we can represent the possible pictures with a {{< math >}}$1\times2${{< /math >}} vector.
 
 <img src="assets/image-20240510150707632.png" alt="image-20240510150707632" style="zoom:25%;" />
 
@@ -1743,7 +1752,7 @@ The most famous example is: **Vector Quantized Variational Auto-encoder (VQVAE)*
 
 <img src="assets/image-20240510162432579.png" alt="image-20240510162432579" style="zoom:33%;" />
 
-The parameters we learn in VQVAE are: Encoder, Decoder, the $5$ vectors in the Codebook
+The parameters we learn in VQVAE are: Encoder, Decoder, the {{< math >}}$5${{< /math >}} vectors in the Codebook
 
 This process is very similar to attention. We can think of the output of the Encoder as the Query, the Codebook as Values and Keys.
 
@@ -1769,13 +1778,13 @@ With some modification, we have variational auto-encoder (VAE).
 
 ### Compression
 
-The image reconstruction is not $100$%. So, there may be a "lossy" effect on the final reconstructed image.
+The image reconstruction is not {{< math >}}$100${{< /math >}}%. So, there may be a "lossy" effect on the final reconstructed image.
 
 <img src="assets/image-20240510170803281.png" alt="image-20240510170803281" style="zoom: 33%;" />
 
 ## Anomaly Detection
 
-Anomaly Detection: Given a set of training data $\{x^1, x^2, ..., x^N\}$, detecting input $x$​​ is *similar* to training data or not
+Anomaly Detection: Given a set of training data {{< math >}}$\{x^1, x^2, ..., x^N\}${{< /math >}}, detecting input {{< math >}}$x${{< /math >}}​​ is *similar* to training data or not
 
 <img src="assets/image-20240510183428138.png" alt="image-20240510183428138" style="zoom:28%;" />
 
@@ -1811,7 +1820,7 @@ For a cat classifier:
 
 ### Local Explanation
 
-For an object $x$ (image, text, etc), it can be composed of multiple **components**: $\{x_1, ..., x_n, ..., x_N\}$. For each $x_i$ in image it can represent pixel, segment, etc. For each $x_i$ in text, it can represent a word.
+For an object {{< math >}}$x${{< /math >}} (image, text, etc), it can be composed of multiple **components**: {{< math >}}$\{x_1, ..., x_n, ..., x_N\}${{< /math >}}. For each {{< math >}}$x_i${{< /math >}} in image it can represent pixel, segment, etc. For each {{< math >}}$x_i${{< /math >}} in text, it can represent a word.
 
 We asks the question: "which component is critical for making a decision?" We can therefore **remove or modify the components**. The important components are those that result in **large decision change**.
 
@@ -1851,57 +1860,57 @@ We can also train a TTS model that takes the output of a particular hidden layer
 
 <img src="assets/image-20240511133947764.png" alt="image-20240511133947764" style="zoom:33%;" />
 
-We can know based on feature maps (the output of a filter) what patterns a particular filter is responsible for detecting. As a result, for an unknown image $X$, we can try to create an image that tries to create a large value of sum in a feature map:
+We can know based on feature maps (the output of a filter) what patterns a particular filter is responsible for detecting. As a result, for an unknown image {{< math >}}$X${{< /math >}}, we can try to create an image that tries to create a large value of sum in a feature map:
 
-$$
+{{< math >}}$${{< /math >}}
 X^* = \arg \max_X \sum_i \sum_j a_{ij}
-$$
+{{< math >}}$${{< /math >}}
 
-$X^*$ is the image that contains the patterns filter 1 can detect. We can find $X^*$ using **gradient *ascent***. One example of the resulting $X^*$ looks like this:
+{{< math >}}$X^*${{< /math >}} is the image that contains the patterns filter 1 can detect. We can find {{< math >}}$X^*${{< /math >}} using **gradient *ascent***. One example of the resulting {{< math >}}$X^*${{< /math >}} looks like this:
 
 <img src="assets/image-20240511140050243.png" alt="image-20240511140050243" style="zoom:28%;" />
 
 However, if we try to find the best image (that maximizes the classification probability),
 
-$$
+{{< math >}}$${{< /math >}}
 X^* = \arg \max_X y_i
-$$
+{{< math >}}$${{< /math >}}
 
 we fail to see any meaningful pattern:
 
 <img src="assets/image-20240511140257814.png" alt="image-20240511140257814" style="zoom:30%;" />
 
-The images should look like a digit. As a result, we need to add constraints $R(X)$ -- how likely $X$ is a digit:
+The images should look like a digit. As a result, we need to add constraints {{< math >}}$R(X)${{< /math >}} -- how likely {{< math >}}$X${{< /math >}} is a digit:
 
-$$
+{{< math >}}$${{< /math >}}
 X^* = \arg \max_X y_i + R(X)
-$$
+{{< math >}}$${{< /math >}}
 
 where:
 
-$$
+{{< math >}}$${{< /math >}}
 R(X) = - \sum_{i,j} |X_{i,j}|
-$$
+{{< math >}}$${{< /math >}}
 
-$R(X)$ restricts image $X$ to have as little pattern (white regions) as possible since an image of a digit should have a couple of patterns (the rest of the image should just be the cover).
+{{< math >}}$R(X)${{< /math >}} restricts image {{< math >}}$X${{< /math >}} to have as little pattern (white regions) as possible since an image of a digit should have a couple of patterns (the rest of the image should just be the cover).
 
 <img src="assets/image-20240511140732770.png" alt="image-20240511140732770" style="zoom:33%;" />
 
 To make the images clearer, we may need several regularization terms, and hyperparameter tuning...
 
-For example, we can append an image generator $G$ (GAN, VAE, etc) before the classifier that we want to understand.
+For example, we can append an image generator {{< math >}}$G${{< /math >}} (GAN, VAE, etc) before the classifier that we want to understand.
 
 <img src="assets/image-20240511140917496.png" alt="image-20240511140917496" style="zoom:35%;" />
 
-$$
+{{< math >}}$${{< /math >}}
 z^* = \arg \max_z y_i
-$$
+{{< math >}}$${{< /math >}}
 
 We can then get the image we want by calculating:
 
-$$
+{{< math >}}$${{< /math >}}
 X^* = G(z^*)
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240511141059751.png" alt="image-20240511141059751" style="zoom:33%;" />
 
@@ -1923,26 +1932,26 @@ This idea is called Local Interpretable Model-Agnostic Explanations (**LIME**)
 
 ### White Box Attack
 
-Assume we know the parameters $\boldsymbol{\theta}$ of the Network.
+Assume we know the parameters {{< math >}}$\boldsymbol{\theta}${{< /math >}} of the Network.
 
 <img src="assets/image-20240511195926194.png" alt="image-20240511195926194" style="zoom:33%;" />
 
-Our goal is to find a new picture $\boldsymbol{x}$ that correspond to an output $\boldsymbol{y}$ that is most different from the true label (one-hot) $\boldsymbol{\hat{y}}$.
+Our goal is to find a new picture {{< math >}}$\boldsymbol{x}${{< /math >}} that correspond to an output {{< math >}}$\boldsymbol{y}${{< /math >}} that is most different from the true label (one-hot) {{< math >}}$\boldsymbol{\hat{y}}${{< /math >}}.
 
-Since we also want the noise to be as little as possible, we add an additional constraint: $d(\boldsymbol{x^0}, \boldsymbol{x}) \leq \epsilon$. $\epsilon$​ is a threshold such that we want the noise to be unable to be perceived by humans.
+Since we also want the noise to be as little as possible, we add an additional constraint: {{< math >}}$d(\boldsymbol{x^0}, \boldsymbol{x}) \leq \epsilon${{< /math >}}. {{< math >}}$\epsilon${{< /math >}}​ is a threshold such that we want the noise to be unable to be perceived by humans.
 
-$$
+{{< math >}}$${{< /math >}}
 \boldsymbol{x^*} = \arg
 \min_{\boldsymbol{x}, d(\boldsymbol{x^0}, \boldsymbol{x}) \leq \epsilon}
 L(\boldsymbol{x})
-$$
+{{< math >}}$${{< /math >}}
 
-We also define $\boldsymbol{\Delta x}$:
-$$
+We also define {{< math >}}$\boldsymbol{\Delta x}${{< /math >}}:
+{{< math >}}$${{< /math >}}
 \boldsymbol{\Delta x} = \boldsymbol{x} - \boldsymbol{x^0}
-$$
+{{< math >}}$${{< /math >}}
 This can be seen as:
-$$
+{{< math >}}$${{< /math >}}
 \begin{bmatrix}
 \Delta x_1 \\
 \Delta x_2 \\
@@ -1963,21 +1972,21 @@ x_2^0 \\
 x_3^0 \\
 \vdots
 \end{bmatrix}
-$$
-There are many ways to calculate distance $d$​ between the two images:
+{{< math >}}$${{< /math >}}
+There are many ways to calculate distance {{< math >}}$d${{< /math >}}​ between the two images:
 
 **L2-norm**:
-$$
+{{< math >}}$${{< /math >}}
 d(\boldsymbol{x^0}, \boldsymbol{x}) =
 \|\boldsymbol{\Delta x}\|_2 =
 \sqrt{(\Delta x_1)^2 + (\Delta x_2)^2 + \dots}
-$$
+{{< math >}}$${{< /math >}}
 **L-infinity**:
-$$
+{{< math >}}$${{< /math >}}
 d(\boldsymbol{x^0}, \boldsymbol{x}) =
 \|\boldsymbol{\Delta x}\|_{\infty} =
 \max\{|\Delta x_1|,|\Delta x_2|, \dots\}
-$$
+{{< math >}}$${{< /math >}}
 L-infinity is a *better* metric for images because it fits human perception of image differences (as seen from the example below). We may need to use other metrics depending on our domain knowledge.
 
 <img src="assets/image-20240511203532567.png" alt="image-20240511203532567" style="zoom:27%;" />
@@ -1986,35 +1995,35 @@ The Loss function can be defined depending on the specific attack:
 
 **Non-Targeted Attack**:
 
-The Loss function $L$ is defined to be the negative cross entropy between the true label and the output label. Since we want to minimize $L$, this is the same as maximizing $ e(\boldsymbol{y}, \boldsymbol{\hat{y}}) $.
+The Loss function {{< math >}}$L${{< /math >}} is defined to be the negative cross entropy between the true label and the output label. Since we want to minimize {{< math >}}$L${{< /math >}}, this is the same as maximizing {{< math >}}$ e(\boldsymbol{y}, \boldsymbol{\hat{y}}) ${{< /math >}}.
 
-$$
+{{< math >}}$${{< /math >}}
 L(\boldsymbol{x}) = - e(\boldsymbol{y}, \boldsymbol{\hat{y}})
-$$
+{{< math >}}$${{< /math >}}
 
 **Targeted Attack:**
 
-Since we want to *minimize* the Loss function, we add the cross entropy between the output and the target label (since we want the two to be similar, therefore a smaller $e$).
+Since we want to *minimize* the Loss function, we add the cross entropy between the output and the target label (since we want the two to be similar, therefore a smaller {{< math >}}$e${{< /math >}}).
 
-$$
+{{< math >}}$${{< /math >}}
 L(\boldsymbol{x}) = - e(\boldsymbol{y}, \boldsymbol{\hat{y}}) +
 e(\boldsymbol{y}, \boldsymbol{y^{\text{target}}})
-$$
+{{< math >}}$${{< /math >}}
 
 How can we do optimization?
 
-If we assume we don't have the constraint on $\min$, it's the same as the previous NN training, except that we now update *input*, not parameters (because parameters are now constant).
+If we assume we don't have the constraint on {{< math >}}$\min${{< /math >}}, it's the same as the previous NN training, except that we now update *input*, not parameters (because parameters are now constant).
 
-1. Start from the *original* image $\boldsymbol{x^0}$
-2. From $t=1$ to $T$: $\boldsymbol{x^t} \leftarrow \boldsymbol{x^{t-1}} - \eta \boldsymbol{g}$​
+1. Start from the *original* image {{< math >}}$\boldsymbol{x^0}${{< /math >}}
+2. From {{< math >}}$t=1${{< /math >}} to {{< math >}}$T${{< /math >}}: {{< math >}}$\boldsymbol{x^t} \leftarrow \boldsymbol{x^{t-1}} - \eta \boldsymbol{g}${{< /math >}}​
 
 If we consider the constraint, the process is very similar:
 
-1. Start from the *original* image $\boldsymbol{x^0}$
-2. From $t=1$ to $T$: $\boldsymbol{x^t} \leftarrow \boldsymbol{x^{t-1}} - \eta \boldsymbol{g}$​​
-3. If $d(\boldsymbol{x^0}, \boldsymbol{x}) > \epsilon$, then $\boldsymbol{x^t} \leftarrow fix(\boldsymbol{x^t})$​
+1. Start from the *original* image {{< math >}}$\boldsymbol{x^0}${{< /math >}}
+2. From {{< math >}}$t=1${{< /math >}} to {{< math >}}$T${{< /math >}}: {{< math >}}$\boldsymbol{x^t} \leftarrow \boldsymbol{x^{t-1}} - \eta \boldsymbol{g}${{< /math >}}​​
+3. If {{< math >}}$d(\boldsymbol{x^0}, \boldsymbol{x}) > \epsilon${{< /math >}}, then {{< math >}}$\boldsymbol{x^t} \leftarrow fix(\boldsymbol{x^t})${{< /math >}}​
 
-If we are using L-infinity, we can fix $\boldsymbol{x^t}$ by finding a point within the constraint that is the closest to $\boldsymbol{x^t}$.
+If we are using L-infinity, we can fix {{< math >}}$\boldsymbol{x^t}${{< /math >}} by finding a point within the constraint that is the closest to {{< math >}}$\boldsymbol{x^t}${{< /math >}}.
 
 <img src="assets/image-20240511205802496.png" alt="image-20240511205802496" style="zoom:28%;" />
 
@@ -2022,24 +2031,24 @@ If we are using L-infinity, we can fix $\boldsymbol{x^t}$ by finding a point wit
 
 We can use **Fast Gradient Sign Method (FGSM, https://arxiv.org/abs/1412.6572)**:
 
-Redefine $\boldsymbol{g}$ as:
-$$
+Redefine {{< math >}}$\boldsymbol{g}${{< /math >}} as:
+{{< math >}}$${{< /math >}}
 \mathbf{g} = \begin{bmatrix}
 \text{sign}\left(\frac{\partial L}{\partial x_1} \bigg|_{\mathbf{x}=\mathbf{x}^{t-1}}\right) \\
 \text{sign}\left(\frac{\partial L}{\partial x_2} \bigg|_{\mathbf{x}=\mathbf{x}^{t-1}} \right) \\
 \vdots
 \end{bmatrix}
-$$
-Here, each entry is either $1$ or $-1$: if $t>0$, $\text{sign}(t) = 1$; otherwise, $\text{sign}(t) = -1$.
+{{< math >}}$${{< /math >}}
+Here, each entry is either {{< math >}}$1${{< /math >}} or {{< math >}}$-1${{< /math >}}: if {{< math >}}$t>0${{< /math >}}, {{< math >}}$\text{sign}(t) = 1${{< /math >}}; otherwise, {{< math >}}$\text{sign}(t) = -1${{< /math >}}.
 
-1. Start from the *original* image $\boldsymbol{x^0}$
-2. Do only one shot: $\boldsymbol{x^t} \leftarrow \boldsymbol{x^{t-1}} - \epsilon \boldsymbol{g}$​​
+1. Start from the *original* image {{< math >}}$\boldsymbol{x^0}${{< /math >}}
+2. Do only one shot: {{< math >}}$\boldsymbol{x^t} \leftarrow \boldsymbol{x^{t-1}} - \epsilon \boldsymbol{g}${{< /math >}}​​
 
 <img src="assets/image-20240511210950529.png" alt="image-20240511210950529" style="zoom:28%;" />
 
-In the case of L-infinity, $\boldsymbol{x}$ will move to either of the four *corners*.
+In the case of L-infinity, {{< math >}}$\boldsymbol{x}${{< /math >}} will move to either of the four *corners*.
 
-There's also an *iterative* version of FGSM, which is basically doing **Step 2** $T$​ iterations
+There's also an *iterative* version of FGSM, which is basically doing **Step 2** {{< math >}}$T${{< /math >}}​ iterations
 
 ### Black Box Attack
 
@@ -2097,15 +2106,15 @@ However, these methods have some drawbacks. For example, if the attackers know t
 
 We can use **Adversarial Training** (training a model that is robust to adversarial attack). This method is an example of **Data Augumentation**.
 
-Given training set $\mathcal{X} = \{(\boldsymbol{x^1}, \hat{y}^1), ..., (\boldsymbol{x^N}, \hat{y}^N)\}$:
+Given training set {{< math >}}$\mathcal{X} = \{(\boldsymbol{x^1}, \hat{y}^1), ..., (\boldsymbol{x^N}, \hat{y}^N)\}${{< /math >}}:
 
-Using $\mathcal{X}$​ to train your model
+Using {{< math >}}$\mathcal{X}${{< /math >}}​ to train your model
 
-1. For $n = 1$ to $N$: Find adversarial input $\boldsymbol{\tilde{x}^n}$ given $\boldsymbol{x^n}$​ by **an attack algorithm**
+1. For {{< math >}}$n = 1${{< /math >}} to {{< math >}}$N${{< /math >}}: Find adversarial input {{< math >}}$\boldsymbol{\tilde{x}^n}${{< /math >}} given {{< math >}}$\boldsymbol{x^n}${{< /math >}}​ by **an attack algorithm**
 
-2. We then have new training data $\mathcal{X}' = \{(\boldsymbol{\tilde{x}^1}, \hat{y}^1), ..., (\boldsymbol{\tilde{x}^N}, \hat{y}^N)\}$
+2. We then have new training data {{< math >}}$\mathcal{X}' = \{(\boldsymbol{\tilde{x}^1}, \hat{y}^1), ..., (\boldsymbol{\tilde{x}^N}, \hat{y}^N)\}${{< /math >}}
 
-3. Using both $\mathcal{X}$ and $\mathcal{X}'$​​ to update your model
+3. Using both {{< math >}}$\mathcal{X}${{< /math >}} and {{< math >}}$\mathcal{X}'${{< /math >}}​​ to update your model
 4. Repeat Steps 1-3
 
 However, if we did not consider an attack algorithm in Adversarial Training, this method will not prevent the attack from that algorithm.
@@ -2164,23 +2173,23 @@ Output of NN: each **action** corresponds to a neuron in output layer (they repr
 
 ### Loss
 
-An **episode** is the whole process from the first observation $s_1$​ to game over.
+An **episode** is the whole process from the first observation {{< math >}}$s_1${{< /math >}}​ to game over.
 
 The **total reward**, a.k.a. **return**, is what we want to maximize:
 
-$$
+{{< math >}}$${{< /math >}}
 R = \sum_{t=1}^T r_t
-$$
+{{< math >}}$${{< /math >}}
 
 ### Optimization
 
-A **trajectory** $\tau$ is the set of all the observations and actions.
+A **trajectory** {{< math >}}$\tau${{< /math >}} is the set of all the observations and actions.
 
-$$
+{{< math >}}$${{< /math >}}
 \tau = \{s_1, a_1, s_2, a_2, ...\}
-$$
+{{< math >}}$${{< /math >}}
 
-Reward is a function of $s_i$ and $a_i$, the current observation and the current action.
+Reward is a function of {{< math >}}$s_i${{< /math >}} and {{< math >}}$a_i${{< /math >}}, the current observation and the current action.
 
 <img src="assets/image-20240513125325278.png" alt="image-20240513125325278" style="zoom:35%;" />
 
@@ -2188,7 +2197,7 @@ This idea is similar to GAN. The Actor is like a Generator; the Reward and the E
 
 ### Control an Actor
 
-Make an Actor take or *don't* take a specific action $\hat{a}$ given specific observation $s$.
+Make an Actor take or *don't* take a specific action {{< math >}}$\hat{a}${{< /math >}} given specific observation {{< math >}}$s${{< /math >}}.
 
 <img src="assets/image-20240513133923534.png" alt="image-20240513133923534" style="zoom:33%;" />
 
@@ -2200,21 +2209,21 @@ This is almost like supervised learning. We can train the Actor by getting a dat
 
 <img src="assets/image-20240513134708863.png" alt="image-20240513134708863" style="zoom:33%;" />
 
-We can also redefine the loss by introducing weights for each {observation, action} pair. For example, we are more desired to see $\hat{a}_1$ followed by $s_1$ than $\hat{a}_3$ followed by $s_3$.
+We can also redefine the loss by introducing weights for each {observation, action} pair. For example, we are more desired to see {{< math >}}$\hat{a}_1${{< /math >}} followed by {{< math >}}$s_1${{< /math >}} than {{< math >}}$\hat{a}_3${{< /math >}} followed by {{< math >}}$s_3${{< /math >}}.
 
-$$
+{{< math >}}$${{< /math >}}
 L = \sum A_n e_n
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240513135117659.png" alt="image-20240513135117659" style="zoom: 33%;" />
 
-The difficulty is what determines $A_i$ and what $\{s_i, \hat{a}_i\}$ pairs to generate.
+The difficulty is what determines {{< math >}}$A_i${{< /math >}} and what {{< math >}}$\{s_i, \hat{a}_i\}${{< /math >}} pairs to generate.
 
 ### Version 0
 
 <img src="assets/image-20240515154630524.png" alt="image-20240515154630524" style="zoom:28%;" />
 
-We can start with a randomly-initialized Actor and then run it with *many episodes*. This will help collect us with some data. If we see a observation-action pair that produces positive reward, we will assign a positive $A_i$​ value to that pair.
+We can start with a randomly-initialized Actor and then run it with *many episodes*. This will help collect us with some data. If we see a observation-action pair that produces positive reward, we will assign a positive {{< math >}}$A_i${{< /math >}}​ value to that pair.
 
 However, generally speaking, this is not a very good strategy since actions are not independent.
 
@@ -2224,42 +2233,42 @@ However, generally speaking, this is not a very good strategy since actions are 
 
 ### Version 1
 
-We need to take into account all the rewards that we gain after performing one action at timestamp $t$. Therefore, we can define a **cumulated reward** (as opposed to an immediate reward in the last version) $G_t$:
+We need to take into account all the rewards that we gain after performing one action at timestamp {{< math >}}$t${{< /math >}}. Therefore, we can define a **cumulated reward** (as opposed to an immediate reward in the last version) {{< math >}}$G_t${{< /math >}}:
 
-$$
+{{< math >}}$${{< /math >}}
 A_t = G_t = \sum_{n=t}^N r_n
-$$
+{{< math >}}$${{< /math >}}
 
 <img src="assets/image-20240515155541817.png" alt="image-20240515155541817" style="zoom:33%;" />
 
 ### Version 2
 
-However, if the sequence of length $N$ is very long, then $r_N$ if probably not the credit of $a_1$. Therefore, we can redefine $G_t'$ using a **discount factor** $\gamma < 1$:
+However, if the sequence of length {{< math >}}$N${{< /math >}} is very long, then {{< math >}}$r_N${{< /math >}} if probably not the credit of {{< math >}}$a_1${{< /math >}}. Therefore, we can redefine {{< math >}}$G_t'${{< /math >}} using a **discount factor** {{< math >}}$\gamma < 1${{< /math >}}:
 
 **Discounted Cumulated Reward**:
-$$
+{{< math >}}$${{< /math >}}
 A_t = G_t' = \sum_{n=t}^N \gamma^{n-t} r_n
-$$
+{{< math >}}$${{< /math >}}
 
 ### Version 3
 
-But good or bad rewards are "relative." If all the $r_n \geq 10$, then having a reward of $10$ is actually very bad. We can redefine $A_i$ values by minusing by a **baseline** $b$. This makes $A_i$ to have positive and negative values.
+But good or bad rewards are "relative." If all the {{< math >}}$r_n \geq 10${{< /math >}}, then having a reward of {{< math >}}$10${{< /math >}} is actually very bad. We can redefine {{< math >}}$A_i${{< /math >}} values by minusing by a **baseline** {{< math >}}$b${{< /math >}}. This makes {{< math >}}$A_i${{< /math >}} to have positive and negative values.
 
-$$
+{{< math >}}$${{< /math >}}
 A_t = G_t' - b
-$$
+{{< math >}}$${{< /math >}}
 
 ### Policy Gradient
 
-1. Initialize Actor NN parameters $\theta^0$
-2. For training iteration $i=1$ to $T$:
-   - Using Actor $\theta^{i-1}$ to interact with the environment.
-   - We then obtain data/training set $\{s_1, a_1\}, \{s_2, a_2\}, ..., \{s_N, a_N\}$​. Note that here the data collection is in the `for` loop of training iterations.
-   - Compute $A_1, A_2, ..., A_N$
-   - Compute Loss $L=\sum_n A_n e_n$
-   - Update Actor parameters using gradient descent: $\theta^i \leftarrow \theta^{i-1} - \eta \nabla L$​
+1. Initialize Actor NN parameters {{< math >}}$\theta^0${{< /math >}}
+2. For training iteration {{< math >}}$i=1${{< /math >}} to {{< math >}}$T${{< /math >}}:
+   - Using Actor {{< math >}}$\theta^{i-1}${{< /math >}} to interact with the environment.
+   - We then obtain data/training set {{< math >}}$\{s_1, a_1\}, \{s_2, a_2\}, ..., \{s_N, a_N\}${{< /math >}}​. Note that here the data collection is in the `for` loop of training iterations.
+   - Compute {{< math >}}$A_1, A_2, ..., A_N${{< /math >}}
+   - Compute Loss {{< math >}}$L=\sum_n A_n e_n${{< /math >}}
+   - Update Actor parameters using gradient descent: {{< math >}}$\theta^i \leftarrow \theta^{i-1} - \eta \nabla L${{< /math >}}​
 
-This process (from 2.1 to 2.3) is very expensive. Each time you update the model parameters, you need to collect the whole training set again. However, this process is necessary because it is based on the *experience* of Actor $\theta^{i-1}$。 We need to use a the new Actor $\theta^i$​'s *trajectory* to train the new Actor.
+This process (from 2.1 to 2.3) is very expensive. Each time you update the model parameters, you need to collect the whole training set again. However, this process is necessary because it is based on the *experience* of Actor {{< math >}}$\theta^{i-1}${{< /math >}}。 We need to use a the new Actor {{< math >}}$\theta^i${{< /math >}}​'s *trajectory* to train the new Actor.
 
 **On-Policy** Learning: <u>the actor to train</u> and <u>the actor for interacting</u> are the same.
 
@@ -2271,9 +2280,9 @@ This process (from 2.1 to 2.3) is very expensive. Each time you update the model
 
 ### Critic
 
-Critic: Given actor $\theta$, how good it is when observing $s$ (and taking action $a$​).
+Critic: Given actor {{< math >}}$\theta${{< /math >}}, how good it is when observing {{< math >}}$s${{< /math >}} (and taking action {{< math >}}$a${{< /math >}}​).
 
-- An example is **value function** $V^{\theta}(s)$: When using actor $\theta$, the **discounted *cumulated* reward** (see Version 2) expected to be obtained after seeing $s$. Note that since the function depends on $\theta$, the same observation $s$ will have a different associated value if the actors are different. **The output values of a critic depend on the actor evaluated**.
+- An example is **value function** {{< math >}}$V^{\theta}(s)${{< /math >}}: When using actor {{< math >}}$\theta${{< /math >}}, the **discounted *cumulated* reward** (see Version 2) expected to be obtained after seeing {{< math >}}$s${{< /math >}}. Note that since the function depends on {{< math >}}$\theta${{< /math >}}, the same observation {{< math >}}$s${{< /math >}} will have a different associated value if the actors are different. **The output values of a critic depend on the actor evaluated**.
 
 <img src="assets/image-20240515215300373.png" alt="image-20240515215300373" style="zoom:33%;" />
 
@@ -2281,19 +2290,19 @@ Critic: Given actor $\theta$, how good it is when observing $s$ (and taking acti
 
 How to train a critic?
 
-One way is to use **Monte-Carlo (MC)** based approach: The critic watches actor $\theta$ to interact with the environment. However, we can only update $V^{\theta}$ after the episode is over.
+One way is to use **Monte-Carlo (MC)** based approach: The critic watches actor {{< math >}}$\theta${{< /math >}} to interact with the environment. However, we can only update {{< math >}}$V^{\theta}${{< /math >}} after the episode is over.
 
 <img src="assets/image-20240515215625579.png" alt="image-20240515215625579" style="zoom:35%;" />
 
-$V^{\theta}(s_a)$ should be as close as possible to $G'_a$ and $V^{\theta}(s_b)$ should be as close as possible to $G'_b$.
+{{< math >}}$V^{\theta}(s_a)${{< /math >}} should be as close as possible to {{< math >}}$G'_a${{< /math >}} and {{< math >}}$V^{\theta}(s_b)${{< /math >}} should be as close as possible to {{< math >}}$G'_b${{< /math >}}.
 
 Another way is **Temporal-difference (TD)** approach. We don't need to wait for the entire episode.
 
 <img src="assets/image-20240515220314195.png" alt="image-20240515220314195" style="zoom:35%;" />
 
-MC and TD may produce *different* results for the same $V^{\theta}$​ with the same dataset as seen from the following example in *Sutton* v2 (Example 6.4).
+MC and TD may produce *different* results for the same {{< math >}}$V^{\theta}${{< /math >}}​ with the same dataset as seen from the following example in *Sutton* v2 (Example 6.4).
 
-That is because MC and TD have different assumptions. For TD, we assume that $s_a$ can *not* influence $s_b$ (no correlation). It is possible that our dataset (the samples) is limited. For MC, we assume that $s_a$ can influence $s_b$. It is possible that observing $s_a$ influences the reward of observing $s_b$ so that it is always zero.
+That is because MC and TD have different assumptions. For TD, we assume that {{< math >}}$s_a${{< /math >}} can *not* influence {{< math >}}$s_b${{< /math >}} (no correlation). It is possible that our dataset (the samples) is limited. For MC, we assume that {{< math >}}$s_a${{< /math >}} can influence {{< math >}}$s_b${{< /math >}}. It is possible that observing {{< math >}}$s_a${{< /math >}} influences the reward of observing {{< math >}}$s_b${{< /math >}} so that it is always zero.
 
 <img src="assets/image-20240516212052542.png" alt="image-20240516212052542" style="zoom:38%;" />
 
@@ -2301,25 +2310,25 @@ That is because MC and TD have different assumptions. For TD, we assume that $s_
 
 How can we use critic on training actor?
 
-Recall that in Version 3, we introduce a baseline $b$ as normalization. How to choose $b$? One possible way is to set $b = V^{\theta}(s_t)$.
-$$
+Recall that in Version 3, we introduce a baseline {{< math >}}$b${{< /math >}} as normalization. How to choose {{< math >}}$b${{< /math >}}? One possible way is to set {{< math >}}$b = V^{\theta}(s_t)${{< /math >}}.
+{{< math >}}$${{< /math >}}
 A_t = G_t' - V^{\theta}(s_t)
-$$
+{{< math >}}$${{< /math >}}
 <img src="assets/image-20240516213342601.png" alt="image-20240516213342601" style="zoom:35%;" />
 
-Why this method works? Remember that $V^{\theta}(s_t)$ takes into account many episodes, so it's an expected value. This makes $A_t$ very intuitive.
+Why this method works? Remember that {{< math >}}$V^{\theta}(s_t)${{< /math >}} takes into account many episodes, so it's an expected value. This makes {{< math >}}$A_t${{< /math >}} very intuitive.
 
 <img src="assets/image-20240516213852293.png" alt="image-20240516213852293" style="zoom:38%;" />
 
 ### Version 4: Advantage Actor-Critic
 
-However, Version 3 is still problematic because $G_t'$ may be very random (it's just a sample). It may be very good or bad. We want it to resemble an average value like $V^{\theta}(s_t)$​​​.
+However, Version 3 is still problematic because {{< math >}}$G_t'${{< /math >}} may be very random (it's just a sample). It may be very good or bad. We want it to resemble an average value like {{< math >}}$V^{\theta}(s_t)${{< /math >}}​​​.
 
-Therefore, for a pair $\{ s_t, a_t \}$:
-$$
+Therefore, for a pair {{< math >}}$\{ s_t, a_t \}${{< /math >}}:
+{{< math >}}$${{< /math >}}
 A_t = \left[r_t + V^{\theta}(s_{t+1})\right] - V^{\theta}(s_t)
-$$
-Note that $s_{t+1}$ is the observation of the environment influenced by the actor taking action $a_t$.
+{{< math >}}$${{< /math >}}
+Note that {{< math >}}$s_{t+1}${{< /math >}} is the observation of the environment influenced by the actor taking action {{< math >}}$a_t${{< /math >}}.
 
 <img src="assets/image-20240516214628159.png" alt="image-20240516214628159" style="zoom:36%;" />
 
@@ -2329,7 +2338,7 @@ The parameters of actor and critic can be shared. In practice, the first several
 
 ### Reward Shaping
 
-In tasks like robot arm bolting on the screws, the reward $r_t$ is always or mostly $0$​ (**spare reward**) because the actor is randomly initialized and it will very likely fail to complete the task. So, we may not know what actions are good or bad. As a consequence, developers can define *extra* rewards to guide agents. This is called **reward shaping**.
+In tasks like robot arm bolting on the screws, the reward {{< math >}}$r_t${{< /math >}} is always or mostly {{< math >}}$0${{< /math >}}​ (**spare reward**) because the actor is randomly initialized and it will very likely fail to complete the task. So, we may not know what actions are good or bad. As a consequence, developers can define *extra* rewards to guide agents. This is called **reward shaping**.
 
 For example, we can incentive the actor to do different things by defining extra rewards based on our *domain knowledge*.
 
@@ -2345,7 +2354,7 @@ We can use Imitation Learning. We assume that actor can interact with the enviro
 
 <img src="assets/image-20240517183746682.png" alt="image-20240517183746682" style="zoom:33%;" />
 
-We can record demonstration of an expert (for example recording of human drivers in self-driving cars training). We define $\{\hat{\tau}_1, ..., \hat{\tau}_K\}$, where each $\hat{\tau}_i$​​ is one trajectory of the expert. Isn't this supervised learning? Yes, this is known as **Behavior Cloning**. This method has several problems:
+We can record demonstration of an expert (for example recording of human drivers in self-driving cars training). We define {{< math >}}$\{\hat{\tau}_1, ..., \hat{\tau}_K\}${{< /math >}}, where each {{< math >}}$\hat{\tau}_i${{< /math >}}​​ is one trajectory of the expert. Isn't this supervised learning? Yes, this is known as **Behavior Cloning**. This method has several problems:
 
 - The experts only sample limited observation. The actor will not know what to do in other edge cases.
 - The agent will copy every behavior, even irrelevant actions.
@@ -2376,3 +2385,10 @@ The principle is that the teacher is always the best. As a result, the basic alg
 IRL is very similar to GAN:
 
 <img src="assets/image-20240517185920053.png" alt="image-20240517185920053" style="zoom:33%;" />
+
+
+
+
+
+
+
