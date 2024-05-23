@@ -1,12 +1,3 @@
----
-title: Deep Learning at National Taiwan University
-date: 2024-05-19
-math: true
-# image:
-#   placement: 2
-#   caption: 'Image credit: [**John Moeses Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)'
----
-
 The course website: [MACHINE LEARNING 2022 SPRING](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 
 # 2/18 Lecture 1: Introduction of Deep Learning
@@ -60,7 +51,7 @@ If $y$ and $\hat{y}_n$ are both probability distributions, we can use **cross en
 The goal is to find the best parameter:
 
 $$
-w^{*}, b^{*} = \arg\min_{w,b} L
+w^*, b^* = \arg\min_{w,b} L
 $$
 
 Solution: **Gradient Descent**
@@ -101,7 +92,7 @@ More pieces require more blue curves.
 How to represent a blue curve (**Hard Sigmoid** function): **Sigmoid** function
 
 $$
-y = c\:\frac{1}{1 + e^{-(b + wx_1)}} = c\:\text{sigmoid}(b + wx_1)
+y = c\frac{1}{1 + e^{-(b + wx_1)}} = c\text{sigmoid}(b + wx_1)
 $$
 
 We can change $w$, $c$ and $b$ to get sigmoid curves with different shapes.
@@ -152,7 +143,7 @@ $$
 $$
 
 1. (Randomly) pick initial values $\boldsymbol{\theta}^0$​
-2. calculate the gradient $\bold{g} = \begin{bmatrix} \frac{\partial{L}}{\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix} = \nabla L(\boldsymbol{\theta}^0)$ with $\boldsymbol{\theta}, \boldsymbol{g} \in \mathbb{R}^n$
+2. calculate the gradient {{< math >}}$\bold{g} = \begin{bmatrix} \frac{\partial{L}} {\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix} = \nabla L(\boldsymbol{\theta}^0)${{< /math >}} with $\boldsymbol{\theta}, \boldsymbol{g} \in \mathbb{R}^n$
 3. perform the update step: $\begin{bmatrix} \theta_1^1 \\ \theta_2^1 \\ \vdots \end{bmatrix} \leftarrow \begin{bmatrix} \theta_1^0 \\ \theta_2^0 \\ \vdots \end{bmatrix} - \begin{bmatrix} \eta \frac{\partial{L}}{\partial{\theta_1}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \eta \frac{\partial{L}}{\partial{\theta_2}}\bigg|_{\boldsymbol{\theta}=\boldsymbol{\theta}^0} \\ \vdots \end{bmatrix}$, namely $\boldsymbol{\theta}^1 \leftarrow \boldsymbol{\theta}^0 - \eta \boldsymbol{g}$
 
 The terms ***batch*** and ***epoch*** are different.
@@ -1939,6 +1930,7 @@ Assume we know the parameters $\boldsymbol{\theta}$ of the Network.
 Our goal is to find a new picture $\boldsymbol{x}$ that correspond to an output $\boldsymbol{y}$ that is most different from the true label (one-hot) $\boldsymbol{\hat{y}}$.
 
 Since we also want the noise to be as little as possible, we add an additional constraint: $d(\boldsymbol{x^0}, \boldsymbol{x}) \leq \epsilon$. $\epsilon$​ is a threshold such that we want the noise to be unable to be perceived by humans.
+
 $$
 \boldsymbol{x^*} = \arg
 \min_{\boldsymbol{x}, d(\boldsymbol{x^0}, \boldsymbol{x}) \leq \epsilon}
