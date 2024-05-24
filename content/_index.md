@@ -77,7 +77,7 @@ sections:
           location: Ann Arbor
           date_start: '2022-09-20'
           date_end: '2023-05-28'
-          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIsDeployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
+          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
     design:
       columns: '2'
   # - block: accomplishments
