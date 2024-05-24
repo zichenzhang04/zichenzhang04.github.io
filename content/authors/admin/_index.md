@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: RA @ Minji Lab | Prev - UM-BCI Lab
+role: RA @ Minji Lab | CV, NLP | Former @ UMDBI Lab
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -114,5 +114,9 @@ social:
 highlight_name: true
 ---
 
-I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, reinforcement learning algorithms, optimization methodologies, and web technologies. I'm interested in working in both academia and industry. I'm currently working in Minji Lab. I previously served as a research assistant at the U-M Direct Brain Interface Lab. Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
-{style="text-align: justify;"}
+I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, reinforcement learning algorithms, optimization methodologies, and web technologies.
+
+I'm interested in working in both academia and industry. I'm currently working in Minji Lab. I previously served as a research assistant at the U-M Direct Brain Interface Lab.
+
+Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
+{style="text-align: left;"}

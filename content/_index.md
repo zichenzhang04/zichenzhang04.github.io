@@ -62,16 +62,16 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: Research Assistant
-          company: Minji Lab at U-M
+        - title: Research Intern
+          company: U-M Minji Lab
           company_url: 'https://www.minjilab.com/home'
           # company_logo: org-gc
           location: Ann Arbor
           date_start: '2024-05-28'
           date_end: '2024-08-28'
-          description:
-        - title: Research Assistant
-          company: Direct Brain Interface Lab at U-M
+          description: My work focuses on the visualization and clustering of genome data
+        - title: Research Intern
+          company: U-M Direct Brain Interface Laboratory
           company_url: 'https://sites.google.com/umich.edu/umdbi/home'
           # company_logo: bci
           location: Ann Arbor
