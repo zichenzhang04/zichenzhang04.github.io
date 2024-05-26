@@ -10,7 +10,7 @@ authors:
   - admin
 ---
 
-***Acknowledgement***:
+***Acknowledgement:***
 
 The course website: [MACHINE LEARNING 2022 SPRING](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 
