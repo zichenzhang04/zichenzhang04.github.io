@@ -10,9 +10,13 @@ authors:
   - admin
 ---
 
-***Acknowledgement:***
+## Direct Link
 
-The course website: [MACHINE LEARNING 2022 SPRING](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
+The **PDF** version of this tutorial can be found at [Google Drive Link](https://drive.google.com/file/d/1In_jZ4LCz8IIgOKLiCrW8MsWS7mCm3RG/view?usp=sharing).
+
+## Acknowledgement
+
+This tutorial is based on slides from this course at NTU [Machine Learning 2022 Spring](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php).
 
 # 2/18 Lecture 1: Introduction of Deep Learning
 
@@ -49,7 +53,6 @@ $$
 where {{< math >}}$e_n${{< /math >}} can be calculated in many ways:
 
 **Mean Absolute Error (MAE)**
-
 {{< math >}}
 $$
 
@@ -124,7 +127,7 @@ How to represent a blue curve (**Hard Sigmoid** function): **Sigmoid** function
 {{< math >}}
 $$
 
-y = c\frac{1}{1 + e^{-(b + wx_1)}} = c\text{sigmoid}(b + wx_1)
+y = c\cdot \frac{1}{1 + e^{-(b + wx_1)}} = c\cdot \text{sigmoid}(b + wx_1)
 
 $$
 {{< /math >}}
@@ -142,7 +145,7 @@ From a model with high bias {{< math >}}$y=b+wx_1${{< /math >}} to the new model
 {{< math >}}
 $$
 
-y = b + \sum_{i} c_i \text{sigmoid}(b_i + w_i x_1)
+y = b + \sum_{i} c_i \cdot \text{sigmoid}(b_i + w_i x_1)
 
 $$
 {{< /math >}}
@@ -152,7 +155,7 @@ Also, if we consider multiple features {{< math >}}$y = b + \sum_{j} w_j x_j${{<
 {{< math >}}
 $$
 
-y = b + \sum_{i} c_i \text{sigmoid}(b_i + \sum_{j} w_{ij} x_j)
+y = b + \sum_{i} c_i \cdot \text{sigmoid}(b_i + \sum_{j} w_{ij} x_j)
 
 $$
 {{< /math >}}
@@ -253,11 +256,11 @@ Traing steps:
 
 Model bias: the potential function set of our model does not even include the desired optimal function/model.
 
-<img src="assets/image-20240503173246516.png" alt="image-20240503173246516" style="zoom: 25%;" />
+<img src="assets/image-20240526124823314.png" alt="image-20240526124823314" style="zoom:33%;" />
 
 Large loss doesn't always imply issues with model bias. There may be issues with *optimization*. That is, gradient descent does not always produce global minima. We may stuck at a local minima. In the language of function set, the set theoretically contain optimal function {{< math >}}$f^*(\boldsymbol{x})${{< /math >}}. However, we may never reach that.
 
-<img src="assets/image-20240503174333051.png" alt="image-20240503174333051" style="zoom: 33%;" />
+<img src="assets/image-20240526124848542.png" alt="image-20240526124848542" style="zoom:30%;" />
 
 ### Optimization issue
 
@@ -269,7 +272,7 @@ Large loss doesn't always imply issues with model bias. There may be issues with
 
 For example, here, the 5-layer should always do better or the same as the 4-layer network. This is clearly due to optimization problems.
 
-<img src="assets/image-20240504100948916.png" alt="image-20240504100948916" style="zoom:25%;" />
+<img src="assets/image-20240526125018446.png" alt="image-20240526125018446" style="zoom:33%;" />
 
 ### Overfitting
 
@@ -287,7 +290,7 @@ Solutions:
 
 For example, CNN is a more constrained version of the fully-connected vanilla neural network.
 
-<img src="assets/image-20240504102902784.png" alt="image-20240504102902784" style="zoom:25%;" />
+<img src="assets/image-20240526124935031.png" alt="image-20240526124935031" style="zoom:25%;" />
 
 ### Bias-Complexity Trade-off
 
@@ -610,10 +613,7 @@ One possible model is:
 {{< math >}}
 $$
 
-f(x) = \begin{cases}
-1 & g(x) > 0 \\
-2 & \text{else}
-\end{cases}
+f(x) = \begin{cases} 1 & g(x) > 0 \\ 2 & \text{else} \end{cases}
 
 $$
 {{< /math >}}
@@ -1859,6 +1859,28 @@ Cycle GAN can also be in both ways:
 
 It can also be applied on **text-style transfer**. This idea is also applied on Unsupervised Abstractive Summarization, Unsupervised Translation, Unsupervised ASR.
 
+## Extra: Diffusion Models
+
+<img src="assets/image-20240526211244237.png" alt="image-20240526211244237" style="zoom:30%;" />
+
+What does the **denoise module** look like specifically? It's easier to train a noise predicter than training a model that can "draw the cat" from scratch.
+
+<img src="assets/image-20240526211359794.png" alt="image-20240526211359794" style="zoom:30%;" />
+
+How can we obtain the training dataset for training a noise predictor? This involves the **Forward Process**, a.k.a. **Diffusion Process**.
+
+<img src="assets/image-20240526211903044.png" alt="image-20240526211903044" style="zoom:30%;" />
+
+We can then use our dataset to train the model.
+
+<img src="assets/image-20240526212022681.png" alt="image-20240526212022681" style="zoom:30%;" />
+
+How do we use it for text-to-image tasks?
+
+<img src="assets/image-20240526212332705.png" alt="image-20240526212332705" style="zoom:30%;" />
+
+<img src="assets/image-20240526212423419.png" alt="image-20240526212423419" style="zoom:33%;" />
+
 # 4/01 Recent Advance of Self-supervised learning for NLP
 
 ## Self-supervised Learning
@@ -2728,6 +2750,295 @@ The principle is that the teacher is always the best. As a result, the basic alg
 IRL is very similar to GAN:
 
 <img src="assets/image-20240517185920053.png" alt="image-20240517185920053" style="zoom:33%;" />
+
+# 5/27 Lecture 13: Network Compression
+
+## Preparation 1: Network Pruning and Lottery Ticket Hypothesis
+
+We may need to deploy ML models in resource-constrained environments because of lower-latency and privacy concerns.
+
+NN are typically *over-parameterized* -- there's significant redundant weights or neurons.
+
+How to evaluate the importance of a *weight*? We can either look at its **absolute value** or its {{< math >}}$b_i${{< /math >}}​ value as seen in life-long learning.
+
+How to evaluate the importance of a *neuron*? We can record the number of times it didn't output a {{< math >}}$0${{< /math >}}​ on a given dataset.
+
+After pruning, the accuracy will drop (hopefully not too much). We can then fine-tune on training data for recover. Remember not to prune too much at once, or the NN won’t recover. We can do the whole process iteratively.
+
+<img src="assets/image-20240526130630137.png" alt="image-20240526130630137" style="zoom:33%;" />
+
+**Weight pruning** is *not* always a very effective method. The network architecture becomes irregular (not fully-connected anymore). It also becomes harder to implement and harder to speed up (if you set the pruned weights to {{< math >}}$0${{< /math >}}, then you are not actually making the NN any smaller).
+
+<img src="assets/image-20240526131333421.png" alt="image-20240526131333421" style="zoom:30%;" />
+
+**Neuron pruning** is a *better* method as it helps the NN architecture stay regular. It's also easy to implement and easy to speedup.
+
+<img src="assets/image-20240526131735594.png" alt="image-20240526131735594" style="zoom:30%;" />
+
+How about simply train a smaller network?
+
+It is widely known that smaller network is more difficult to learn successfully. It is easier to first train a large NN and then gradually reduce its size.
+
+<img src="assets/image-20240526134830493.png" alt="image-20240526134830493" style="zoom:30%;" />
+
+<img src="assets/image-20240526135040715.png" alt="image-20240526135040715" style="zoom:33%;" />
+
+The **Lottery Ticket Hypothesis** states that a large network is like a bunch of sub-networks so that we have a higher chance of train the network successfully.
+
+## Preparation 2: Other ways
+
+### Knowledge Distillation
+
+There are two NNs: one large Teacher Net, one small Student Net.
+
+<img src="assets/image-20240526142007275.png" alt="image-20240526142007275" style="zoom:33%;" />
+
+The Student Net can hopefully learn the information that "1" is similar to "7" from the output of the Teacher Net. This is better than simply learning from the dataset labels. In practice, we may also use an ensemble NN to represent the Teacher Net.
+
+We may add **Temperature for softmax** {{< math >}}$T${{< /math >}}, a *hyperparameter*, when doing Knowledge Distillation:
+
+{{< math >}}
+$$
+
+y_i' = \frac{\exp{\frac{y_i}{T}}}{\sum_j \exp{\frac{y_j}{T}}}
+
+$$
+{{< /math >}}
+
+<img src="assets/image-20240526143053309.png" alt="image-20240526143053309" style="zoom:33%;" />
+
+The temperature can help make sharp distribution a little bit *smoother*. This is critical because vanilla softmax can produce results very similar to the one-hot label in the dataset.
+
+### Parameter Quantization
+
+#### Less Bits
+
+We can use less bits to represent a value (lowering the numerical precision).
+
+#### Weight Clustering
+
+<img src="assets/image-20240526145421852.png" alt="image-20240526145421852" style="zoom:38%;" />
+
+#### Huffman encoding
+
+We can represent frequent clusters by less bits, represent rare clusters by more bits.
+
+#### Binary Weights
+
+It's even possible to make your weights always {{< math >}}$+1${{< /math >}} or {{< math >}}$-1${{< /math >}}​. One classical example is Binary Connect.
+
+### Architecture Design: Depthwise Seperable Convolution
+
+#### Depthwise Convolution
+
+Depthwise convolution considers the interaction within a specific channel.
+
+<img src="assets/image-20240526150741632.png" alt="image-20240526150741632" style="zoom:33%;" />
+
+The filter number must be equal to the input channel number (each filter only considers one channel). The number of input channels must be equal to the number of output channels. The filters are {{< math >}}$k \times k${{< /math >}} matrices.
+
+However, one problem is that there is no interaction between channels.
+
+#### Pointwise Convolution
+
+Pointwise convolution considers the interaction amongst channels.
+
+<img src="assets/image-20240526151334552.png" alt="image-20240526151334552" style="zoom:36%;" />
+
+The filter number does not have to be equal to the input channel number. However, we force the filter size to be {{< math >}}$1 \times 1${{< /math >}}.
+
+#### Number of Parameters Comparison
+
+<img src="assets/image-20240526151706549.png" alt="image-20240526151706549" style="zoom:38%;" />
+
+Since {{< math >}}$O${{< /math >}} is usually a very large number, we can safely ignore {{< math >}}$\frac{1}{O}${{< /math >}}. Therefore, the standard CNN uses {{< math >}}$k^2${{< /math >}} times more parameters than Depthwise Seperable Convolution.
+
+#### Low rank approximation
+
+{{< math >}}
+$$
+
+M = WN=U(VN)=(UV)N
+
+$$
+{{< /math >}}
+
+Therefore, we can approximate the matrix {{< math >}}$W=UV${{< /math >}} though there're some constraints on {{< math >}}$W${{< /math >}} (it's low-rank).
+
+<img src="assets/image-20240526152119201.png" alt="image-20240526152119201" style="zoom:38%;" />
+
+The Depthwise Seperable Convolution is very similar to this idea of using two layers to replace one layer in order to reduce the parameter size.
+
+<img src="assets/image-20240526153043698.png" alt="image-20240526153043698" style="zoom:33%;" />
+
+# 6/03 Lecture 14: Life-Long Learning
+
+## Preparation 1: Catastrophic Forgetting
+
+### Challenges
+
+Life-Long Learning (**LLL**) is also known as **Continuous Learning**, **Never Ending Learning** or **Incremental Learning**.
+
+This problem is also evident in real-world applications:
+
+<img src="assets/image-20240526213202226.png" alt="image-20240526213202226" style="zoom:28%;" />
+
+One example of the problem LLL tries to tackle is:
+
+<img src="assets/image-20240526214316424.png" alt="image-20240526214316424" style="zoom:33%;" />
+
+<img src="assets/image-20240526214334996.png" alt="image-20240526214334996" style="zoom:38%;" />
+
+The network has enough capacity to learn both tasks. However, it still failed.
+
+<img src="assets/image-20240526214836392.png" alt="image-20240526214836392" style="zoom:33%;" />
+
+It's not because machine are not able to do it, but it just didn't do it.
+
+Even though multi-task training can solve this problem, this may lead to issues concerning **computation** and **storage**. For example, if we want to train the model on the dataset of the 1000-th task, we have to store the previous 999 tasks. However, multi-task training can be considered as the *upper bound* of LLL.
+
+Training a model for each task is also a possible solution. However, we cannot store all the models obviously for storage reasons. More importantly, this way, knowledge cannot transfer across different tasks.
+
+### Live-Long v.s. Transfer
+
+LLL is different from transfer learning. In transfer learning, we don't care about whether the model can still do the old task.
+
+### Evaluation
+
+<img src="assets/image-20240526221251157.png" alt="image-20240526221251157" style="zoom:38%;" />
+
+Here, {{< math >}}$R_{i,j}${{< /math >}} means the performance (accuracy) on task {{< math >}}$j${{< /math >}} after training task {{< math >}}$i${{< /math >}}​.
+
+- If {{< math >}}$i>j${{< /math >}}, after training on task {{< math >}}$i${{< /math >}}, does the model forgot task {{< math >}}$j${{< /math >}}?
+- If {{< math >}}$i<j${{< /math >}}, after training on task {{< math >}}$i${{< /math >}}, can we transfer the skill of task {{< math >}}$i${{< /math >}} to task {{< math >}}$j${{< /math >}}?
+
+We can define the accuracy to be:
+
+{{< math >}}
+$$
+
+\text{score} = \frac{1}{T} \sum_{i=1}^{T} R_{T,i}
+
+$$
+{{< /math >}}
+
+Alternatively, we can define the accuracy using a metric called **Backward Transfer**:
+
+{{< math >}}
+$$
+
+\text{score} = \frac{1}{T-1} \sum_{i=1}^{T-1} R_{T,i} - R_{i,i}
+
+$$
+{{< /math >}}
+
+Since {{< math >}}$R_{T,i}${{< /math >}} is usually smaller than {{< math >}}$R_{i,i}${{< /math >}}, the score is usually *negative*.
+
+We are also interested in the knowledge transfer. Therefore, there's another score metric called Forward Transfer:
+
+{{< math >}}
+$$
+
+\text{score} = \frac{1}{T-1} \sum_{i=2}^{T} R_{i-1,i} - R_{0,i}
+
+$$
+{{< /math >}}
+
+## Preparation 2: Solutions
+
+### Selective Synaptic Plasticity
+
+This is a **regularization**-based approach.
+
+Here is a clear visualization explaining why Catastrophic Forgetting would occur.
+
+<img src="assets/image-20240527101146833.png" alt="image-20240527101146833" style="zoom:33%;" />
+
+The basic idea of Selective Synaptic Plasticity is that some parameters in the model are important to the previous tasks. We shall only change the *unimportant* parameters.
+
+We can revise the loss function that we want to minimize.
+
+{{< math >}}
+$$
+
+L'(\boldsymbol{\theta}) = L(\boldsymbol{\theta}) +
+\lambda \sum_i b_i (\theta_i - \theta_{i}^{b})^2
+
+$$
+{{< /math >}}
+
+Each parameter learned from the previous tasks {{< math >}}$\theta_i^b${{< /math >}} has a "guard" {{< math >}}$b_i${{< /math >}} representing how important the parameter is to the previous tasks. {{< math >}}$\theta_i${{< /math >}} is the parameter to be learning. {{< math >}}$L(\boldsymbol{\theta})${{< /math >}} is the loss for current task.
+
+- If {{< math >}}$b_i=0${{< /math >}}, there's no constraint on {{< math >}}$\theta_i${{< /math >}}. This will lead to Catastrophic Forgetting.
+- If {{< math >}}$b_i = \infty${{< /math >}}, {{< math >}}$\theta_i${{< /math >}} would always be equal to {{< math >}}$\theta_i^b${{< /math >}}​. This will prevent the model from learning anything from training, leading to **Intransigence**.
+
+We humans set the values of {{< math >}}$b_i${{< /math >}}. Different papers have talked about different ways to calculate the value of {{< math >}}$b_i${{< /math >}}.
+
+<img src="assets/image-20240527103024717.png" alt="image-20240527103024717" style="zoom:33%;" />
+
+There's also an older method called Gradient Episodic Memory (GEM):
+
+<img src="assets/image-20240527105918632.png" alt="image-20240527105918632" style="zoom:33%;" />
+
+The learning order also plays a role in whether Catastrophic Forgetting occurs. Thus we have **Curriculum Learning**:
+
+<img src="assets/image-20240527111044274.png" alt="image-20240527111044274" style="zoom:33%;" />
+
+# 6/10 Lecture 15: Meta Learning
+
+## Meta Learning
+
+<img src="assets/image-20240527125929170.png" alt="image-20240527125929170" style="zoom:33%;" />
+
+We can define {{< math >}}$\phi${{< /math >}}, the **learnable components** of the **learning algorithm** {{< math >}}$F_{\phi}${{< /math >}}. For example, in DL, {{< math >}}$\phi${{< /math >}} may include NN architecture, initial parameters, learning rate, etc.
+
+We also need to define loss function {{< math >}}$L(\phi)${{< /math >}} for learning algorithm {{< math >}}$F_{\phi}${{< /math >}}.  We need support of different tasks to conduct meta learning. This is often called **Across-Task Training**, whereas the vanilla machine learning is called **Within-Task Training**.
+
+<img src="assets/image-20240527133106496.png" alt="image-20240527133106496" style="zoom:33%;" />
+
+How do we evaluate the loss? We can evaluate the classifier on the testing set. Note that training examples (often called **support set**) and testing examples (often called **query set**) here are both in the training *task*.
+
+<img src="assets/image-20240527132844607.png" alt="image-20240527132844607" style="zoom:38%;" />
+
+The loss {{< math >}}$l^i${{< /math >}} is the sum of cross entropy for each datapoint. We can then define our total loss {{< math >}}$L(\phi) = \sum_{i=1}^{N} l^i${{< /math >}}, where {{< math >}}$N${{< /math >}}​ is the number of training *tasks*. We can then find the optimal {{< math >}}$\phi^* = \arg \min_{\phi} L(\phi)${{< /math >}}​​.
+
+Here, the loss of meta learning is different from ML:
+
+<img src="assets/image-20240527135738166.png" alt="image-20240527135738166" style="zoom:28%;" />
+
+Using the optimization approach, if you know how to compute {{< math >}}$\frac{\partial L(\phi)}{\partial \phi}${{< /math >}}, gradient descent is your friend. What if {{< math >}}$L(\phi)${{< /math >}} is not differentiable (for example, {{< math >}}$\phi${{< /math >}} is a *discrete* value such as the number of layers in the network)? We can use Reinforcement Learning or Evolutionary Algorithm. We can therefore get a learned “learning algorithm” {{< math >}}$F_{\phi^*}${{< /math >}}.
+
+In typical ML, you compute the loss based on *training* examples. In meta learning, you compute the loss based on *testing* examples.
+
+The general framework of meta learning looks like this:
+
+<img src="assets/image-20240527133632296.png" alt="image-20240527133632296" style="zoom:33%;" />
+
+Note that in the testing time, meta learning is different from vanilla ML as it uses **Across-Task Testing**. The process of one Within-Task Training and one Within-Task Testing is called one **episode**.
+
+<img src="assets/image-20240527135358082.png" alt="image-20240527135358082" style="zoom:33%;" />
+
+Across-Task Training is often called the outer loop and Within-Task Training is often called the inner loop.
+
+<img src="assets/image-20240527140325362.png" alt="image-20240527140325362" style="zoom:30%;" />
+
+Meta learning is often used to achieve **one-shot learning** -- we only need a few examples to train a network if the learning algorithm is good enough.
+
+Machine learning is about finding a function {{< math >}}$f${{< /math >}}. Meta learning is about finding a function {{< math >}}$F${{< /math >}} that finds a function {{< math >}}$f${{< /math >}}​.
+
+What you know about ML can usually apply to meta learning:
+
+- Overfitting on training tasks
+- Get more training tasks to improve performance
+- Task augmentation
+- There are also hyperparameters when learning a learning algorithm (But hopefully, we can obtain an optimal learning algorithm that can be applied on future tasks)
+- Development tasks, alongside training tasks and testing tasks (just like development set used in ML)
+
+Recalled the gradient descent algorithm:
+
+<img src="assets/image-20240527141850831.png" alt="image-20240527141850831" style="zoom:33%;" />
+
+We can learn the initialized parameter {{< math >}}$\boldsymbol{\theta}${{< /math >}} (this idea is in MAML).
 
 
 
