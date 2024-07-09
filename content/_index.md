@@ -62,14 +62,30 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: Co-Founder & CTO
+          company: Collage
+          company_url: 'https://collageapp.info/'
+          # company_logo: org-gc
+          location: Remote
+          date_start: '2024-04-28'
+          date_end: ''
+          description: Applying LLMs, prompt engineering and recommendation algorithms to transform college experience
         - title: Research Intern
           company: U-M Minji Lab
           company_url: 'https://www.minjilab.com/home'
           # company_logo: org-gc
           location: Ann Arbor
           date_start: '2024-05-28'
-          date_end: '2024-08-28'
-          description: My work focuses on the visualization and clustering of genome data
+          date_end: ''
+          description: Developed an efficient sorting algorithm called ComplexSorter in Python Pybedtools, Numpy, Pandas, and Matplotlib that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them using different criteria based on user prompt
+        - title: Core Member
+          company: Michigan Hackers
+          company_url: 'https://michhackers.com/'
+          # company_logo: org-gc
+          location: Ann Arbor
+          date_start: '2022-09-01'
+          date_end: ''
+          description: Helped to build MWalk, an Android mobile app written in Java that tracks U-M students’ walking workouts, speed and distance, using Health Platform API and Firebase
         - title: Research Intern
           company: U-M Direct Brain Interface Laboratory
           company_url: 'https://sites.google.com/umich.edu/umdbi/home'
@@ -77,7 +93,7 @@ sections:
           location: Ann Arbor
           date_start: '2022-09-20'
           date_end: '2023-05-28'
-          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine) and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
+          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
     design:
       columns: '2'
   # - block: accomplishments
@@ -122,10 +138,41 @@ sections:
   #         url: ''
   #   design:
   #     columns: '2'
+
+  - block: portfolio
+    id: projects
+    content:
+      title: Projects
+      filters:
+        folders:
+          - project
+      # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
+      default_button_index: 0
+      # Filter toolbar (optional).
+      # Add or remove as many filters (`filter_button` instances) as you like.
+      # To show all items, set `tag` to "*".
+      # To filter by a specific tag, set `tag` to an existing tag name.
+      # To remove the toolbar, delete the entire `filter_button` block.
+      buttons:
+        - name: All
+          tag: '*'
+        - name: Algorithm
+          tag: Algorithm
+        - name: ML
+          tag: ML
+        - name: NLP
+          tag: NLP
+    design:
+      # Choose how many columns the section has. Valid values: '1' or '2'.
+      columns: '1'
+      view: showcase
+      # For Showcase view, flip alternate rows?
+      flip_alt_rows: false
+
   - block: collection
     id: posts
     content:
-      title: Recent Posts
+      title: Posts
       subtitle: ''
       text: ''
       # Choose how many pages you would like to display (0 = all pages)
@@ -149,33 +196,6 @@ sections:
       # Choose a layout view
       view: compact
       columns: '2'
-  # - block: portfolio
-  #   id: projects
-  #   content:
-  #     title: Projects
-  #     filters:
-  #       folders:
-  #         - project
-  #     # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
-  #     default_button_index: 0
-  #     # Filter toolbar (optional).
-  #     # Add or remove as many filters (`filter_button` instances) as you like.
-  #     # To show all items, set `tag` to "*".
-  #     # To filter by a specific tag, set `tag` to an existing tag name.
-  #     # To remove the toolbar, delete the entire `filter_button` block.
-  #     buttons:
-  #       - name: All
-  #         tag: '*'
-  #       - name: Deep Learning
-  #         tag: Deep Learning
-  #       - name: Other
-  #         tag: Demo
-  #   design:
-  #     # Choose how many columns the section has. Valid values: '1' or '2'.
-  #     columns: '1'
-  #     view: showcase
-  #     # For Showcase view, flip alternate rows?
-  #     flip_alt_rows: false
 
   # - block: markdown
   #   content:
