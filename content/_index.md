@@ -77,7 +77,7 @@ sections:
           location: Ann Arbor
           date_start: '2024-05-28'
           date_end: ''
-          description: Developed an efficient sorting algorithm called ComplexSorter in Python Pybedtools, Numpy, Pandas, and Matplotlib that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them using different criteria based on user prompt
+          description: Developed an efficient sorting algorithm called ComplexSorter in Python and C/C++, using Pybedtools, Pyranges, Pandas, Numpy, Matplotlib, zlib, and Dask, that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them using different schemes based on user prompt
         - title: Core Member
           company: Michigan Hackers
           company_url: 'https://michhackers.com/'

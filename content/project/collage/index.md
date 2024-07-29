@@ -1,6 +1,6 @@
 ---
 title: Collage.com
-summary: An AI-driven education technology platform that uses React, Flask, custom LLM, LangChain and OpenAI API to personalize class schedules and career exploration, enhancing user engagement and academic planning.
+summary: An AI-driven education technology platform that uses LlamaIndex, scikit-learn, Pandas, React Mantine, Flask, Natural Language Toolkit, LangChain, Heroku CI/CD Pipeline, and OpenAI API (GPT4-o & DALL-E Models) to personalize class schedules and career exploration, enhancing user engagement and academic planning
 tags:
   - ML
   - NLP
