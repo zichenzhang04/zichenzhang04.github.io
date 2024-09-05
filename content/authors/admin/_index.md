@@ -21,7 +21,7 @@ role: RA @ Minji Lab | CV, NLP | Former @ UMDBI Lab
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: University of Michigan CS
+  - name: University of Michigan
     url: https://cse.engin.umich.edu/
 
 # Short bio (displayed in user profile at end of posts)
@@ -29,15 +29,15 @@ bio: I'm passionate about deep learning models, reinforcement learning algorithm
 
 # Interests to show in About widget
 interests:
-  - Deep Learning Models
-  - Domain Adaptation
+  - Multimodal Learning
+  - Adversarial Attacks
   - Explainable AI
 
 # Education to show in About widget
 education:
   courses:
     - course: B.S. in Computer Science
-      institution: University of Michigan
+      institution: University of Michigan-Ann Arbor
       year: 2026
 
 # Skills
@@ -116,7 +116,7 @@ highlight_name: true
 
 I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, reinforcement learning algorithms, optimization methodologies, and web technologies.
 
-I'm interested in working in both academia and industry. I'm currently working in Minji Lab. I previously served as a research assistant at the U-M Direct Brain Interface Lab.
+I'm interested in working in both academia and industry. I previously served as a research assistant at the U-M Minji Lab and Direct Brain Interface Lab.
 
 Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
 {style="text-align: left;"}

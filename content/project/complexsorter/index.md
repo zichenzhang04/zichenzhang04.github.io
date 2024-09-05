@@ -1,6 +1,6 @@
 ---
-title: ComplexSorter
-summary: A scalable Python Toolkit that sorts gigantic genomic datasets like ChIA-Drop efficiently in different schemes
+title: MIA-Sort
+summary: A scalable Python library that sorts gigantic genomic datasets like ChIA-Drop efficiently in different schemes
 tags:
   - Algorithm
   - Python

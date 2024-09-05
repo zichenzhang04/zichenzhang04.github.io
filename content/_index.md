@@ -66,7 +66,7 @@ sections:
           company: Collage
           company_url: 'https://collageapp.info/'
           # company_logo: org-gc
-          location: Remote
+          location: Hybrid
           date_start: '2024-04-28'
           date_end: ''
           description: Applying LLMs, prompt engineering and recommendation algorithms to transform college experience
@@ -76,8 +76,8 @@ sections:
           # company_logo: org-gc
           location: Ann Arbor
           date_start: '2024-05-28'
-          date_end: ''
-          description: Developed an efficient sorting algorithm called ComplexSorter in Python and C/C++, using Pybedtools, Pyranges, Pandas, Numpy, Matplotlib, zlib, and Dask, that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them using different schemes based on user prompt
+          date_end: '2024-08-29'
+          description: Developed MIA-Sort, an efficient sorting algorithm that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them in different schemes
         - title: Core Member
           company: Michigan Hackers
           company_url: 'https://michhackers.com/'
