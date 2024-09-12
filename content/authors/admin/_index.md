@@ -114,9 +114,9 @@ social:
 highlight_name: true
 ---
 
-I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, reinforcement learning algorithms, optimization methodologies, and web technologies.
+I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, web technologies and entrepreneurship.
 
-I'm interested in working in both academia and industry. I previously served as a research assistant at the U-M Minji Lab and Direct Brain Interface Lab.
+I’m interested in both the academia and the entrepreneurial world. I co-founded Collage, an EdTech startup to assist students with course scheduling. I previously served as a research assistant at the U-M Minji Lab and Direct Brain Interface Lab.
 
 Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
 {style="text-align: left;"}
