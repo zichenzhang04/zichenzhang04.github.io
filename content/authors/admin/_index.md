@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: RA @ Minji Lab | CV, NLP | Former @ UMDBI Lab
+role: Former RA @ Minji Lab, @ UMDBI Lab | Co-Founder @ Collage
 
 # Organizations/Affiliations to show in About widget
 organizations:
