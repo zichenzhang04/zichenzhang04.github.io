@@ -172,11 +172,11 @@ sections:
   - block: collection
     id: posts
     content:
-      title: Posts
+      title: Blogs
       subtitle: ''
       text: ''
       # Choose how many pages you would like to display (0 = all pages)
-      count: 1
+      count: 0
       # Filter on criteria
       filters:
         folders:
@@ -194,7 +194,7 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: compact
+      view: card
       columns: '2'
 
   # - block: markdown

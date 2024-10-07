@@ -1,5 +1,5 @@
 ---
-title: Deep Learning Overview Inspired by NTU
+title: A Deep Learning Tutorial Written for Everyone
 summary: A brief introduction to deep learning models and theories inspired by a course at NTU
 date: 2024-05-19
 tags:
