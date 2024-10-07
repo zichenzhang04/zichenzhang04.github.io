@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Zichen Zhang
+title: Zichen "Charlie" Zhang
 
 # Name pronunciation (optional)
 name_pronunciation:
@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Former RA @ Minji Lab, @ UMDBI Lab | Co-Founder @ Collage
+role: Former RA @ Minji Lab, @ UM-DBI Lab | Co-Founder @ Collage
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -25,13 +25,13 @@ organizations:
     url: https://cse.engin.umich.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: I'm passionate about deep learning models, reinforcement learning algorithms, optimization methodologies, and web technologies.
+bio: I'm passionate about deep learning models, web technologies, and entrepreneurship
 
 # Interests to show in About widget
 interests:
   - Multimodal Learning
-  - Adversarial Attacks
   - Explainable AI
+  - Distributed Systems for ML
 
 # Education to show in About widget
 education:
@@ -114,7 +114,7 @@ social:
 highlight_name: true
 ---
 
-I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, web technologies and entrepreneurship.
+I'm a third-year undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, web technologies and entrepreneurship.
 
 I’m interested in both the academia and the entrepreneurial world. I co-founded Collage, an EdTech startup to assist students with course scheduling. I previously served as a research assistant at the U-M Minji Lab and Direct Brain Interface Lab.
 
