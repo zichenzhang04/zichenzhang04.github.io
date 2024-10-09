@@ -114,9 +114,9 @@ social:
 highlight_name: true
 ---
 
-I'm a third-year undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, web technologies and entrepreneurship.
+I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, web technologies and entrepreneurship.
 
-I’m interested in both the academia and the entrepreneurial world. I co-founded Collage, an EdTech startup to assist students with course scheduling. I previously served as a research assistant at the U-M Minji Lab and Direct Brain Interface Lab.
+I’m interested in both the academia and the entrepreneurial world. I'm always interested in designing efficient algorithms and methods that handle large amounts of data, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) and Dr. [Jane Huggins](https://medicine.umich.edu/dept/mni/jane-huggins-phd) at the U-M Minji Lab and Direct Brain Interface Lab, respectively. I also co-founded Collage, an EdTech startup to assist students with course scheduling.
 
 Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
 {style="text-align: left;"}
