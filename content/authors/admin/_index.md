@@ -29,9 +29,9 @@ bio: I'm passionate about deep learning models, web technologies, and entreprene
 
 # Interests to show in About widget
 interests:
-  - Multimodal Learning
-  - Explainable AI
-  - Distributed Systems for ML
+  - Training unified foundation models that accepts multimodal inputs, including touch, images, videos, language, and audio
+  - Building efficient multimodal models from efficiently fine-tuning pre-trained unimodal model using limited amount of downstream data
+  - Improving unimodal accuracy by transferring representations learned from other modalities
 
 # Education to show in About widget
 education:
