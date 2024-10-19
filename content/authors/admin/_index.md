@@ -37,7 +37,7 @@ interests:
 education:
   courses:
     - course: B.S. in Computer Science
-      institution: University of Michigan-Ann Arbor
+      institution: University of Michigan
       year: 2026
 
 # Skills
