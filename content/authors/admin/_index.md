@@ -114,7 +114,7 @@ social:
 highlight_name: true
 ---
 
-I'm an undergraduate student at the University of Michigan, majoring in Computer Science.  I'm passionate about training unified foundation models that accept multimodal inputs, including touch, images, videos, language, and audio. I'm enthusiastic about building efficient multimodal models by efficiently fine-tuning pre-trained unimodal models using a limited amount of downstream data and improving unimodal accuracy by transferring representations learned from other modalities.
+I'm a third-year undergraduate student at the University of Michigan, majoring in Computer Science.  I'm passionate about training unified foundation models that accept multimodal inputs, including touch, images, videos, language, and audio. I'm enthusiastic about building efficient multimodal models by efficiently fine-tuning pre-trained unimodal models using a limited amount of downstream data and improving unimodal accuracy by transferring representations learned from other modalities.
 
 I've designed efficient algorithms and methods that handle large amounts of data, including the [MIA-Sort Python Library](https://pypi.org/project/miasort/) at the Minji Lab, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim). I also implemented a study to find factors influencing Brain-Computer Interface (BCI) system performance and user satisfaction, and I was honored to be advised by Dr. [Jane Huggins](https://medicine.umich.edu/dept/mni/jane-huggins-phd) at the Direct Brain Interface Lab.
 
