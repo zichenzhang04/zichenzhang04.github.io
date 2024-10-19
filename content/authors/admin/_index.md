@@ -29,9 +29,9 @@ bio: I'm passionate about deep learning models, web technologies, and entreprene
 
 # Interests to show in About widget
 interests:
-  - Training unified foundation models that accepts multimodal inputs, including touch, images, videos, language, and audio
-  - Building efficient multimodal models from efficiently fine-tuning pre-trained unimodal model using limited amount of downstream data
-  - Improving unimodal accuracy by transferring representations learned from other modalities
+  - Unified foundation models
+  - Efficiently fine-tuning using little downstream data
+  - Transfer learning from other modalities
 
 # Education to show in About widget
 education:
@@ -114,9 +114,11 @@ social:
 highlight_name: true
 ---
 
-I'm an undergraduate student at the University of Michigan, majoring in Computer Science. I'm passionate about deep learning models, web technologies and entrepreneurship.
+I'm an undergraduate student at the University of Michigan, majoring in Computer Science.  I'm passionate about training unified foundation models that accept multimodal inputs, including touch, images, videos, language, and audio. I'm enthusiastic about building efficient multimodal models by efficiently fine-tuning pre-trained unimodal models using a limited amount of downstream data and improving unimodal accuracy by transferring representations learned from other modalities.
 
-I’m interested in both the academia and the entrepreneurial world. I'm always interested in designing efficient algorithms and methods that handle large amounts of data, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) and Dr. [Jane Huggins](https://medicine.umich.edu/dept/mni/jane-huggins-phd) at the U-M Minji Lab and Direct Brain Interface Lab, respectively. I also co-founded Collage, an EdTech startup to assist students with course scheduling.
+I've designed efficient algorithms and methods that handle large amounts of data, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) and Dr. [Jane Huggins](https://medicine.umich.edu/dept/mni/jane-huggins-phd) at the U-M Minji Lab and Direct Brain Interface Lab, respectively.
+
+I'm also interested in entrepreneurship and web technologies. I co-founded Collage, an EdTech startup to assist students with course scheduling using LLM agents.
 
 Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
 {style="text-align: left;"}
