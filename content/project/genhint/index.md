@@ -1,6 +1,6 @@
 ---
-title: GenHint
-summary: GenHint won the MHacks 2024 Honorable Mention of Best Developer Tool Track. Unlike conventional AI coding assistants like GitHub Copilot, GenHint does not give you codes directly. Instead, it generates code templates with "TODO" comments and explains each subproblem for you. Download GenHint at VS Code Extensions.
+title: GenHint (🏆MHacks 2024 Best Developer Tool Winner)
+summary: Unlike conventional AI coding assistants like GitHub Copilot, GenHint does not give you codes directly. Instead, it generates code templates with "TODO" comments and explains each subproblem for you. It's powered by Llama-3-70B model hosted on Groq. Download GenHint at VS Code Extensions.
 tags:
   - NLP
   - LLM
