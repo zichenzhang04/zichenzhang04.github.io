@@ -65,7 +65,7 @@ sections:
         - title: Co-Founder & CTO
           company: Collage
           company_url: 'https://collageapp.info/'
-          # company_logo: org-gc
+          company_logo: collage
           location: Hybrid
           date_start: '2024-04-28'
           date_end: ''
@@ -73,7 +73,7 @@ sections:
         - title: Research Intern
           company: U-M Minji Lab
           company_url: 'https://www.minjilab.com/home'
-          # company_logo: org-gc
+          company_logo: uofm
           location: Ann Arbor
           date_start: '2024-05-28'
           date_end: '2024-08-29'
@@ -81,7 +81,7 @@ sections:
         - title: Core Member
           company: Michigan Hackers
           company_url: 'https://michhackers.com/'
-          # company_logo: org-gc
+          company_logo: michiganhackers
           location: Ann Arbor
           date_start: '2022-09-01'
           date_end: ''
@@ -89,7 +89,7 @@ sections:
         - title: Research Intern
           company: U-M Direct Brain Interface Laboratory
           company_url: 'https://sites.google.com/umich.edu/umdbi/home'
-          # company_logo: bci
+          company_logo: uofm
           location: Ann Arbor
           date_start: '2022-09-20'
           date_end: '2023-05-28'
@@ -196,6 +196,18 @@ sections:
       # Choose a layout view
       view: card
       columns: '2'
+
+  - block: markdown
+    id: funfacts
+    content:
+      title: Fun Facts About Me
+      text: "
+      - My Chinese name is 张紫宸 (Zhang Zichen). In Chinese, 'Zi' (紫) means 'purple,' which traditionally represents nobility, elegance, and auspiciousness. 'Chen' (宸) refers to a palace or the residence of an emperor, symbolizing dignity and grandeur. Together, the name 'Zichen' conveys a sense of royalty, grace, and aspiration for greatness.
+
+      - I was born and raised in **Zhangjiagang**, a small Chinese city close to Suzhou. I studied at the [Jiangsu Provincial Liangfeng Middle School](https://jslfgz.zjgedu.cn/xxgk/xxjj) in China before transferring to [Rochester Adams High School](https://ahs.rochester.k12.mi.us/) in Rochester Hills, Michigan. *Go Highlanders*!
+
+      - I love Chinese calligraphy and I started learning it since elementary school. Please follow me on instagram to see more of my works!
+      "
 
   # - block: markdown
   #   content:
