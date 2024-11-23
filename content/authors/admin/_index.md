@@ -136,7 +136,7 @@ I'm a third-year undergraduate student at the University of Michigan, majoring i
 
 I've designed efficient algorithms that handle large amounts of data, including the [MIA-Sort Python Library](https://pypi.org/project/miasort/), and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) at the Minji Lab. I also implemented a study to find factors influencing **Brain-Computer Interface** (BCI) system performance and user satisfaction, and I was honored to be advised by Dr. [Jane Huggins](https://medicine.umich.edu/dept/mni/jane-huggins-phd) at the Direct Brain Interface Lab.
 
-I'm also interested in **entrepreneurship** and **web technologies**. I co-founded [Collage](https://collageapp.info/), an **EdTech startup** to assist students with course scheduling using **LLM agents**, and I'm currently leading the tech team as the Chief Technology Officer. Follow our [GitHub](https://github.com/collage-us/collage) and [LinkedIn](https://www.linkedin.com/company/collageus/) for more information.
+I'm also interested in **entrepreneurship** and **web technologies**. I co-founded [Collage](https://mycollage.us/), an **EdTech startup** to assist students with course scheduling using **LLM agents**, and I'm currently leading the tech team as the Chief Technology Officer. Follow our [GitHub](https://github.com/collage-us/collage) and [LinkedIn](https://www.linkedin.com/company/collageus/) for more information.
 
 Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
 {style="text-align: left;"}
