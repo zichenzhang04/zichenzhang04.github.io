@@ -39,7 +39,7 @@ sections:
   - block: about.biography
     id: about
     content:
-      title: Biography
+      title: About Me 👋
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
   # - block: skills
@@ -200,7 +200,7 @@ sections:
   - block: markdown
     id: funfacts
     content:
-      title: Fun Facts About Me
+      title: Fun Facts
       text: "
       - My Chinese name is 张紫宸 (Zhang Zichen). In Chinese, 'Zi' (紫) means 'purple,' which traditionally represents nobility, elegance, and auspiciousness. 'Chen' (宸) refers to a palace or the residence of an emperor, symbolizing dignity and grandeur. Together, the name 'Zichen' conveys a sense of royalty, grace, and aspiration for greatness.
 
