@@ -16,9 +16,15 @@ main:
   - name: Blogs
     url: '#posts'
     weight: 30
+  - name: Awards
+    url: '#awards'
+    weight: 31
   - name: Fun Facts
     url: '#funfacts'
     weight: 40
+  - name: Gallery
+    url: '#gallery'
+    weight: 41
   # - name: Talks
   #   url: '#talks'
   #   weight: 40
