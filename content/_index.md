@@ -50,53 +50,7 @@ sections:
   #     username: admin
   #   design:
   #     columns: '1'
-  - block: experience
-    id: experience
-    content:
-      title: Experience
-      # Date format for experience
-      #   Refer to https://docs.hugoblox.com/customization/#date-format
-      date_format: Jan 2006
-      # Experiences.
-      #   Add/remove as many `experience` items below as you like.
-      #   Required fields are `title`, `company`, and `date_start`.
-      #   Leave `date_end` empty if it's your current employer.
-      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-      items:
-        - title: Co-Founder & CTO
-          company: Collage
-          company_url: 'https://mycollage.us/'
-          company_logo: collage
-          location: Hybrid
-          date_start: '2024-04-28'
-          date_end: ''
-          description: Applying LLMs, prompt engineering and recommendation algorithms to transform college experience
-        - title: Research Intern
-          company: U-M Minji Lab
-          company_url: 'https://www.minjilab.com/home'
-          company_logo: uofm
-          location: Ann Arbor
-          date_start: '2024-05-28'
-          date_end: '2024-08-29'
-          description: Developed MIA-Sort, an efficient sorting algorithm that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them in different schemes
-        - title: Core Member
-          company: Michigan Hackers
-          company_url: 'https://michhackers.com/'
-          company_logo: michiganhackers
-          location: Ann Arbor
-          date_start: '2022-09-01'
-          date_end: ''
-          description: Helped to build MWalk, an Android mobile app written in Java that tracks U-M students’ walking workouts, speed and distance, using Health Platform API and Firebase
-        - title: Research Intern
-          company: U-M Direct Brain Interface Laboratory
-          company_url: 'https://sites.google.com/umich.edu/umdbi/home'
-          company_logo: uofm
-          location: Ann Arbor
-          date_start: '2022-09-20'
-          date_end: '2023-05-28'
-          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
-    design:
-      columns: '2'
+
   # - block: accomplishments
   #   content:
   #     # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
@@ -167,9 +121,57 @@ sections:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
       view: compact
-      # For Showcase view, flip alternate rows?
-      flip_alt_rows: false
+      # # For Showcase view, flip alternate rows?
+      # flip_alt_rows: false
 
+  - block: experience
+    id: experience
+    content:
+      title: Experience
+      # Date format for experience
+      #   Refer to https://docs.hugoblox.com/customization/#date-format
+      date_format: Jan 2006
+      # Experiences.
+      #   Add/remove as many `experience` items below as you like.
+      #   Required fields are `title`, `company`, and `date_start`.
+      #   Leave `date_end` empty if it's your current employer.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+        - title: Co-Founder & CTO
+          company: Collage
+          company_url: 'https://mycollage.us/'
+          company_logo: collage
+          location: Hybrid
+          date_start: '2024-04-28'
+          date_end: ''
+          description: Applying LLMs, prompt engineering and recommendation algorithms to transform college experience
+        - title: Research Intern
+          company: U-M Minji Lab
+          company_url: 'https://www.minjilab.com/home'
+          company_logo: uofm
+          location: Ann Arbor
+          date_start: '2024-05-28'
+          date_end: '2024-08-29'
+          description: Developed MIA-Sort, an efficient sorting algorithm that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them in different schemes
+        - title: Core Member
+          company: Michigan Hackers
+          company_url: 'https://michhackers.com/'
+          company_logo: michiganhackers
+          location: Ann Arbor
+          date_start: '2022-09-01'
+          date_end: ''
+          description: Helped to build MWalk, an Android mobile app written in Java that tracks U-M students’ walking workouts, speed and distance, using Health Platform API and Firebase
+        - title: Research Intern
+          company: U-M Direct Brain Interface Laboratory
+          company_url: 'https://sites.google.com/umich.edu/umdbi/home'
+          company_logo: uofm
+          location: Ann Arbor
+          date_start: '2022-09-20'
+          date_end: '2023-05-28'
+          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
+    design:
+      columns: '2'
+    
   - block: collection
     id: posts
     content:
@@ -182,13 +184,13 @@ sections:
       filters:
         folders:
           - post
-        author: ""
-        category: ""
-        tag: ""
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ""
+      #   author: ""
+      #   category: ""
+      #   tag: ""
+      #   exclude_featured: false
+      #   exclude_future: false
+      #   exclude_past: false
+      #   publication_type: ""
       # Choose how many pages you would like to offset by
       offset: 0
       # Page order: descending (desc) or ascending (asc) date.
