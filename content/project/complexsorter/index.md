@@ -7,6 +7,14 @@ tags:
   - Python
 date: "2024-07-01"
 
+links:
+  - icon_pack: fab
+    name: PyPI
+    url: "https://pypi.org/project/miasort/"
+  - icon_pack: fab
+    name: Code
+    url: "https://github.com/minjikimlab/complex-sortere"
+
 # Optional external URL for project (replaces project detail page).
 external_link: https://github.com/minjikimlab/complex-sorter
 
