@@ -4,7 +4,6 @@ summary: A brief introduction to deep learning models and theories inspired by a
 date: 2024-05-19
 tags:
   - Deep Learning
-  - Machine Learning
 share: true
 authors:
   - admin
