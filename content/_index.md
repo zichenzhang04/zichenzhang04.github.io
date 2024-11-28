@@ -255,7 +255,7 @@ sections:
         <ul>
           <li>My Chinese name is 张紫宸. In Chinese, 'Zi' (紫) means 'purple,' which traditionally represents nobility, elegance, and auspiciousness. 'Chen' (宸) refers to a palace or the residence of an emperor, symbolizing dignity and grandeur. Together, the name 'Zichen' conveys a sense of royalty, grace, and aspiration for greatness.</li>
           <br>
-          <li>I was born and raised in <b>Zhangjiagang</b>, a small city close to Suzhou, China. I studied at the <a href='https://jslfgz.zjgedu.cn/xxgk/xxjj' target="_blank">Jiangsu Provincial Liangfeng Middle School</a> International Department (now named International Academy) in China before transferring to <a href='https://ahs.rochester.k12.mi.us/' target="_blank">Rochester Adams High School</a> in Rochester Hills, Michigan. <em>Go Highlanders!</em></li>
+          <li>I was born and raised in <b>Zhangjiagang</b>, a small city close to Suzhou, China. I studied at the <a href='https://jslfgz.zjgedu.cn/xxgk/xxjj' target="_blank">Jiangsu Provincial Liangfeng Senior Middle School</a> (梁丰高中) International Department (now named International Academy) in China before transferring to <a href='https://ahs.rochester.k12.mi.us/' target="_blank">Rochester Adams High School</a> in Rochester Hills, Michigan. <em>Go Highlanders!</em></li>
           <br>
           <li>I love Chinese calligraphy and I started learning it since elementary school. Please follow me on Instagram to see more of my works!</li>
         </ul>
