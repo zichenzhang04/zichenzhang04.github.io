@@ -9,7 +9,7 @@ links:
   - name: Code
     url: "https://github.com/collage-us/collage"
 
-summary: <div><p style=color:gray>Max Feldman*, Alex Wang*, <b>Zichen Zhang</b>*, Jaden Sun*.<br></p></div>Collage is an AI-driven education platform designed by college students for college students, leveraging tools like LlamaIndex, Scikit-Learn, and OpenAI APIs to personalize class schedules and career exploration, accessible via edu Google accounts.
+summary: <div><p style=color:gray>Max Feldman*, Alex Wang*, <b>Zichen Zhang</b>*, Jaden Sun*.<br></p></div>Accessible via your edu Google account, Collage is an AI-driven education platform designed to enhance academic planning and career exploration for University of Michigan students. The platform features a personalized, Pinterest-like course catalog tailored to individual academic interests and career goals, an AI advisor to assist with scheduling decisions, and a social networking system for sharing schedules and connecting with peers.
 
 tags:
   - ML
