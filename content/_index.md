@@ -57,7 +57,7 @@ sections:
     id: projects
     content:
       title: Projects
-      # subtitle: subtitle
+      subtitle: \* denotes equal contribution
       filters:
         folders:
           - project
@@ -71,12 +71,18 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Algorithm
-          tag: Algorithm
+        - name: Multimodal
+          tag: Multimodal
         - name: ML
           tag: ML
+        - name: Algorithm
+          tag: Algorithm
         - name: NLP
           tag: NLP
+        - name: CV
+          tag: CV
+        - name: Web
+          tag: Web
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
