@@ -71,12 +71,6 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Multimodal
-          tag: Multimodal
-        - name: ML
-          tag: ML
-        - name: Algorithm
-          tag: Algorithm
         - name: NLP
           tag: NLP
         - name: CV
@@ -271,10 +265,20 @@ sections:
   - block: markdown
     id: gallery
     content:
-      title: Calligraphy Gallery
+      title: Calligraphy
       subtitle:  A Graceful Dance of Ink and Soul
       text: |-
-        {{< gallery album="charlie-calligraphy" >}}
+        {{< gallery album="calligraphy" >}}
+    design:
+      columns: '1'
+
+  - block: markdown
+    id: photography
+    content:
+      title: Photography
+      subtitle: Capture Moments in Life
+      text: |-
+        {{< gallery album="photography" >}}
     design:
       columns: '1'
 

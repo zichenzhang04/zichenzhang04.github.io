@@ -22,9 +22,12 @@ main:
   - name: Fun Facts
     url: '#funfacts'
     weight: 40
-  - name: Gallery
+  - name: Calligraphy
     url: '#gallery'
     weight: 41
+  - name: Photography
+    url: '#photography'
+    weight: 42
   # - name: Talks
   #   url: '#talks'
   #   weight: 40

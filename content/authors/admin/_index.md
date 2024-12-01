@@ -89,8 +89,8 @@ social:
     icon_pack: fas
     link: mailto:zhangzzc@umich.edu
     label: Reach out to me via email!
-    display:
-      header: true
+    # display:
+    #   header: true
   # - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
   #   icon_pack: fas
   #   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
@@ -103,23 +103,23 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/zichenzhang04
-    display:
-      header: true
+    # display:
+    #   header: true
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/zichen-zhang-charlie/
-    display:
-      header: true
+    # display:
+    #   header: true
   - icon: instagram
     icon_pack: fab
     link: https://www.instagram.com/charliez.zhang/
-    display:
-      header: true
+    # display:
+    #   header: true
   - icon: x
     icon_pack: fab
     link: https://twitter.com/CharlieZZhang1
-    display:
-      header: true
+    # display:
+    #   header: true
 
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
@@ -136,7 +136,9 @@ I'm a third-year undergraduate student at the University of Michigan, majoring i
 
 I've designed efficient algorithms that handle large amounts of data, including the [MIA-Sort](https://pypi.org/project/miasort/) algorithm, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) at the [Minji Lab](https://www.minjilab.com/). I also implemented a study to find factors influencing **Brain-Computer Interface** (BCI) system's performance on people with physical impairments, and I was honored to be advised by Dr. [Jane Huggins](https://medicine.umich.edu/dept/pmr/jane-huggins-phd) at the [Direct Brain Interface (UM-DBI) Laboratory](https://sites.google.com/umich.edu/umdbi/home).
 
-I'm also interested in **entrepreneurship** and **web technologies**. I co-founded [Collage](https://mycollage.us/), an **EdTech startup** to assist students with course scheduling using **LLM agents**, and I'm currently leading the tech team as its CTO. Follow our [GitHub](https://github.com/collage-us/collage) and [LinkedIn](https://www.linkedin.com/company/collageus/) for more information.
+I'm also interested in **entrepreneurship** and **web technologies**. I co-founded [Collage](https://mycollage.us/), an **EdTech startup** to assist students with course scheduling using **LLM agents**, and I'm currently leading the tech team as its CTO. Follow our [LinkedIn](https://www.linkedin.com/company/collageus/) for more information.
 
-Feel free to contact me at zhangzzc@umich.edu. I’m always open to a coffee chat.
+📢 Feel free to contact me at [zhangzzc@umich.edu](mailto:zhangzzc@umich.edu). I'm always open to a coffee chat.
+
+🎨 View my [Chinese calligraphy](#gallery) and [photography](#photography) works here!
 {style="text-align: left;"}
