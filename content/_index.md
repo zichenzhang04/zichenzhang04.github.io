@@ -237,7 +237,7 @@ sections:
         - certificate_url: https://honors.umich.edu/awards.php
           date_end: ''
           date_start: '2024-05-02'
-          description: 'Received for 4 terms: 12/19/22, 04/27/22, 12/15/23, 05/02/24'
+          description: 'Received for 4 terms: 12/19/22, 04/27/23, 12/15/23, 05/02/24'
           icon: uofm
           organization: University of Michigan
           organization_url:

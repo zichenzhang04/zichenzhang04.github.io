@@ -1,5 +1,5 @@
 ---
-title: Collage
+title: "Collage: An AI-Driven Education Technology Platform"
 #  (🤵 LeapYear F24 Batch Finalists)
 
 # subtitle: A Subtitle

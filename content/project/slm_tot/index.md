@@ -24,7 +24,7 @@ links:
     url: "https://docs.google.com/presentation/d/1Z6alEtiIT-FiFVZRdf5-Wq34b7H2LS2z5L6RaIsoI1Q/edit?usp=sharing"
 
 # Optional external URL for project (replaces project detail page).
-external_link:
+external_link: https://github.com/zichenzhang04/slm-tot
 
 image:
   caption: Proposed Pipeline
