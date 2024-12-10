@@ -14,6 +14,9 @@ date: "2024-11-28"
 
 links:
   - icon_pack: fab
+    name: Poster
+    url: uploads/slm_tot_poster.pdf
+  - icon_pack: fab
     name: Code
     url: "https://github.com/zichenzhang04/slm-tot"
   - icon_pack: fab
