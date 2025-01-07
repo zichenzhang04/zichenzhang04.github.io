@@ -111,7 +111,7 @@ sections:
           company_logo: uofm
           location: Ann Arbor
           date_start: '2024-05-28'
-          date_end: '2024-08-29'
+          date_end: '2024-12-01'
           description: Developed MIA-Sort, an efficient sorting algorithm that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them in different schemes
         - title: Core Member
           company: Michigan Hackers
