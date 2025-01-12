@@ -3,7 +3,7 @@ title: "VTMo: Unified Visuo-Tactile Transformer Encoder with Mixture-of-Modality
 
 # subtitle: A Subtitle
 
-summary: <div><p style=color:gray><b>Zichen Zhang</b>, Peihao Li, Yuan Cheng.<br></p></div>We introduce VTMo, a modular Vision-Touch Transformer encoder that unifies dual-encoder flexibility with fusion-encoder accuracy through a shared self-attention mechanism and modality-specific/cross-modal experts. VTMo supports image-only, touch-only, and vision-touch fusion tasks, offering versatility for speed or accuracy requirements. Our method achieves competitive performance on the Image-to-Touch Retrieval task while reducing training time and computational complexity.
+summary: <div><p style=color:gray><b>Zichen Zhang</b>, Peihao Li, Yuan Cheng.<br></p></div>We introduce VTMo, a modular Vision-Touch Transformer encoder that unifies dual-encoder flexibility with fusion-encoder accuracy through a shared self-attention mechanism and modality-specific/cross-modal experts. VTMo supports image-only, touch-only, and vision-touch fusion tasks, offering versatility for speed or accuracy. Our method achieves competitive performance on the Image-to-Touch Retrieval task while reducing training time and computational complexity.
 
 tags:
   - CV

@@ -3,7 +3,7 @@ title: "GenHint: An AI Coding Assistant that Teaches How to Code"
 
 # subtitle: A Subtitle
 
-summary: <div>🏆 <em>Best Developer Tool Winner</em> 🏆. <em>MHacks 17, 2024</em></div><div><p style=color:gray><b>Zichen Zhang</b>*, Peihao Li*, Tongyuan Miao*, Yuchen Huang*.<br></p></div>Unlike conventional AI coding assistants like GitHub Copilot, GenHint does not give you codes directly. Instead, it generates code templates with "TODO" comments and explains each subproblem for you. It's powered by Llama-3-70B model hosted on Groq. Download GenHint at VS Code Extensions.
+summary: <div>🏆 <em>Honorable Mention Best Developer Tool</em> 🏆. <em>MHacks 17, 2024</em></div><div><p style=color:gray><b>Zichen Zhang</b>*, Peihao Li*, Tongyuan Miao*, Yuchen Huang*.<br></p></div>Unlike conventional AI coding assistants like GitHub Copilot, GenHint does not give you codes directly. Instead, it generates code templates with "TODO" comments and explains each subproblem for you. It's powered by Llama 3 70B hosted on Groq. Published as a VS Code Extension and easy to download, it will be a great companion for your coding workflow.
 
 tags:
   - NLP

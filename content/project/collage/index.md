@@ -1,5 +1,5 @@
 ---
-title: "Collage: An AI-Driven Education Technology Platform"
+title: "Collage: Pinterest for Education"
 #  (🤵 LeapYear F24 Batch Finalists)
 
 # subtitle: A Subtitle
@@ -10,11 +10,13 @@ links:
   - icon_pack: fab
     name: <i class="fa-solid fa-video"></i> Video
     url: "https://drive.google.com/file/d/1EpJMm7-qgCWr2wovNsjL_MndlbcsJurq/view?usp=sharing"
+  - icon_pack: fab
+    name: <i class="fa-brands fa-slideshare"></i> Slides
+    url: uploads/Collage_Pitch.pdf
 
-summary: <div><p style=color:gray>Max Feldman*, Alex Wang*, <b>Zichen Zhang</b>*, Jaden Sun*.<br></p></div>Accessible via your edu Google account, Collage is an AI-driven education platform designed to enhance academic planning and career exploration for University of Michigan students. The platform features a personalized, Pinterest-like course catalog tailored to individual academic interests and career goals, an AI advisor to assist with scheduling decisions, and a social networking system for sharing schedules and connecting with peers.
+summary: <div><p style=color:gray>Max Feldman*, Alex Wang*, <b>Zichen Zhang</b>*, Jaden Sun*.<br></p></div>Accessible via your educational Google account, Collage is an AI-powered educational discovery engine that personalizes academic advising and scheduling and connects students with their classes, advisors, and peers. The platform features a personalized, Pinterest-like course catalog tailored to individual academic interests and career goals, an AI advisor to assist with scheduling decisions, and a social networking system for sharing schedules and connecting with peers.
 
 tags:
-  - NLP
   - LLM
   - Web
 
