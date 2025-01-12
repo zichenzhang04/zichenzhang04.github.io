@@ -13,13 +13,13 @@ date: "2024-07-01"
 
 links:
   - icon_pack: fab
-    name: PyPI
+    name: <i class="fa-brands fa-python"></i> PyPI
     url: "https://pypi.org/project/miasort/"
   - icon_pack: fab
-    name: Code
+    name: <i class="fa-brands fa-github"></i> Code
     url: "https://github.com/minjikimlab/complex-sortere"
   - icon_pack: fab
-    name: Slides
+    name: <i class="fa-brands fa-slideshare"></i> Slides
     url: "https://docs.google.com/presentation/d/1HlCBedjfW4_4OxoKooeJ24knkI02DvjJdKQeQ9RA0E0/edit?usp=sharing"
 
 # Optional external URL for project (replaces project detail page).

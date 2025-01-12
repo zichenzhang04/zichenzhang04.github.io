@@ -14,13 +14,13 @@ date: "2024-11-28"
 
 links:
   - icon_pack: fab
-    name: Poster
+    name: <i class="fa-solid fa-image"></i> Poster
     url: uploads/slm_tot_poster.pdf
   - icon_pack: fab
-    name: Code
+    name: <i class="fa-brands fa-github"></i> Code
     url: "https://github.com/zichenzhang04/slm-tot"
   - icon_pack: fab
-    name: Slides
+    name: <i class="fa-brands fa-slideshare"></i> Slides
     url: "https://docs.google.com/presentation/d/1Z6alEtiIT-FiFVZRdf5-Wq34b7H2LS2z5L6RaIsoI1Q/edit?usp=sharing"
 
 # Optional external URL for project (replaces project detail page).

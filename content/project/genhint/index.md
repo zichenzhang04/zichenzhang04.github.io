@@ -1,9 +1,9 @@
 ---
-title: GenHint (🏆 MHacks 2024 Best Developer Tool Winner)
+title: "GenHint: An AI Coding Assistant that Teaches How to Code"
 
 # subtitle: A Subtitle
 
-summary: <div><p style=color:gray><b>Zichen Zhang</b>*, Peihao Li*, Tongyuan Miao*, Yuchen Huang*.<br></p></div>Unlike conventional AI coding assistants like GitHub Copilot, GenHint does not give you codes directly. Instead, it generates code templates with "TODO" comments and explains each subproblem for you. It's powered by Llama-3-70B model hosted on Groq. Download GenHint at VS Code Extensions.
+summary: <div>🏆 <em>Best Developer Tool Winner</em> 🏆. <em>MHacks 17, 2024</em></div><div><p style=color:gray><b>Zichen Zhang</b>*, Peihao Li*, Tongyuan Miao*, Yuchen Huang*.<br></p></div>Unlike conventional AI coding assistants like GitHub Copilot, GenHint does not give you codes directly. Instead, it generates code templates with "TODO" comments and explains each subproblem for you. It's powered by Llama-3-70B model hosted on Groq. Download GenHint at VS Code Extensions.
 
 tags:
   - NLP
@@ -14,22 +14,22 @@ date: "2024-09-29"
 
 links:
   - icon_pack: fab
-    name: Project Page
+    name: <i class="fa-solid fa-house"></i> Project Page
     url: "https://sites.google.com/umich.edu/genhint/home"
   - icon_pack: fab
-    name: Visual Studio Marketplace
+    name: <i class="fa-solid fa-shop"></i> Visual Studio Marketplace
     url: "https://marketplace.visualstudio.com/items?itemName=GenHintAI.genhint"
   - icon_pack: fab
-    name: DevPost
+    name: <i class="fa-solid fa-award"></i> DevPost
     url: "https://devpost.com/software/genhint"
   - icon_pack: fab
-    name: Code
+    name: <i class="fa-brands fa-github"></i> Code
     url: "https://github.com/zichenzhang04/GenHint"
   - icon_pack: fab
-    name: Slides
+    name: <i class="fa-brands fa-slideshare"></i> Slides
     url: "https://docs.google.com/presentation/d/1Hema8aINeFc_Ei6GI9Ywr5kVhC1Pzar6dIe9H8K3xzc/edit?usp=sharing"
   - icon_pack: fab
-    name: Video
+    name: <i class="fa-solid fa-video"></i> Video
     url: "https://youtu.be/72yeRx4773o?si=XVYOGT9v_GI1rfnF"
 
 

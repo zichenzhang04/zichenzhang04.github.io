@@ -14,10 +14,10 @@ date: "2024-11-29"
 
 links:
   - icon_pack: fab
-    name: Code
+    name: <i class="fa-brands fa-github"></i> Code
     url: "https://github.com/zichenzhang04/vtmo"
   - icon_pack: fab
-    name: Slides
+    name: <i class="fa-brands fa-slideshare"></i> Slides
     url: "https://docs.google.com/presentation/d/19UWa0zMQ0JQCR4A5m738eSrDVnWaY-NeCDSSL-FIHJs/edit?usp=sharing"
 
 # Optional external URL for project (replaces project detail page).
