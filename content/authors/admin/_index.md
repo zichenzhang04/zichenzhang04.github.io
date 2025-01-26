@@ -135,9 +135,9 @@ I'm a third-year undergraduate student at the University of Michigan, majoring i
 
 I've designed efficient algorithms that handle large amounts of data, including the [MIA-Sort](https://pypi.org/project/miasort/) algorithm, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) at the [Minji Lab](https://www.minjilab.com/). I also implemented a study to find factors influencing **Brain-Computer Interface** (BCI) system's performance on people with physical impairments, and I was honored to be advised by Dr. [Jane Huggins](https://medicine.umich.edu/dept/pmr/jane-huggins-phd) at the [Direct Brain Interface (UM-DBI) Laboratory](https://sites.google.com/umich.edu/umdbi/home).
 
-I'm also passionate about building next-generation AI applications to tackle real-world problems. I co-founded [Collage](https://www.linkedin.com/company/collageus/), an EdTech startup. We aim to replace archaic college course registration systems with an AI-powered discovery engine that **automates and personalizes college academic advising and scheduling**, connecting students with their classes, advisors, and peers. Sign up for free at [mycollage.us](https://mycollage.us/) with Google Education account and start building your perfect college experience.
+I'm also excited about building next-generation AI applications to tackle real-world problems. I co-founded [Collage](https://www.linkedin.com/company/collageus/), an EdTech startup. We aim to replace archaic college course registration systems with an AI-powered discovery engine that **automates and personalizes college academic advising and scheduling**, connecting students with their classes, advisors, and peers. Sign up for free at [mycollage.us](https://mycollage.us/) with Google Education account and start building your perfect college experience.
 
-📢 Feel free to contact me at [zhangzzc@umich.edu](mailto:zhangzzc@umich.edu). I'm always open to a coffee chat.
+📢 Feel free to drop me an email at [zhangzzc@umich.edu](mailto:zhangzzc@umich.edu). I'm always open to chats and feedbacks.
 
 🎨 View my [Chinese calligraphy](#gallery) and [photography](#photography) works here!
 {style="text-align: left;"}
