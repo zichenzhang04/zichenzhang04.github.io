@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Zichen Zhang
+title: Zichen "Charlie" Zhang
 
 # Name pronunciation (optional)
 name_pronunciation:
