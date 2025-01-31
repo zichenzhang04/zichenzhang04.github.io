@@ -17,7 +17,7 @@ links:
     url: "https://pypi.org/project/miasort/"
   - icon_pack: fab
     name: <i class="fa-brands fa-github"></i> Code
-    url: "https://github.com/minjikimlab/complex-sortere"
+    url: "https://github.com/minjikimlab/miasort"
   - icon_pack: fab
     name: <i class="fa-brands fa-slideshare"></i> Slides
     url: "https://docs.google.com/presentation/d/1HlCBedjfW4_4OxoKooeJ24knkI02DvjJdKQeQ9RA0E0/edit?usp=sharing"
