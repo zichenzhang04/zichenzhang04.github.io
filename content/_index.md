@@ -84,6 +84,52 @@ sections:
       # For Showcase view, flip alternate rows?
       flip_alt_rows: true
 
+  - block: portfolio # collection
+    id: posts
+    content:
+      title: Blogs
+      subtitle: ''
+      text: ''
+      # Choose how many pages you would like to display (0 = all pages)
+      count: 0
+      # Filter on criteria
+      filters:
+        folders:
+          - post
+      # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
+      default_button_index: 0
+      # Filter toolbar (optional).
+      # Add or remove as many filters (`filter_button` instances) as you like.
+      # To show all items, set `tag` to "*".
+      # To filter by a specific tag, set `tag` to an existing tag name.
+      # To remove the toolbar, delete the entire `filter_button` block.
+      buttons:
+        - name: All
+          tag: '*'
+        - name: Deep Learning
+          tag: Deep Learning
+        - name: AI
+          tag: AI
+        - name: Web App
+          tag: Web Application
+        - name: System
+          tag: System
+      #   author: ""
+      #   category: ""
+      #   tag: ""
+      #   exclude_featured: false
+      #   exclude_future: false
+      #   exclude_past: false
+      #   publication_type: ""
+      # Choose how many pages you would like to offset by
+      offset: 0
+      # Page order: descending (desc) or ascending (asc) date.
+      order: desc
+    design:
+      # Choose a layout view
+      view: card
+      columns: '2'
+
   - block: experience
     id: experience
     content:
@@ -130,46 +176,6 @@ sections:
           date_end: '2023-05-28'
           description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
     design:
-      columns: '2'
-
-  - block: portfolio # collection
-    id: posts
-    content:
-      title: Blogs
-      subtitle: ''
-      text: ''
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 0
-      # Filter on criteria
-      filters:
-        folders:
-          - post
-      # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
-      default_button_index: 0
-      # Filter toolbar (optional).
-      # Add or remove as many filters (`filter_button` instances) as you like.
-      # To show all items, set `tag` to "*".
-      # To filter by a specific tag, set `tag` to an existing tag name.
-      # To remove the toolbar, delete the entire `filter_button` block.
-      buttons:
-        - name: All
-          tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
-      #   author: ""
-      #   category: ""
-      #   tag: ""
-      #   exclude_featured: false
-      #   exclude_future: false
-      #   exclude_past: false
-      #   publication_type: ""
-      # Choose how many pages you would like to offset by
-      offset: 0
-      # Page order: descending (desc) or ascending (asc) date.
-      order: desc
-    design:
-      # Choose a layout view
-      view: card
       columns: '2'
 
   - block: accomplishments

@@ -1,9 +1,10 @@
 ---
 title: A Deep Learning Tutorial Written for Everyone
-summary: A brief introduction to deep learning models and theories inspired by a course at NTU
+summary: A detailed introduction to the most common deep learning model architectures and theories, including Transformer, BERT, GAN, Meta Learning, Adversarial Learning, Reinforcement Learning, Network Compression, Anomaly Detection, etc.
 date: 2024-05-19
 tags:
   - Deep Learning
+  - AI
 share: true
 authors:
   - admin
