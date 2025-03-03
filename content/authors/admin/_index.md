@@ -139,6 +139,8 @@ I've designed efficient algorithms that handle large amounts of data, including 
 
 I'm also excited about building next-generation AI applications to tackle real-world problems. I co-founded [Collage](https://www.linkedin.com/company/collageus/), an EdTech startup. We aim to replace archaic college course registration systems with an AI-powered discovery engine that **automates and personalizes college academic advising and scheduling**, connecting students with their classes, advisors, and peers. Sign up for free at [mycollage.us](https://mycollage.us/) with Google Education account and start building your perfect college experience.
 
+🔗 You can find my social media accounts here at my [Linktree](https://linktr.ee/zichencharlie).
+
 📢 Feel free to drop me an email at [zhangzzc@umich.edu](mailto:zhangzzc@umich.edu). I'm always open to chats and feedbacks.
 
 🎨 View my [Chinese calligraphy](#gallery) and [photography](#photography) works here!
