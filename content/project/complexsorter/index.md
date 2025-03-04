@@ -3,7 +3,7 @@ title: "MIA-Sort: Multiplex Chromatin Interaction Analysis by Efficiently Sortin
 
 # subtitle: A Subtitle
 
-summary: <div><p style=color:gray><b>Zichen Zhang</b>, <a href="https://www.michiganmedicine.org/profile/10026/minji-kim" style=color:gray target="_blank">Minji Kim</a>.<br></p></div>MIA-Sort is a Python bioinformatics tool for efficiently extracting and sorting chromatin complexes from large datasets like Hi-C and Pore-C, enabling researchers to analyze chromatin loops, stripes, jets, and hubs to study loop extrusion.
+summary: <div><p style=color:gray><b>Zichen Zhang</b>, <a href="https://www.michiganmedicine.org/profile/10026/minji-kim" target="_blank">Minji Kim</a>.<br></p></div>MIA-Sort is a Python bioinformatics tool for efficiently extracting and sorting chromatin complexes from large datasets like Hi-C and Pore-C, enabling researchers to analyze chromatin loops, stripes, jets, and hubs to study loop extrusion.
 
 tags:
   - Algorithm
