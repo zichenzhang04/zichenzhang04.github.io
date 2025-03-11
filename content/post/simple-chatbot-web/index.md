@@ -10,7 +10,7 @@ authors:
   - admin
 ---
 
-Have you ever thought about building a chatbot on the web that can tailor its responses using the data you’ve collected? We've recently upgraded our [Collage](https://mycollage.us/) AI Advisor and made it more personalized. The idea is simple (so is the coding). My take on building a chatbot backend for a web application:
+Have you ever thought about building a chatbot on the web that can tailor its responses using the data you’ve collected? We've recently upgraded our [Collage](http://joincollage.com) AI Advisor and made it more personalized. The idea is simple (so is the coding). My take on building a chatbot backend for a web application:
 
 ![Collage AI Summary](./assets/collage_ai_summary.jpeg)
 
@@ -37,4 +37,4 @@ Malicious user queries may try to jailbreak your chatbot. There're many solution
 
 - Post: use another LLM as a critic to evaluate whether the response contains any inappropriate and sensitive data. If the critic thinks the response is bad, you can send out a warning to the user.
 
-These are just some abstract personal ideas. Please also remember to check out Collage at [mycollage.us](https://mycollage.us/).
+These are just some abstract personal ideas. Please also remember to check out Collage at [joincollage.com](http://joincollage.com).

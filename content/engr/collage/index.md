@@ -6,7 +6,7 @@ title: "Collage: Pinterest for Education"
 
 links:
   - name: <i class="fa-solid fa-house"></i> Product
-    url: "https://mycollage.us/"
+    url: "http://joincollage.com"
   - icon_pack: fab
     name: <i class="fa-solid fa-video"></i> Video
     url: "https://drive.google.com/file/d/1EpJMm7-qgCWr2wovNsjL_MndlbcsJurq/view?usp=sharing"

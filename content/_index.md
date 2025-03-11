@@ -174,7 +174,7 @@ sections:
       items:
         - title: Co-Founder & CTO
           company: Collage
-          company_url: 'https://mycollage.us/'
+          company_url: 'http://joincollage.com'
           company_logo: collage
           location: Hybrid
           date_start: '2024-04-28'
