@@ -13,6 +13,9 @@ links:
   - icon_pack: fab
     name: <i class="fa-brands fa-slideshare"></i> Deck
     url: uploads/Collage_Pitch.pdf
+  - icon_pack: fab
+    name: <i class="fa-brands fa-github"></i> GitHub
+    url: "https://github.com/collage-us"
 
 summary: <div><p style=color:gray>Max Feldman*, Alex Wang*, <b>Zichen Zhang</b>*, Jaden Sun*, Kali Francisco, Nate Bennett, Leo Choi, Tanishka Nalawade, Joe Tang, Asher Katz, Eden McCullough, Dasha Skalitzky.<br></p></div>Accessible via your Google Education account, Collage is an AI-powered educational discovery engine that personalizes academic advising and scheduling and connects students with their classes, advisors, and peers. The platform features a personalized, Pinterest-like course catalog tailored to individual academic interests and career goals, an AI advisor to assist with scheduling decisions, and a social networking system for sharing schedules and connecting with peers.
 
