@@ -133,6 +133,8 @@ highlight_name: true
 
 I'm a third-year undergraduate student at the University of Michigan, majoring in **Computer Science**. I'm affiliated to the [Honors Program](https://lsa.umich.edu/honors) at the College of Literature, Science, and the Arts (LSA).
 
+I will be joining the AI Innovation Lab at [Supercell](https://supercell.com/en/), maker of Brawl Stars, Clash Royale, Clash of Clans, Boom Beach, etc. I will be exploring ways to integrate Multimodal Large Language Models (MLLMs) and other Generative AI technologies into games to create more immersive experiences that go beyond traditional input methods like the mouse and keyboard.
+
 I'm passionate about training unified foundation models that accept multimodal inputs, including **touch, images, videos, language, and audio**. I'm enthusiastic about building efficient multimodal models by **efficiently fine-tuning** pre-trained unimodal models using a limited amount of downstream data and improving unimodal accuracy by **transferring** representations learned from other modalities.
 
 I've designed efficient algorithms that handle large amounts of data, including the [MIA-Sort](https://pypi.org/project/miasort/) algorithm, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) at the [Minji Lab](https://www.minjilab.com/). I also implemented a study to find factors influencing **Brain-Computer Interface** (BCI) system's performance on people with physical impairments, and I was honored to be advised by Dr. [Jane Huggins](https://medicine.umich.edu/dept/pmr/jane-huggins-phd) at the [Direct Brain Interface (UM-DBI) Laboratory](https://sites.google.com/umich.edu/umdbi/home).
