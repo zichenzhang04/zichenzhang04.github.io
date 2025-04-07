@@ -172,38 +172,46 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: AI Engineering Intern (AI Innovation Lab)
+          company: Supercell
+          company_url: 'https://supercell.com/en/'
+          company_logo: supercell
+          location: Helsinki, Uusimaa, Finland
+          date_start: '2025-04-07'
+          date_end: ''
+          description: Integration of Multimodal LLMs into games to create richer, more immersive end-user experiences, pushing beyond traditional input methods like mouse, screen, and keyboard.
         - title: Co-Founder & CTO
           company: Collage
           company_url: 'http://joincollage.com'
           company_logo: collage
-          location: Hybrid
+          location: Ann Arbor, MI, USA
           date_start: '2024-04-28'
           date_end: ''
-          description: Applying LLMs, prompt engineering and recommendation algorithms to transform college experience
+          description: Nuking archaic course registration systems with web search & text-to-SQL LLM agent, Retrieval-Augmented Generation, and recommendation algorithms
         - title: Research Intern
           company: U-M Minji Lab
           company_url: 'https://www.minjilab.com/home'
           company_logo: uofm
-          location: Ann Arbor
+          location: Ann Arbor, MI, USA
           date_start: '2024-05-28'
           date_end: '2024-12-01'
-          description: Developed MIA-Sort, an efficient sorting algorithm that reads a dataset of 4 billion chromosome genome-scale metabolic models (GEMs) fragments and ranks them in different schemes
+          description: MIA-Sort, first bioinformatics Python package that efficiently reads datasets of 4B+ chromosome fragments and sorts/visualizes them in different schemes, open-sourced on GitHub
         - title: Core Member
           company: Michigan Hackers
           company_url: 'https://michhackers.com/'
           company_logo: michiganhackers
-          location: Ann Arbor
+          location: Ann Arbor, MI, USA
           date_start: '2022-09-01'
-          date_end: ''
-          description: Helped to build MWalk, an Android mobile app written in Java that tracks U-M students’ walking workouts, speed and distance, using Health Platform API and Firebase
+          date_end: '2023-05-01'
+          description: MWalk, an Android mobile app written in Java that tracks U-M students’ walking workouts, speed and distance, using Health Platform API and Firebase
         - title: Research Intern
           company: U-M Direct Brain Interface Laboratory
           company_url: 'https://sites.google.com/umich.edu/umdbi/home'
           company_logo: uofm
-          location: Ann Arbor
+          location: Ann Arbor, MI, USA
           date_start: '2022-09-20'
           date_end: '2023-05-28'
-          description: Deployed the branch logics of the brain-computer interface survey instrument in Qualtrics hosted on JavaScript Form Engine and implemented the automated user interaction functionalities in JavaScript and JavaScript APIs
+          description: User interaction automation of an internal Brain-Computer Interface (BCI) survey research instrument
     design:
       columns: '2'
 
@@ -249,10 +257,19 @@ sections:
         #   organization_url: https://www.datacamp.com
         #   title: 'Object-Oriented Programming in R'
         #   url: ''
+        - certificate_url: https://devpost.com/software/genhint
+          date_end: ''
+          date_start: '2024-09-29'
+          description: 'One of the largest hackathons in the U.S., attracting over 550 students from leading universities in North America.'
+          icon: mhacks
+          organization: MHacks 2024
+          organization_url:
+          title: 'Honorable Mention Best Developer Tool'
+          url: ''
         - certificate_url: https://honors.umich.edu/awards.php
           date_end: ''
           date_start: '2024-03-24'
-          description: 'Students who achieve an “A” record for two or more consecutive terms'
+          description: '“A” record for two or more consecutive terms. Received for two years, 2024 and 2025'
           icon: uofm
           organization: University of Michigan
           organization_url:
@@ -272,7 +289,7 @@ sections:
         - certificate_url: https://honors.umich.edu/awards.php
           date_end: ''
           date_start: '2024-05-02'
-          description: 'Received for 4 terms: 12/19/22, 04/27/23, 12/15/23, 05/02/24'
+          description: 'Received for 5 terms: Fall 2022, Winter 2023, Fall 2023, Winter 2024, Fall 2024'
           icon: uofm
           organization: University of Michigan
           organization_url:
