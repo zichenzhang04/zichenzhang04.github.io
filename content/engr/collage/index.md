@@ -1,5 +1,5 @@
 ---
-title: "Collage: Pinterest for Education"
+title: "Collage: Pinterest for Advising"
 #  (🤵 LeapYear F24 Batch Finalists)
 
 # subtitle: A Subtitle
