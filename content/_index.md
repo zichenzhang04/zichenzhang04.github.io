@@ -172,14 +172,14 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: AI Engineering Intern (AI Innovation Lab)
+        - title: AI Innovation Lab
           company: Supercell
           company_url: 'https://supercell.com/en/'
           company_logo: supercell
           location: Helsinki, Uusimaa, Finland
           date_start: '2025-04-07'
           date_end: ''
-          description: Integration of Multimodal LLMs into games to create richer, more immersive end-user experiences, pushing beyond traditional input methods like mouse, screen, and keyboard.
+          description: Integration of Multimodal LLMs into games to create richer, more immersive end-user experiences
         - title: Co-Founder & CTO
           company: Collage
           company_url: 'http://joincollage.com'
@@ -188,6 +188,14 @@ sections:
           date_start: '2024-04-28'
           date_end: ''
           description: Nuking archaic course registration systems with web search & text-to-SQL LLM agent, Retrieval-Augmented Generation, and recommendation algorithms
+        - title: AI Engineering Intern
+          company: Starward Game Studios
+          company_url: 'https://www.starwardgames.com/'
+          company_logo: starward
+          location: Mountain View, CA, USA
+          date_start: '2025-04-14'
+          date_end: ''
+          description: LLM Continued Learning, Retrieval-Augmented Generation, and agents in game characters
         - title: Research Intern
           company: U-M Minji Lab
           company_url: 'https://www.minjilab.com/home'
