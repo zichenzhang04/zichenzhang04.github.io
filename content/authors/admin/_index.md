@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Computer Vision Research | Co-Founder @ Collage
+role: AI Lab @ Supercell | Co-Founder & CTO @ Collage
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -133,7 +133,7 @@ highlight_name: true
 
 I'm a third-year undergraduate student at the University of Michigan, majoring in **Computer Science**. I'm affiliated to the [Honors Program](https://lsa.umich.edu/honors) at the College of Literature, Science, and the Arts (LSA).
 
-I will be joining the AI Innovation Lab at [Supercell](https://supercell.com/en/), maker of Brawl Stars, Clash Royale, Clash of Clans, Boom Beach, etc. I will be exploring ways to integrate Multimodal Large Language Models (MLLMs) and other Generative AI technologies into games to create more immersive experiences that go beyond traditional input methods like the mouse and keyboard.
+I'm currently working in the AI Innovation Lab at [Supercell](https://supercell.com/en/), maker of Brawl Stars, Clash Royale, Clash of Clans, Boom Beach, etc.
 
 I'm passionate about training unified foundation models that accept multimodal inputs, including **touch, images, videos, language, and audio**. I'm enthusiastic about building efficient multimodal models by **efficiently fine-tuning** pre-trained unimodal models using a limited amount of downstream data and improving unimodal accuracy by **transferring** representations learned from other modalities.
 
