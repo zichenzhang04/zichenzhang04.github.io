@@ -133,13 +133,11 @@ highlight_name: true
 
 I'm a third-year undergraduate student at the University of Michigan, majoring in **Computer Science**. I'm affiliated to the [Honors Program](https://lsa.umich.edu/honors) at the College of Literature, Science, and the Arts (LSA).
 
-I'm currently working in the AI Innovation Lab at [Supercell](https://supercell.com/en/), maker of Brawl Stars, Clash Royale, Clash of Clans, Boom Beach, etc.
-
-I'm passionate about training unified foundation models that accept multimodal inputs, including **touch, images, videos, language, and audio**. I'm enthusiastic about building efficient multimodal models by **efficiently fine-tuning** pre-trained unimodal models using a limited amount of downstream data and improving unimodal accuracy by **transferring** representations learned from other modalities.
+I'm currently working in the AI Innovation Lab at [Supercell](https://supercell.com/en/), maker of Brawl Stars, Clash Royale, and Clash of Clans. I'm building autonomous AI companions, assistants and NPCs in games that interact with players — multimodal LLM agents that understand game context, possess unique personalities & dynamic moods, act autonomously in games, and have long-term memories of players.
 
 I've designed efficient algorithms that handle large amounts of data, including the [MIA-Sort](https://pypi.org/project/miasort/) algorithm, and I was fortunate to be advised by Professor [Minji Kim](https://www.michiganmedicine.org/profile/10026/minji-kim) at the [Minji Lab](https://www.minjilab.com/). I also implemented a study to find factors influencing **Brain-Computer Interface** (BCI) system's performance on people with physical impairments, and I was honored to be advised by Dr. [Jane Huggins](https://medicine.umich.edu/dept/pmr/jane-huggins-phd) at the [Direct Brain Interface (UM-DBI) Laboratory](https://sites.google.com/umich.edu/umdbi/home).
 
-I'm also excited about building next-generation AI applications to tackle real-world problems. I co-founded [Collage](https://www.linkedin.com/company/collageus/), an EdTech startup. We aim to replace archaic college course registration systems with an AI-powered discovery engine that **automates and personalizes college academic advising and scheduling**, connecting students with their classes, advisors, and peers. Sign up for free at [joincollage.com](http://joincollage.com) with Google Education account and start building your perfect college experience.
+I'm excited about building next-generation AI applications to tackle real-world problems. I co-founded [Collage](https://www.linkedin.com/company/collageus/), an EdTech startup. We aim to replace archaic college course registration systems with an AI-powered discovery engine that **automates and personalizes college academic advising and scheduling**, connecting students with their classes, advisors, and peers. Sign up for free at [joincollage.com](http://joincollage.com) with Google Education account and start building your perfect college experience.
 
 🔗 You can find my social media accounts here at my [Linktree](https://linktr.ee/zichencharlie).
 
